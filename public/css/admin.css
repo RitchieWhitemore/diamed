@@ -1,0 +1,13 @@
+.admin-delete-form {
+    display: inline-block;
+}
+
+.admin-delete-form button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.admin-delete-form button i {
+    color: red;
+}
