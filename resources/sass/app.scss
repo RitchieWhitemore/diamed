@@ -1,1 +1,18 @@
-@import "block/header";
+@import "variables";
+@import "block/main-header";
+@import "block/main-nav";
+@import "block/social";
+
+main {
+  position: relative;
+  top: -47px;
+  background-color: antiquewhite;
+}
+
+button:focus {
+  outline: none;
+}
+
+.body__menu-open {
+  overflow: hidden;
+}
