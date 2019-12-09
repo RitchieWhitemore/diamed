@@ -5,3 +5,11 @@ $(function () {
         $('body').toggleClass('body__menu-open');
     })
 });
+
+$(function () {
+    $(document).ready(function () {
+        $('#main-slider').bxSlider({
+            controls: false
+        });
+    });
+});
