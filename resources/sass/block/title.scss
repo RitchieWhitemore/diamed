@@ -1,0 +1,24 @@
+.title {
+  display: inline-block;
+  font-size: 21px;
+  font-weight: 800;
+  text-align: center;
+  color: $font-color-grey;
+
+  &::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 80%;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: $border-color-aqua;
+  }
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 30px;
+  }
+}

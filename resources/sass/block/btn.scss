@@ -24,6 +24,16 @@
   background-size: contain;
 }
 
+.btn__service {
+  padding: 3px 18px;
+  background-color: $border-color-aqua;
+  font-size: 13px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+
 @media (min-width: 992px) {
   .btn {
     padding: 20px 60px;

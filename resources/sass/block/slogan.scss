@@ -29,7 +29,12 @@
 
 @media (min-width: 992px) {
   .slogan {
-    margin-bottom: 100px;
+    margin: 0;
+    padding-bottom: 300px;
+
+    background-image: url("/img/bg-illustration-slogan.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
 
     h2 {
       margin-bottom: 40px;

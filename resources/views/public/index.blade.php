@@ -22,46 +22,54 @@
         </div>
     </section>
     <section class="services">
-        <h2 class="title services__title">Наши услуги</h2>
-        <div class="services__block services__block--therapy">
-            <h3>Болит зуб или выпала пломба?</h3>
-            <ul class="services__list">
-                <li class="services__item"><a href="#" class="services__link">Диагностика</a></li>
-                <li class="services__item"><a href="#" class="services__link">Лечение зубов</a></li>
-                <li class="services__item"><a href="#" class="services__link">Лечение десен</a></li>
-            </ul>
+        <div class="services__header">
+            <h2 class="title services__title">Наши услуги</h2>
         </div>
-        <div class="services__block services__block--surgery">
-            <h3>Если зуб разрушен или отсутствует</h3>
-            <ul class="services__list">
-                <li class="services__item"><a href="#" class="services__link">Реставрация зубов</a></li>
-                <li class="services__item"><a href="#" class="services__link">Удаление зубов</a></li>
-                <li class="services__item"><a href="#" class="services__link">Имплантация зубов</a></li>
-                <li class="services__item"><a href="#" class="services__link">Протезирование зубов</a></li>
-            </ul>
-        </div>
-        <div class="services__block services__block--kids">
-            <h3>Детская стоматология</h3>
-            <ul class="services__list">
-                <li class="services__item"><a href="#" class="services__link">Адаптация ребенка к лечению</a></li>
-                <li class="services__item"><a href="#" class="services__link">Лечение без страха</a></li>
-                <li class="services__item"><a href="#" class="services__link">Рекомендации родителям</a></li>
-            </ul>
-        </div>
-        <div class="services__block services__block--cosmetology">
-            <h3>Идеальная улыбка</h3>
-            <ul class="services__list">
-                <li class="services__item"><a href="#" class="services__link">Профилактика и гигиена</a></li>
-                <li class="services__item"><a href="#" class="services__link">Лечение кариеса без сверления (метод
-                        ICON)</a></li>
-                <li class="services__item"><a href="#" class="services__link">Отбеливание зубов</a></li>
-                <li class="services__item"><a href="#" class="services__link">Выравнивание зубов и прикуса</a></li>
-            </ul>
+        <div class="services__content">
+            <div class="services__block services__block--therapy">
+                <h3>Болит зуб или<br>выпала пломба?</h3>
+                <ul class="services__list">
+                    <li class="services__item"><a href="#" class="services__link">Диагностика</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Лечение зубов</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Лечение десен</a></li>
+                </ul>
+            </div>
+            <div class="services__block services__block--surgery">
+                <h3>Если зуб разрушен<br>или отсутствует</h3>
+                <ul class="services__list">
+                    <li class="services__item"><a href="#" class="services__link">Реставрация зубов</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Удаление зубов</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Имплантация зубов</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Протезирование зубов</a></li>
+                </ul>
+            </div>
+            <div class="services__block services__block--kids">
+                <h3>Детская<br>стоматология</h3>
+                <ul class="services__list">
+                    <li class="services__item"><a href="#" class="services__link">Адаптация ребенка к лечению</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Лечение без страха</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Рекомендации родителям</a></li>
+                </ul>
+            </div>
+            <div class="services__block services__block--cosmetology">
+                <h3>Идеальная<br> улыбка</h3>
+                <ul class="services__list">
+                    <li class="services__item"><a href="#" class="services__link">Профилактика и гигиена</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Лечение кариеса без сверления (метод
+                            ICON)</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Отбеливание зубов</a></li>
+                    <li class="services__item"><a href="#" class="services__link">Выравнивание зубов и прикуса</a></li>
+                </ul>
+            </div>
         </div>
         <footer class="services__footer">
-            <p>Не знаете какая услуга Вам подходит?</p>
-            <button>Записаться на консультацию</button>
+            <div class="services__btn-wrapper">
+                <p>Не знаете какая услуга Вам подходит?</p>
+                <button class="services__btn btn__service">Записаться на консультацию</button>
+            </div>
         </footer>
+        <div class="services__illustration">
+        </div>
     </section>
     <section class="about-company">
         <h2 class="title about-company__title">О клинике</h2>

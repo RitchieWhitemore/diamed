@@ -1,0 +1,186 @@
+.services {
+  margin-bottom: 35px;
+}
+
+.services__header {
+  text-align: center;
+}
+
+.services__title {
+  margin-bottom: 62px;
+}
+
+.services__content {
+  padding: 0 35px;
+  padding-bottom: 15px;
+  background-color: $bg-color-aqua;
+}
+
+.services__block {
+  position: relative;
+  top: -40px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding-top: 125px;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+
+  }
+
+  &--therapy {
+    background-image: url("/img/service-therapy.png");
+  }
+
+  &--surgery {
+    background-image: url("/img/service-surgery.png");
+  }
+
+  &--kids {
+    background-image: url("/img/service-kids.png");
+  }
+
+  &--cosmetology {
+    background-image: url("/img/service-cosmetology.png");
+  }
+}
+
+.services__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.services__item {
+  font-size: 14px;
+  font-weight: 300;
+
+}
+
+.services__link {
+  color: $font-color-grey;
+  text-decoration: underline;
+
+}
+
+.services__footer {
+  padding: 0 35px;
+  padding-bottom: 45px;
+  position: relative;
+  top: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url("/img/bg-service-mobile.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.services__btn-wrapper {
+  margin: 0 auto;
+  padding: 15px;
+  background-color: white;
+  border-radius: 28px;
+  box-shadow: 4px 0 14px rgba(0, 0, 0, 0.1);
+
+  p {
+    position: absolute;
+    top: -25px;
+    font-size: 11px;
+    font-weight: 300;
+    color: $font-color-grey;
+  }
+}
+
+.services__btn {
+  margin: 0 auto;
+  box-shadow: 0 4px 4px rgba(27, 191, 186, 0.2);
+}
+
+@media (min-width: 992px) {
+  .services {
+    position: relative;
+    top: -110px;
+
+    padding-bottom: 80px;
+  }
+  .services__title {
+    margin-bottom: 110px;
+  }
+
+  .services__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .services__block {
+    margin: 0;
+    top: -55px;
+    padding-top: 155px;
+    min-width: 240px;
+    background-size: contain;
+    z-index: 9;
+  }
+
+  .services__btn-wrapper {
+    padding: 20px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 770px;
+    border-radius: 41px;
+
+    p {
+      margin: 0;
+      width: 50%;
+      text-align: center;
+      position: static;
+      font-size: 14px;
+    }
+  }
+
+  .services__btn {
+    margin: 0;
+    padding: 9px 60px;
+    font-size: 14px;
+    border-radius: 21px;
+  }
+
+  .services__illustration {
+    position: absolute;
+    width: 100%;
+    height: 560px;
+    bottom: 115px;
+    background-image: url("/img/bg-illustration-service.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+
+  .services__footer {
+    padding-bottom: 106px;
+    background-image: url("/img/bg-service.png");
+    background-position: center bottom;
+  }
+}
+
+@media (min-width: 1338px) {
+  .services {
+    margin: 0;
+  }
+
+  .services__block {
+    padding-top: 180px;
+    max-width: 270px;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+}
