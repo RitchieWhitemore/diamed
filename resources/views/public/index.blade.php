@@ -5,7 +5,7 @@
         <ul id="main-slider" class="slider__list">
             <li class="slider__item">
                 <picture>
-                    <source media="(min-width:950px" )="" srcset="/img/slider.jpg">
+                    <source media="(min-width:540px" )="" srcset="/img/slider.jpg">
                     <img src="/img/slider-mobile.png" alt="">
                 </picture>
             </li>
@@ -16,7 +16,10 @@
     </section>
     <section class="slogan">
         <h2>Ваши улыбки - наша работа!</h2>
-        <button>Записаться</button>
+        <div class="slogan__button-wrapper">
+            <button class="btn">Записаться</button>
+            <button class="slogan__whatsapp btn__whatsapp"></button>
+        </div>
     </section>
     <section class="services">
         <h2 class="title services__title">Наши услуги</h2>

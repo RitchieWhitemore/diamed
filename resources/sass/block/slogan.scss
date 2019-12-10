@@ -1,0 +1,44 @@
+.slogan {
+  position: relative;
+  margin-bottom: 35px;
+
+  h2 {
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    color: $font-color-aqua;
+    text-align: center;
+  }
+}
+
+.slogan__button-wrapper {
+  position: relative;
+}
+
+.slogan__whatsapp {
+  position: absolute;
+  top: 0;
+  left: 74%;
+}
+
+@media (min-width: 768px) {
+  .slogan__whatsapp {
+    left: 63%;
+  }
+}
+
+@media (min-width: 992px) {
+  .slogan {
+    margin-bottom: 100px;
+
+    h2 {
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+  }
+
+  .slogan__whatsapp {
+    left: 65%;
+    top: 8px;
+  }
+}
