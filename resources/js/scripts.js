@@ -12,6 +12,16 @@ $(function () {
             controls: false
         });
 
-        $('#main-gallery').bxSlider({})
+        $('#main-gallery').bxSlider({});
+
+        if ($(window).width() <= 779) {
+            $('#team-slider').bxSlider({});
+        } else {
+            /*$('#team-slider').bxSlider({
+                minSlides: 1,
+                maxSlides: 5,
+                slideWidth: 270,
+            });*/
+        }
     });
 });

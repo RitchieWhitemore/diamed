@@ -132,27 +132,96 @@
         </div>
     </section>
     <section class="team">
-        <h2 class="title team__title"></h2>
-        <div class="team__member member">
-            <img src="/img/kostenuk-small.jpg">
-            <h3 class="member__title"><span>Костенюк</span> Александр Евгеньевич</h3>
-            <p>Врач - стоматолог
-                общей практики
-                Заместитель главного врача
-                клиники «Диамед»
-            </p>
-            <p>
-                Окончил Московский
-                медицинский стоматологический
-                институт в 1981 г.
-            </p>
-            <button>Записаться на прием</button>
-            <p>Опыт работы: 38 лет</p>
-            <a href="#">Сертификаты</a>
+        <header class="team__header">
+            <h2 class="title team__title">Наша команда</h2>
+        </header>
+        <div class="team__list-wrapper">
+            <ul id="team-slider" class="team__list">
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <a href="#" class="member__cert-link">Сертификаты</a>
+                    </div>
+                </li>
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+                            медицинский стоматологический
+                            институт в 1981 г.
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <a href="#" class="member__cert-link">Сертификаты</a>
+                    </div>
+                </li>
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+                            медицинский стоматологический
+                            институт в 1981 г.
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <a href="#" class="member__cert-link">Сертификаты</a>
+                    </div>
+                </li>
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+                            медицинский стоматологический
+                            институт в 1981 г.
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <a href="#" class="member__cert-link">Сертификаты</a>
+                    </div>
+                </li>
+            </ul>
         </div>
+        <div class="team__illustration">
+        </div>
+        <a href="#" class="btn team__btn">Больше специалистов</a>
     </section>
     <section class="articles">
-        <h2 class="articles__title title">Полезные статьи и новости</h2>
+        <header class="articles__header">
+            <h2 class="articles__title title">Полезные статьи и новости</h2>
+        </header>
         <div class="articles__list">
             <{{--div class="articles__item">
                 <img src="/img/article1.jpg">
