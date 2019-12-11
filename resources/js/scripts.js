@@ -11,5 +11,7 @@ $(function () {
         $('#main-slider').bxSlider({
             controls: false
         });
+
+        $('#main-gallery').bxSlider({})
     });
 });

@@ -1,0 +1,65 @@
+.director {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.director__text {
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: #1bbfba;
+}
+
+.director__photo {
+  margin-right: 10px;
+  margin-top: 15px;
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  background-image: url("/img/director.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 5px solid $border-color-aqua;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.director__sign {
+  margin-bottom: 9px;
+  font-size: 10px;
+  font-weight: 300;
+  font-style: italic;
+  color: $font-color-grey;
+}
+
+.director__mail {
+  color: $font-color-aqua;
+  text-decoration: underline;
+  font-size: 12px;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .director__photo {
+    margin: 0;
+    margin-right: 30px;
+    width: 170px;
+    height: 170px;
+  }
+
+  .director__text {
+    font-size: 14px;
+  }
+
+  .director__sign {
+    font-size: 12px;
+  }
+
+  .director__mail {
+    font-size: 16px;
+  }
+}

@@ -4,11 +4,16 @@
 @import "block/main-header";
 @import "block/main-nav";
 @import "block/social";
+
 @import "block/slider";
+@import "block/gallery";
+
 @import "block/slogan";
 @import "block/btn";
 @import "block/services";
 @import "block/title";
+@import "block/about-company";
+@import "block/director";
 
 main {
   position: relative;

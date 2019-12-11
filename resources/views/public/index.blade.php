@@ -71,32 +71,41 @@
         <div class="services__illustration">
         </div>
     </section>
-    <section class="about-company">
-        <h2 class="title about-company__title">О клинике</h2>
+    <section class="about-company container">
+        <header class="about-company__header">
+            <h2 class="title about-company__title">О клинике</h2>
+        </header>
         <p class="about-company__text">Наша клиника была одной из первых современных частных клиник, появившихся в
             городе Александров. Мы занимаемся любимым делом и работаем на благо наших пациентов с 2004 года и за это
             время успели завоевать безупречную репутацию у многих пациентов.</p>
-        <div class="gallery">
-            <img src="/img/diamed_n.jpg">
+        <div class="about-company__gallery-wrapper">
+            <div class="about-company__gallery gallery">
+                <ul id="main-gallery" class="gallery__list">
+                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
+                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
+                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
+                </ul>
+            </div>
+            <div class="about-company__info">
+                <div class="row features">
+                    <div class="col value">
+                        <span class="number">15</span><span class="text">лет успешной работы</span>
+                    </div>
+                    <div class="col value">
+                        <span class="number">18000</span><span class="text">довольных пациентов</span>
+                    </div>
+                </div>
+                <div class="row links">
+                    <div class="col"><a href="#">Лицензии</a></div>
+                    <div class="col"><a href="#">Стерилизация</a></div>
+                </div>
+                <div class="row links">
+                    <div class="col"><a href="#">Вакансии</a></div>
+                    <div class="col"><a href="#">Информация для клиентов</a></div>
+                </div>
+            </div>
         </div>
-        <table class="about-company__info">
-            <tr>
-                <td>
-                    15 <span>лет успешной работы</span>
-                </td>
-                <td>
-                    18000 <span>довольных пациентов</span>
-                </td>
-            </tr>
-            <tr>
-                <td><a href="#">Лицензии</a></td>
-                <td><a href="#">Стерилизация</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">Вакансии</a></td>
-                <td><a href="#">Информация для клиентов</a></td>
-            </tr>
-        </table>
+
         <p class="about-company__text">Сегодня каждому хочется иметь своего грамотного стоматолога, способного
             выслушать, проконсультировать и быстро помочь в любой ситуации. Если Вам нужен настоящий семейный
             стоматолог, то обратитесь в нашу клинику и Вы найдете такого врача! Моей целью всегда было создание
@@ -118,7 +127,7 @@
                 <p class="director__sign">С уважением, генеральный директор
                     Корнилова Инна Гаральдовна
                 </p>
-                <a href="#">Письмо директору клиники</a>
+                <a href="#" class="director__mail"><i class="fas fa-envelope"></i>Письмо директору клиники</a>
             </div>
         </div>
     </section>

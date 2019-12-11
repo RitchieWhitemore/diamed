@@ -1,0 +1,45 @@
+.gallery {
+  position: relative;
+}
+
+.gallery .bx-viewport {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery .bx-pager {
+  display: none;
+}
+
+.gallery .bx-prev,
+.gallery .bx-next {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%) rotate(-45deg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0e0e0;
+  border-bottom: none;
+  border-right: none;
+  font-size: 0;
+}
+
+.gallery .bx-next {
+  right: 10px;
+  left: auto;
+  transform: translateY(-50%) rotate(135deg)
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .gallery__item {
+    height: 395px;
+  }
+}
