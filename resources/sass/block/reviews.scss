@@ -1,0 +1,144 @@
+.reviews {
+
+
+}
+
+.reviews__wrapper {
+  padding: 30px 15px;
+  padding-bottom: 0;
+  background-color: #1bbfba;
+
+  &-bottom {
+    padding: 30px 15px;
+    padding-bottom: 80px;
+    background-image: url("/img/bg-reviews.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+.reviews__header {
+  display: none;
+  text-align: center;
+}
+
+.reviews__text {
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.reviews__author {
+  font-size: 11px;
+  font-weight: 300;
+  font-style: normal;
+  color: $font-color-grey;
+}
+
+.reviews__rating {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  color: white;
+
+  li {
+    margin-right: 5px;
+  }
+}
+
+.reviews__link {
+  display: block;
+  font-size: 12px;
+  color: white;
+  text-decoration: underline;
+}
+
+.reviews__video {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.reviews__video iframe {
+  border-radius: 10px;
+  width: 290px;
+  height: 191px;
+}
+
+@media (min-width: 992px) {
+  .reviews {
+    padding-bottom: 125px;
+    margin-bottom: 160px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url("/img/bg-reviews.png");
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: center bottom;
+  }
+
+  .reviews__header {
+    display: block;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .reviews__wrapper {
+    max-width: 680px;
+    width: 50%;
+    background-color: #1bbfba;
+
+    &-bottom {
+      padding: 0;
+      padding-top: 30px;
+      width: 50%;
+      max-width: 680px;
+      background-image: none;
+      background-color: #1bbfba;
+      z-index: 9;
+    }
+  }
+
+  .reviews__text {
+    font-size: 14px;
+  }
+
+  .reviews__author {
+    font-size: 14px;
+  }
+
+  .reviews__btn {
+    position: absolute;
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .reviews__video iframe {
+    width: 670px;
+    height: 442px;
+  }
+
+  .reviews__link {
+    font-size: 14px;
+  }
+
+  .reviews__illustration {
+    position: absolute;
+    top: 0;
+    width: 284px;
+    height: 478px;
+    background-image: url("/img/bg-illustration-review.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  .reviews__wrapper {
+    padding-right: 140px;
+  }
+}
