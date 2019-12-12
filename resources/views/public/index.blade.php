@@ -275,22 +275,34 @@
             <h2 class="articles__title title">Полезные статьи и новости</h2>
         </header>
         <div class="articles__list">
-            <{{--div class="articles__item">
-                <img src="/img/article1.jpg">
-                <h3>Секреты идеальной улыбки</h3>
+            <div class="articles__item">
+                <a href="#">
+                    <div class="articles__image-wrapper">
+                        <img src="/img/article1.jpg">
+                    </div>
+                    <h3>Секреты идеальной улыбки</h3>
+                </a>
             </div>
             <div class="articles__item">
-                <img src="/img/article2.jpg">
-                <h3>Рекомендации для пациента
-                    после имплантации</h3>
+                <a href="#">
+                    <div class="articles__image-wrapper">
+                        <img src="/img/article2.jpg">
+                    </div>
+                    <h3>Рекомендации для пациента
+                        после имплантации</h3>
+                </a>
             </div>
             <div class="articles__item">
-                <img src="/img/article3.jpg">
-                <h3>Адаптация ребенка к стоматологи-
-                    ческому лечению</h3>
-            </div>--}}
-            <a href="#">Больше информации</a>
+                <a href="#">
+                    <div class="articles__image-wrapper">
+                        <img src="/img/article3.jpg">
+                    </div>
+                    <h3>Адаптация ребенка к стоматологи-
+                        ческому лечению</h3>
+                </a>
+            </div>
         </div>
+        <a href="#" class="btn article__btn">Больше информации</a>
     </section>
     <section class="reviews">
         <div class="reviews__list">
