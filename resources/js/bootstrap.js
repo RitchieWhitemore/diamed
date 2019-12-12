@@ -20,6 +20,8 @@ try {
 
     require('./../../node_modules/bxslider/dist/jquery.bxslider.js');
 
+    require('./../../node_modules/simplelightbox/dist/simple-lightbox.min.js');
+
 } catch (e) {
 }
 

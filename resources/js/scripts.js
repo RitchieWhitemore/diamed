@@ -23,5 +23,16 @@ $(function () {
                 slideWidth: 270,
             });*/
         }
+
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+        $('.member__cert-link').on('click', function (evt) {
+            evt.preventDefault();
+            var gallery = $(this).siblings('.member__cert-gallery').find('a').simpleLightbox();
+            gallery.open();
+        });
     });
 });

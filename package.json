@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "bxslider": "^4.2.14",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "simplelightbox": "^1.17.3"
   }
 }
