@@ -62,24 +62,33 @@
     @yield('content')
 </main>
 <footer class="main-footer">
-    <div class="main-footer__row">
-        <p>© 2019 Все права защищены
-            Стоматологическая
-            клиника «Диамед»</p>
-        <button id="up" class="button-up"></button>
-    </div>
-    <div class="main-footer__row">
-        <nav class="main-footer__menu">
-            <ul class="main-footer__list">
-                <li class="main-footer__item"><a href="#">Услуги и цены</a></li>
-                <li class="main-footer__item"><a href="#">Наша команда</a></li>
-                <li class="main-footer__item"><a href="#">Акции</a></li>
-                <li class="main-footer__item"><a href="#">Контакты</a></li>
+    <div class="container main-footer__wrapper">
+        <div class="main-footer__header">
+            <p class="main-footer__copyright">© 2019 Все права защищены
+                Стоматологическая
+                клиника <span>«Диамед»</span></p>
+            <button id="up" class="main-footer__btn-up btn__up"><i class="fas fa-chevron-circle-up"></i></button>
+        </div>
+        <div class="main-footer__row">
+            <nav class="main-footer__menu">
+                <ul class="main-footer__list">
+                    <li class="main-footer__item"><a href="#" class="main-footer__link">Услуги и цены</a></li>
+                    <li class="main-footer__item"><a href="#" class="main-footer__link">Наша команда</a></li>
+                    <li class="main-footer__item"><a href="#" class="main-footer__link">Акции</a></li>
+                    <li class="main-footer__item"><a href="#" class="main-footer__link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-footer__social-wrapper">
+            <ul class="main-footer__social social__list social__list--grey">
+                <li class="social__item"><a href="#" class="social__link social__link--vk">Вконтакте</a></li>
+                <li class="social__item"><a href="#" class="social__link social__link--fb">Facebook</a></li>
+                <li class="social__item"><a href="#" class="social__link social__link--ok">Одноклассники</a></li>
             </ul>
-        </nav>
+        </div>
     </div>
-    <div class="main-footer__social-wrapper">
-        <ul class="main-footer__social social__list social__list--black">
+    <div class="main-footer__social-wrapper--mobile">
+        <ul class="main-footer__social social__list social__list--grey">
             <li class="social__item"><a href="#" class="social__link social__link--vk">Вконтакте</a></li>
             <li class="social__item"><a href="#" class="social__link social__link--fb">Facebook</a></li>
             <li class="social__item"><a href="#" class="social__link social__link--ok">Одноклассники</a></li>

@@ -39,6 +39,13 @@
   border-radius: 15px;
 }
 
+.btn__up {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: $font-color-aqua;
+}
+
 @media (min-width: 992px) {
   .btn {
     padding: 20px 60px;

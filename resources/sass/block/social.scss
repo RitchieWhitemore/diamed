@@ -6,8 +6,15 @@
   flex-direction: row;
 }
 
-.social__link {
+.social__item {
   margin-right: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social__link {
   display: block;
   font-size: 0;
   width: 28px;
@@ -28,6 +35,10 @@
   &--ok {
     background-image: url("/img/ok.png");
   }
+}
+
+.social__list--grey .social__link {
+  background-color: #6c6e73;
 }
 
 @media (min-width: 992px) {
