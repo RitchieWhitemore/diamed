@@ -3,6 +3,12 @@ $(function () {
         $(evt.currentTarget).toggleClass('main-header__btn-menu--close');
         $('.main-nav').toggleClass('main-nav--close');
         $('body').toggleClass('body__menu-open');
+    });
+
+    $('#up').on('click', function (evt) {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 1000);
     })
 });
 
