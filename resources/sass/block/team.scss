@@ -85,6 +85,10 @@
     margin-right: 30px;
     width: 270px;
     z-index: 9;
+
+    &:last-child {
+      display: none;
+    }
   }
 
   .team__illustration {
@@ -102,5 +106,14 @@
     left: 50%;
     bottom: -27px;
     transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1140px) {
+  .team__item {
+
+    &:last-child {
+      display: block;
+    }
   }
 }

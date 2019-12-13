@@ -363,14 +363,22 @@
         <div class="reviews__illustration"></div>
     </section>
     <section class="signup">
-        <h2 class="signup__title title">Записаться на прием</h2>
-        <form>
-            <input type="text" name="name">
-            <input type="text" name="phone">
-            <input type="submit" value="Записаться">
-        </form>
+        <header class="signup__header">
+            <h2 class="signup__title title">Записаться на прием</h2>
+        </header>
+        <div class="signup__wrapper">
+            <div class="signup__form-wrapper">
+                <form class="signup__form">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                    <input type="text" name="phone" placeholder="Телефон">
+                    <button type="submit" class="btn btn--auqa">Записаться</button>
+                </form>
+            </div>
+        </div>
+
     </section>
     <section class="map">
-
+        <iframe src="https://yandex.ru/map-widget/v1/-/CGh8rFif" width="100%" height="200" frameborder="0"
+                allowfullscreen="true"></iframe>
     </section>
 @endsection
