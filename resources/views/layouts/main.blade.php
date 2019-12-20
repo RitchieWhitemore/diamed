@@ -95,6 +95,7 @@
         </ul>
     </div>
 </footer>
+@include ('layouts.modals')
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('/js/scripts.js') }}"></script>
 </body>

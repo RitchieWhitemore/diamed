@@ -17,7 +17,7 @@
     <section class="slogan">
         <h2>Ваши улыбки - наша работа!</h2>
         <div class="slogan__button-wrapper">
-            <button class="btn">Записаться</button>
+            <button class="btn" data-toggle="modal" data-target="#exampleModal">Записаться</button>
             <button class="slogan__whatsapp btn__whatsapp"></button>
         </div>
     </section>
