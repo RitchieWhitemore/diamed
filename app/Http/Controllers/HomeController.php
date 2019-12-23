@@ -20,4 +20,9 @@ class HomeController extends Controller
     {
         return view('public.info');
     }
+
+    public function team()
+    {
+        return view('public.team');
+    }
 }
