@@ -27,12 +27,16 @@
                     для всей семьи «Диамед»</p>
             </div>
             <ul class="main-nav__list">
-                <li class="main-nav__item"><a href="/" class="main-nav__link main-nav__link--active">Главная</a></li>
+                <li class="main-nav__item"><a href="{{route('main')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'main' ? 'main-nav__link--active' : ''}}">Главная</a>
+                </li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Услуги и цены</a></li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Наша команда</a></li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Отзывы</a></li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Статьи и новости</a></li>
-                <li class="main-nav__item"><a href="#" class="main-nav__link">Акции</a></li>
+                <li class="main-nav__item"><a href="{{route('stock')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'stock' ? 'main-nav__link--active' : ''}}">Акции</a>
+                </li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Вопросы</a></li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Контакты</a></li>
             </ul>

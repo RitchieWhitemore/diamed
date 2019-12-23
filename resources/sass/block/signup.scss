@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.signup--stock {
+  background-image: url("/img/bg-signup-stock-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .signup__header {
   text-align: center;
 }
@@ -95,5 +101,10 @@
   .map iframe {
     width: 100%;
     height: 517px;
+  }
+
+  .signup--stock {
+    height: 410px;
+    background-image: url("/img/bg-signup-stock.jpg");
   }
 }

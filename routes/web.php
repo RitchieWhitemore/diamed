@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('main');
+
+Route::get('/stock', 'HomeController@stock')->name('stock');
 
 Auth::routes();
 
