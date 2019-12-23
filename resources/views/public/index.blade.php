@@ -101,7 +101,7 @@
                 </div>
                 <div class="row links">
                     <div class="col"><a href="#">Вакансии</a></div>
-                    <div class="col"><a href="#">Информация для клиентов</a></div>
+                    <div class="col"><a href="{{route('info')}}">Информация для клиентов</a></div>
                 </div>
             </div>
         </div>

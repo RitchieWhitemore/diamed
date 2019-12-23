@@ -1,22 +1,4 @@
-.stock__header {
-  margin-bottom: 20px;
-  background-image: url("/img/bg-stock-header-mobile.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 107px;
-  display: flex;
 
-  h1 {
-    margin: auto;
-    margin-bottom: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
-    color: white;
-  }
-}
 
 .stock__link {
   margin-bottom: 20px;
@@ -176,17 +158,6 @@
 }
 
 @media (min-width: 992px) {
-  .stock__header {
-    margin-bottom: 30px;
-    background-image: url("/img/bg-stock-header.jpg");
-    background-position: center;
-    height: 135px;
-
-    h1 {
-      margin: auto;
-      font-size: 24px;
-    }
-  }
 
   .stock__system .stock__link {
     display: none;

@@ -1,0 +1,44 @@
+.info {
+  padding-bottom: 70px;
+}
+
+.info__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.info__item {
+  display: flex;
+  margin-bottom: 20px;
+
+  a {
+    display: block;
+    color: $font-color-grey;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  a:hover {
+    color: $font-color-red;
+    text-decoration: none;
+  }
+}
+
+.info__icon {
+  display: block;
+  margin-right: 12px;
+  color: $font-color-red;
+  font-size: 16px;
+}
+
+@media (min-width: 992px) {
+
+  .info__item a {
+    font-size: 18px;
+  }
+
+  .info__icon {
+    font-size: 18px;
+  }
+}

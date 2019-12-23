@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="stock page">
-        <header class="stock__header">
+        <header class="stock__header page__header">
             <h1>Система скидок</h1>
         </header>
         <div class="stock__system container">

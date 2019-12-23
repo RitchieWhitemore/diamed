@@ -4,6 +4,7 @@
 @import "block/main-header";
 @import "block/main-nav";
 @import "block/social";
+@import "page/page";
 
 @import "block/slider";
 @import "block/gallery";
@@ -22,6 +23,7 @@
 @import "block/signup";
 @import "block/main-footer";
 @import "page/stock";
+@import "page/info";
 
 main {
   position: relative;

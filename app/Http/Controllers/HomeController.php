@@ -15,4 +15,9 @@ class HomeController extends Controller
     {
         return view('public.stock');
     }
+
+    public function info()
+    {
+        return view('public.info');
+    }
 }

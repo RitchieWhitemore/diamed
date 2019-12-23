@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index')->name('main');
 
 Route::get('/stock', 'HomeController@stock')->name('stock');
 
+Route::get('/info', 'HomeController@info')->name('info');
+
 Auth::routes();
 
 Route::group(
