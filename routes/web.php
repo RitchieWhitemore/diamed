@@ -19,6 +19,8 @@ Route::get('/info', 'HomeController@info')->name('info');
 
 Route::get('/team', 'HomeController@team')->name('team');
 
+Route::get('/contact', 'HomeController@contact')->name('contact');
+
 Auth::routes();
 
 Route::group(

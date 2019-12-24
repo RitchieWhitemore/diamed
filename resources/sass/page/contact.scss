@@ -1,0 +1,96 @@
+.contact__image-wrapper {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  width: 288px;
+  height: 190px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.contact__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 20px;
+  padding-left: 43px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  color: $font-color-grey;
+  min-height: 28px;
+
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 28px 28px;
+
+  a {
+    margin: auto 0;
+    color: $font-color-grey;
+  }
+
+  &--phone {
+    font-weight: bold;
+    background-image: url("/img/phone.png");
+  }
+
+  &--address {
+    background-image: url("/img/map.png");
+  }
+
+  &--time {
+    background-image: url("/img/time.png");
+  }
+
+  &--mail {
+    background-image: url("/img/mail.png");
+  }
+}
+
+.contact__info-wrapper {
+  margin: 0 auto;
+  margin-bottom: 35px;
+  max-width: 320px;
+}
+
+.contact__wrapper {
+  margin: 0 auto;
+  margin-bottom: 35px;
+  display: flex;
+  position: relative;
+  max-width: 320px;
+}
+
+.contact__mail {
+  font-size: 16px;
+}
+
+.contact__whatsapp {
+  right: 0;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 992px) {
+  .contact__flex {
+    margin-bottom: 125px;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact__image-wrapper {
+    margin: 0;
+    margin-right: 125px;
+    width: 571px;
+    height: 377px;
+  }
+
+  .contact__signup-wrapper {
+    top: -74px;
+  }
+}

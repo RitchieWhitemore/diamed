@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('public.team');
     }
+
+    public function contact()
+    {
+        return view('public.contact');
+    }
 }

@@ -40,7 +40,9 @@
                                               class="main-nav__link {{Route::currentRouteName() == 'stock' ? 'main-nav__link--active' : ''}}">Акции</a>
                 </li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Вопросы</a></li>
-                <li class="main-nav__item"><a href="#" class="main-nav__link">Контакты</a></li>
+                <li class="main-nav__item"><a href="{{route('contact')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'contact' ? 'main-nav__link--active' : ''}}">Контакты</a>
+                </li>
             </ul>
             <div class="main-nav__info-wrapper">
                 <p class="main-nav__info main-nav__info--phone">
@@ -82,7 +84,8 @@
                     <li class="main-footer__item"><a href="{{route('team')}}" class="main-footer__link">Наша команда</a>
                     </li>
                     <li class="main-footer__item"><a href="{{route('stock')}}" class="main-footer__link">Акции</a></li>
-                    <li class="main-footer__item"><a href="#" class="main-footer__link">Контакты</a></li>
+                    <li class="main-footer__item"><a href="{{route('contact')}}" class="main-footer__link">Контакты</a>
+                    </li>
                 </ul>
             </nav>
         </div>
