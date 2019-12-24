@@ -2,8 +2,8 @@
   position: relative;
 }
 
-.signup--stock {
-  background-image: url("/img/bg-signup-stock-mobile.jpg");
+.signup--page {
+  background-image: url("/img/bg-signup-page-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -103,8 +103,8 @@
     height: 517px;
   }
 
-  .signup--stock {
+  .signup--page {
     height: 410px;
-    background-image: url("/img/bg-signup-stock.jpg");
+    background-image: url("/img/bg-signup-page.jpg");
   }
 }

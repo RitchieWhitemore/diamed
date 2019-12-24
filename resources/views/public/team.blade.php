@@ -195,16 +195,8 @@
             </ul>
             <div class="team-page__illustration">
             </div>
-            <p class="team-page__slogan">Ваши улыбки - наша работа!</p>
+            <p class="page__slogan">Ваши улыбки - наша работа!</p>
         </div>
     </section>
-    <section class="stock__signup signup signup--stock">
-        <div class="signup__form-wrapper">
-            <form class="signup__form">
-                <input type="text" name="name" placeholder="Ваше имя">
-                <input type="text" name="phone" placeholder="Телефон">
-                <button type="submit" class="btn btn--auqa">Записаться</button>
-            </form>
-        </div>
-    </section>
+    @include ('layouts.signup-page')
 @endsection

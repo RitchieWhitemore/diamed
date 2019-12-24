@@ -18,6 +18,19 @@
   }
 }
 
+.page__signup .signup__form-wrapper {
+  top: -40px;
+  position: relative;
+}
+
+.page__slogan {
+  margin-bottom: 67px;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  color: $font-color-aqua;
+}
+
 @media (min-width: 992px) {
   .page__header {
     margin-bottom: 46px;
@@ -29,5 +42,14 @@
       margin: auto;
       font-size: 24px;
     }
+  }
+
+  .page__signup .signup__form-wrapper {
+    top: -70px;
+  }
+
+  .page__slogan {
+    font-size: 24px;
+    margin-bottom: 130px;
   }
 }

@@ -152,11 +152,6 @@
   text-align: center;
 }
 
-.stock__signup .signup__form-wrapper {
-  top: -40px;
-  position: relative;
-}
-
 @media (min-width: 992px) {
 
   .stock__system .stock__link {
@@ -225,9 +220,5 @@
 
   .stock__note {
     font-size: 12px;
-  }
-
-  .stock__signup .signup__form-wrapper {
-    top: -70px;
   }
 }

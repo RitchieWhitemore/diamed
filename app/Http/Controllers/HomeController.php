@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view('public.contact');
     }
+
+    public function license()
+    {
+        return view('public.license');
+    }
 }

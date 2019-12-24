@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="row links">
-                    <div class="col"><a href="#">Лицензии</a></div>
+                    <div class="col"><a href="{{route('license')}}">Лицензии</a></div>
                     <div class="col"><a href="#">Стерилизация</a></div>
                 </div>
                 <div class="row links">
