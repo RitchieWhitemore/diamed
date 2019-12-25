@@ -358,7 +358,7 @@
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
             </div>
-            <button class="btn reviews__btn">Оставить отзыв</button>
+            <button class="btn reviews__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
         </div>
         <div class="reviews__illustration"></div>
     </section>

@@ -9,6 +9,11 @@ $(function () {
         $("html, body").animate({
             scrollTop: 0
         }, 1000);
+    });
+
+    $('#file-review').on('change', function (evt) {
+        var target = evt.target;
+        $('.form__file-input-wrapper .form__file-name').text(target.files[0].name);
     })
 });
 

@@ -23,7 +23,8 @@
                 <p class="review-page__question">Были в нашей клинике?
                     Будем рады вашим отзывам.</p>
 
-                <button class="btn review-page__btn">Оставить отзыв</button>
+                <button class="btn review-page__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв
+                </button>
             </div>
 
             <ul class="review-page__list">
