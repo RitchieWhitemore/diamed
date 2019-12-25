@@ -1,0 +1,100 @@
+.review-page__video-list {
+  margin: 0;
+  margin-bottom: 35px;
+  padding: 0;
+  list-style: none;
+}
+
+.review-page__video {
+  margin-bottom: 10px;
+  text-align: center;
+
+  iframe {
+    width: 290px;
+    height: 191px;
+    border-radius: 10px;
+  }
+}
+
+.review-page__question {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: $font-color-grey;
+  text-align: center;
+}
+
+.review-page__list {
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding: 0;
+  list-style: none;
+}
+
+.review-page__item {
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.review-page__pagination {
+  margin-bottom: 120px;
+}
+
+@media (min-width: 992px) {
+
+  .review-page__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-page__video-list {
+    display: flex;
+    justify-content: space-between;
+    order: 1;
+  }
+
+  .review-page__video {
+
+
+    iframe {
+      width: 540px;
+      height: 377px;
+      border-radius: 20px;
+    }
+  }
+
+  .review-page__list {
+    margin-bottom: 65px;
+    order: 2;
+  }
+
+  .review-page__item {
+    width: 100%;
+  }
+
+  .review-page__pagination {
+    margin-bottom: 70px;
+    order: 3;
+  }
+
+  .review-page__button-wrapper {
+    margin-bottom: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 4;
+  }
+
+  .review-page__question {
+    margin: 0;
+    margin-right: 65px;
+  }
+
+  .review-page__btn {
+    margin: 0;
+  }
+}

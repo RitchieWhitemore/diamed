@@ -34,7 +34,9 @@
                 <li class="main-nav__item"><a href="{{route('team')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'team' ? 'main-nav__link--active' : ''}}">Наша
                         команда</a></li>
-                <li class="main-nav__item"><a href="#" class="main-nav__link">Отзывы</a></li>
+                <li class="main-nav__item"><a href="{{route('review')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'review' ? 'main-nav__link--active' : ''}}">Отзывы</a>
+                </li>
                 <li class="main-nav__item"><a href="#" class="main-nav__link">Статьи и новости</a></li>
                 <li class="main-nav__item"><a href="{{route('stock')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'stock' ? 'main-nav__link--active' : ''}}">Акции</a>

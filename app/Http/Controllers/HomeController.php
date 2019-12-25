@@ -35,4 +35,9 @@ class HomeController extends Controller
     {
         return view('public.license');
     }
+
+    public function review()
+    {
+        return view('public.review');
+    }
 }

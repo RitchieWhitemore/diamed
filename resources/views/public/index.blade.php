@@ -268,7 +268,7 @@
         </div>
         <div class="team__illustration">
         </div>
-        <a href="#" class="btn team__btn">Больше специалистов</a>
+        <a href="{{route('team')}}" class="btn team__btn">Больше специалистов</a>
     </section>
     <section class="articles">
         <header class="articles__header">
@@ -350,7 +350,7 @@
                     <cite class="reviews__author">Антон Семенов</cite>
                 </blockquote>
             </div>
-            <a href="#" class="reviews__link">Смотреть все отзывы</a>
+            <a href="{{route('review')}}" class="reviews__link">Смотреть все отзывы</a>
         </div>
         <div class="reviews__wrapper-bottom">
             <div class="reviews__video">

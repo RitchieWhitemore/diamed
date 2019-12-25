@@ -23,6 +23,8 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/licenses', 'HomeController@license')->name('license');
 
+Route::get('/reviews', 'HomeController@review')->name('review');
+
 Auth::routes();
 
 Route::group(

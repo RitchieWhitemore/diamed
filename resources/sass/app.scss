@@ -22,11 +22,16 @@
 @import "block/reviews";
 @import "block/signup";
 @import "block/main-footer";
+@import "block/review";
+@import "block/pagination";
+
 @import "page/stock";
 @import "page/info";
 @import "page/team-page";
 @import "page/contact";
 @import "page/license";
+@import "page/review-page";
+
 
 main {
   position: relative;
