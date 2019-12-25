@@ -66,15 +66,21 @@
     margin-bottom: 115px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
+
+    &--page {
+      justify-content: flex-start;
+    }
   }
 
   .articles__item {
-    width: 370px;
+    width: 350px;
     margin: 0;
     margin-right: 30px;
+    margin-bottom: 30px;
 
-    &:last-child {
+    &:nth-child(3n) {
       margin-right: 0;
     }
   }

@@ -106,7 +106,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary">Отправить</button>
+                <button type="button" class="btn btn-secondary">Оставить отзыв</button>
             </div>
         </div>
     </div>

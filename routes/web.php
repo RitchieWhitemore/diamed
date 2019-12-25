@@ -25,6 +25,8 @@ Route::get('/licenses', 'HomeController@license')->name('license');
 
 Route::get('/reviews', 'HomeController@review')->name('review');
 
+Route::get('/articles', 'HomeController@article')->name('article');
+
 Auth::routes();
 
 Route::group(

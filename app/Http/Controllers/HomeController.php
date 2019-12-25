@@ -40,4 +40,9 @@ class HomeController extends Controller
     {
         return view('public.review');
     }
+
+    public function article()
+    {
+        return view('public.article');
+    }
 }

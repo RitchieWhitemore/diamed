@@ -302,7 +302,7 @@
                 </a>
             </div>
         </div>
-        <a href="#" class="btn article__btn">Больше информации</a>
+        <a href="{{route('article')}}" class="btn article__btn">Больше информации</a>
     </section>
     <section class="reviews">
         <div class="reviews__wrapper">
