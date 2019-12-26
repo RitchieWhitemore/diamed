@@ -1,0 +1,32 @@
+.services-page__header {
+  margin-bottom: 60px;
+}
+
+.services-page__text {
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: 300;
+  color: $font-color-grey;
+
+  &--last {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  .services-page__header {
+    margin-bottom: 120px;
+  }
+
+  .services-page__text {
+    font-size: 16px;
+
+    &--last {
+      margin-bottom: 120px;
+    }
+  }
+
+  .services-page__slogan {
+    margin-bottom: 60px;
+  }
+}
