@@ -27,6 +27,8 @@ Route::get('/reviews', 'HomeController@review')->name('review');
 
 Route::get('/articles', 'HomeController@article')->name('article');
 
+Route::get('/sterilization', 'HomeController@sterilization')->name('sterilization');
+
 Auth::routes();
 
 Route::group(

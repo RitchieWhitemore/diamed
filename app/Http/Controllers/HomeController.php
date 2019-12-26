@@ -45,4 +45,9 @@ class HomeController extends Controller
     {
         return view('public.article');
     }
+
+    public function sterilization()
+    {
+        return view('public.sterilization');
+    }
 }

@@ -1,0 +1,171 @@
+.sterilization__container {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.sterilization__text {
+  font-size: 12px;
+  color: $font-color-grey;
+
+  &--last {
+    margin-bottom: 40px;
+  }
+}
+
+.page__image-wrapper {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 290px;
+  height: 190px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.sterilization__wrapper {
+  padding-top: 80px;
+  background-image: url("/img/bg-sterilization-mobile.jpg");
+  background-repeat: repeat-y;
+  background-position: top center;
+}
+
+.sterilization__text-strong {
+  padding: 0 32px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  color: $font-color-grey;
+  text-align: center;
+}
+
+.sterilization__list {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 100px;
+  list-style: none;
+}
+
+.sterilization__item {
+  padding-left: 105px;
+  margin-bottom: 15px;
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    color: $font-color-aqua;
+  }
+
+  p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 300;
+    color: $font-color-grey;
+  }
+
+  &--one {
+    background-image: url("/img/one.png");
+  }
+
+  &--two {
+    background-image: url("/img/two.png");
+  }
+
+  &--three {
+    background-image: url("/img/three.png");
+  }
+
+  &--four {
+    background-image: url("/img/four.png");
+  }
+
+  &--five {
+    background-image: url("/img/five.png");
+  }
+}
+
+@media (min-width: 992px) {
+  .sterilization__container {
+    max-width: 992px;
+  }
+
+  .sterilization__flex {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+
+  .page__image-wrapper {
+    width: 571px;
+    height: 377px;
+    border-radius: 20px;
+  }
+
+  .sterilization__col-left {
+    margin-right: 50px;
+  }
+
+  .sterilization__col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sterilization__text {
+    font-size: 16px;
+    line-height: 20px;
+
+    &--last {
+      margin-bottom: 60px;
+    }
+  }
+
+  .sterilization__wrapper {
+    padding-top: 80px;
+    background-image: url("/img/bg-sterilization.jpg");
+
+  }
+
+  .sterilization__text-strong {
+    margin-bottom: 40px;
+    padding: 0 125px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .sterilization__list {
+    margin: 0 auto;
+    margin-bottom: 45px;
+    max-width: 780px;
+    padding-bottom: 0;
+  }
+
+  .sterilization__item {
+    padding-top: 7px;
+    margin-bottom: 30px;
+    min-height: 95px;
+
+    h3 {
+      margin-bottom: 5px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .sterilization__container {
+    max-width: 1140px;
+  }
+}
