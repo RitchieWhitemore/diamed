@@ -1,80 +1,322 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="services-page page">
-        <header class="services-page__header page__header">
-            <h1>Услуги и цены</h1>
+    <section class="service-page page">
+        <header class="service-page__header page__header">
+            <h1>Лечение зубов</h1>
         </header>
-        <div class="service-pages__content services__content">
-            <div class="services__block services__block--therapy">
-                <h3>Болит зуб или<br>выпала пломба?</h3>
-                <ul class="services__list">
-                    <li class="services__item"><a href="#" class="services__link">Диагностика</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Лечение зубов</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Лечение десен</a></li>
-                </ul>
+        <div class="page__content">
+            <div class="service-page__content-header container">
+                <div class="page__col-left service-page__col-left">
+                    <div class="page__image-wrapper">
+                        <img src="/img/sterilization.jpg">
+                    </div>
+                </div>
+                <div class="page__col-right">
+                    <p class="page__text service-page__text">
+                        В клинике «Диамед» в городе Александрове проводится эффективное лечение кариеса, в том числе без
+                        сверления по методу ICON на любых стадиях его развития. Эндодонтическое лечение (лечение и
+                        перелечивание каналов), эстетическая реставрация зубов.
+                    </p>
+
+                    <button class="btn" data-toggle="modal" data-target="#exampleModal">Записаться</button>
+                </div>
             </div>
-            <div class="services__block services__block--surgery">
-                <h3>Если зуб разрушен<br>или отсутствует</h3>
-                <ul class="services__list">
-                    <li class="services__item"><a href="#" class="services__link">Реставрация зубов</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Удаление зубов</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Имплантация зубов</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Протезирование зубов</a></li>
-                </ul>
-            </div>
-            <div class="services__block services__block--kids">
-                <h3>Детская<br>стоматология</h3>
-                <ul class="services__list">
-                    <li class="services__item"><a href="#" class="services__link">Адаптация ребенка к лечению</a>
+
+            <div class="service-page__features container">
+
+                <h2>Особенности лечения в стоматологии «Диамед»</h2>
+                <ul class="service-page__features-list shadow-sm">
+                    <li class="service-page__features-item"><i class="far fa-check-circle"></i>Предоставляем
+                        обширный перечень услуг
+                        для всех возрастов
                     </li>
-                    <li class="services__item"><a href="#" class="services__link">Лечение без страха</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Рекомендации родителям</a></li>
-                </ul>
-            </div>
-            <div class="services__block services__block--cosmetology">
-                <h3>Идеальная<br> улыбка</h3>
-                <ul class="services__list">
-                    <li class="services__item"><a href="#" class="services__link">Профилактика и гигиена</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Лечение кариеса без сверления
-                            (метод
-                            ICON)</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Отбеливание зубов</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Выравнивание зубов и прикуса</a>
+                    <li class="service-page__features-item"><i class="far fa-check-circle"></i>Лечим только на
+                        основе
+                        современных методов
+                        и технологий
+                    </li>
+                    <li class="service-page__features-item"><i class="far fa-check-circle"></i>Работаем на новейшем
+                        оборудовании
                     </li>
                 </ul>
+
             </div>
+
+            <div class="service-page__content-footer container">
+                <div class="page__col-left service-page__col-left">
+                    <h3>Лечим зубы под микроскопом
+                        что позволяет</h3>
+                    <ul class="service-page__features-list">
+                        <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Перелечивать
+                            сложные каналы, имеющие изгибы и
+                            ответвления
+                        </li>
+                        <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Извлекать обломки
+                            инструмента из каналов
+                        </li>
+                        <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Спасать даже
+                            самые безнадежные зубы
+                        </li>
+                    </ul>
+                </div>
+                <div class="page__col-right">
+                    <div class="page__video-wrapper service-page__video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mBQj5r7Vc7M"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <footer class="services__footer">
-            <div class="services__btn-wrapper">
-                <p>Не знаете какая услуга Вам подходит?</p>
-                <button class="services__btn btn__service">Записаться на консультацию</button>
+    </section>
+    <section class="price">
+        <h2 class="price__title">Стоимость услуг от 1500 руб</h2>
+        <header class="price__header">
+            <h2 class="title">Стоимость услуг</h2>
+        </header>
+        <div class="price__list-wrapper shadow-sm">
+            <ul class="price__list">
+                <li class="price__item collapsed" data-toggle="collapse"
+                    data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="price__item-title">Лечение кариеса методом ICON (без сверления)</span>
+                    <span class="price__value">от 2250 руб.</span>
+
+                    <div class="price__description collapse" id="collapseExample1">
+                        <p>Лечение поверхностного кариеса и некариозных поражений (Кариес-индикатор, комбинированная
+                            анестезия, механическая и медикаментозная обработка полости зуба, светоотверждаемая пломба 1
+                            объёма, шлифовка и полировка пломб)</p>
+                    </div>
+                </li>
+                <li class="price__item collapsed" data-toggle="collapse"
+                    data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="price__item-title">Лечение кариеса методом ICON (без сверления)</span>
+                    <span class="price__value">от 2250 руб.</span>
+
+                    <div class="price__description collapse" id="collapseExample2">
+                        <p>Лечение поверхностного кариеса и некариозных поражений (Кариес-индикатор, комбинированная
+                            анестезия, механическая и медикаментозная обработка полости зуба, светоотверждаемая пломба 1
+                            объёма, шлифовка и полировка пломб)</p>
+                    </div>
+                </li>
+                <li class="price__item collapsed" data-toggle="collapse"
+                    data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="price__item-title">Лечение кариеса методом ICON (без сверления)</span>
+                    <span class="price__value">от 2250 руб.</span>
+
+                    <div class="price__description collapse" id="collapseExample3">
+                        <p>Лечение поверхностного кариеса и некариозных поражений (Кариес-индикатор, комбинированная
+                            анестезия, механическая и медикаментозная обработка полости зуба, светоотверждаемая пломба 1
+                            объёма, шлифовка и полировка пломб)</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn__wrapper">
+                <a class="btn btn__price price__btn">Смотреть все услуги и цены</a>
             </div>
-        </footer>
-        <div class="container">
-            <p class="services-page__slogan page__slogan">Ваши улыбки - наша работа!</p>
 
-            <p class="services-page__text">Уже более 15 лет мы оказываем жителям и гостям Александрова
-                высококачественные
-                стоматологические услуги. Большая часть первичных пациентов клиники становятся нашими клиентами по
-                рекомендации своих друзей и знакомых, что является основным показателем доверия.<br>
-                Комплексный подход - основной принцип работы наших специалистов!</p>
-            <p class="services-page__text">Мы постоянно отслеживаем и анализируем все самые новейшие технологии в мире
-                стоматологии.</p>
-
-            <p class="services-page__text">Наша клиника оснащена современным стоматологическим оборудованием, которое
-                дает широкие возможности
-                качественного лечения и максимальный комфорт для пациента.</p>
-
-            <p class="services-page__text services-page__text--last">На основании детального исследования,
-                предоставляется максимально полная информация о текущем состоянии
-                зубочелюстной системы пациента; существует возможность участвовать в выборе максимально подходящего
-                комплексного плана лечения. На свои услуги стоматология устанавливает цены, позволяющие использовать
-                самые
-                современные материалы и оборудование для лечения, а значит, гарантировать стопроцентное качество нашей
-                работы.</p>
+        </div>
+        <div class="container btn__wrapper">
+            <a href="#" class="btn btn__price price__btn-mobile">Смотреть все услуги и цены</a>
         </div>
 
     </section>
+    <section class="team">
+        <header class="team__header">
+            <h2 class="title team__title">К кому записаться</h2>
+        </header>
+        <div class="team__list-wrapper">
+            <ul id="team-slider" class="team__list">
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <div class="member__cert">
+                            <a id="gallery-1" href="#" class="member__cert-link">Сертификаты</a>
+                            <div class="member__cert-gallery">
+                                <a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg"
+                                   title="The Cleaner"><img
+                                            src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg"
+                                   title="Winter Dance"><img
+                                            src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg"
+                                   title="The Uninvited Guest"><img
+                                            src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg"
+                                   title="Oh no, not again!"><img
+                                            src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg"
+                                   title="Swan Lake"><img
+                                            src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg"
+                                   title="The Shake"><img
+                                            src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg"
+                                   title="Who's that, mommy?"><img
+                                            src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg"
+                                            width="75" height="75"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+                            медицинский стоматологический
+                            институт в 1981 г.
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <div class="member__cert">
+                            <a href="#" class="member__cert-link">Сертификаты</a>
+                            <div class="member__cert-gallery">
+                                <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg"
+                                   title="Oh no, not again!"><img
+                                            src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg"
+                                   title="Swan Lake"><img
+                                            src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg"
+                                   title="The Shake"><img
+                                            src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg"
+                                            width="75" height="75"></a>
+                                <a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg"
+                                   title="Who's that, mommy?"><img
+                                            src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg"
+                                            width="75" height="75"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+                            медицинский стоматологический
+                            институт в 1981 г.
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <a href="#" class="member__cert-link">Сертификаты</a>
+                    </div>
+                </li>
+                <li class="team__item">
+                    <div class="member">
+                        <img src="/img/kostenuk-small.jpg">
+                        <h3 class="member__title"><span>Костенюк</span><br>Александр Евгеньевич</h3>
+                        <p class="member__text">Врач - стоматолог
+                            общей практики
+                            Заместитель главного врача
+                            клиники «Диамед»
+                        </p>
+                        <p class="member__text">
+                            Окончил Московский
+                            медицинский стоматологический
+                            институт в 1981 г.
+                        </p>
+                        <button class="member__btn">Записаться на прием</button>
+                        <p class="member__text member__text--experience">Опыт работы: 38 лет</p>
+                        <a href="#" class="member__cert-link">Сертификаты</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="team__illustration">
+        </div>
+        <a href="{{route('team')}}" class="btn team__btn">Больше специалистов</a>
+    </section>
+    <section class="reviews">
+        <div class="reviews__wrapper">
+            <div class="reviews__list">
+                <blockquote class="reviews__item">
+                    <p class="reviews__text">«У меня проблемы с прикусом и мама отправила меня в эту клинику к своему
+                        врачу, которому она
+                        доверяет. Ольга Владимировна вылечила ей зубы и помогла мне. Большое спасибо!»</p>
+                    <ul class="reviews__rating">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                    </ul>
+                    <cite class="reviews__author">Валерия</cite>
+                </blockquote>
+                <blockquote class="reviews__item">
+                    <p class="reviews__text">«После лечения мне гораздо лучше, зубы как раньше, больше не шатаются. В
+                        клинике все
+                        доброжелательные, всё хорошо, мне очень понравилось»</p>
+                    <ul class="reviews__rating">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                    </ul>
+                    <cite class="reviews__author">Лидия Петровна</cite>
+                </blockquote>
+                <blockquote class="reviews__item">
+                    <p class="reviews__text">«Ни каких сомнений не было, клиника мне очень нравится. Всё первоклассные
+                        специалисты, я ими всеми
+                        очень доволен»</p>
+                    <ul class="reviews__rating">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                    </ul>
+                    <cite class="reviews__author">Антон Семенов</cite>
+                </blockquote>
+            </div>
+            <a href="{{route('review')}}" class="reviews__link">Смотреть все отзывы</a>
+        </div>
+        <div class="reviews__wrapper-bottom">
+            <div class="reviews__video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QCfSMlXLWU8" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            <button class="btn reviews__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+        </div>
+        <div class="reviews__illustration"></div>
+    </section>
+    <p class="page__slogan">Ваши улыбки - наша работа!</p>
     @include ('layouts.signup-page')
 @endsection

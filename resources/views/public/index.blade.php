@@ -29,9 +29,12 @@
             <div class="services__block services__block--therapy">
                 <h3>Болит зуб или<br>выпала пломба?</h3>
                 <ul class="services__list">
-                    <li class="services__item"><a href="#" class="services__link">Диагностика</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Лечение зубов</a></li>
-                    <li class="services__item"><a href="#" class="services__link">Лечение десен</a></li>
+                    <li class="services__item"><a href="{{route('service')}}" class="services__link">Диагностика</a>
+                    </li>
+                    <li class="services__item"><a href="{{route('service')}}" class="services__link">Лечение зубов</a>
+                    </li>
+                    <li class="services__item"><a href="{{route('service')}}" class="services__link">Лечение десен</a>
+                    </li>
                 </ul>
             </div>
             <div class="services__block services__block--surgery">

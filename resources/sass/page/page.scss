@@ -31,6 +31,22 @@
   color: $font-color-aqua;
 }
 
+.page__content p {
+  font-size: 12px;
+  color: $font-color-grey;
+}
+
+.page__video-wrapper {
+  margin-bottom: 10px;
+  text-align: center;
+
+  iframe {
+    width: 290px;
+    height: 191px;
+    border-radius: 10px;
+  }
+}
+
 @media (min-width: 992px) {
   .page__header {
     margin-bottom: 46px;
@@ -51,5 +67,17 @@
   .page__slogan {
     font-size: 24px;
     margin-bottom: 130px;
+  }
+
+  .page__text {
+    font-size: 16px;
+  }
+
+  .page__video-wrapper {
+    iframe {
+      width: 540px;
+      height: 377px;
+      border-radius: 20px;
+    }
   }
 }

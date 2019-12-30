@@ -30,8 +30,8 @@
                 <li class="main-nav__item"><a href="{{route('main')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'main' ? 'main-nav__link--active' : ''}}">Главная</a>
                 </li>
-                <li class="main-nav__item"><a href="{{route('service')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'service' ? 'main-nav__link--active' : ''}}">Услуги
+                <li class="main-nav__item"><a href="{{route('services')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'services' ? 'main-nav__link--active' : ''}}">Услуги
                         и цены</a></li>
                 <li class="main-nav__item"><a href="{{route('team')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'team' ? 'main-nav__link--active' : ''}}">Наша
@@ -86,7 +86,7 @@
         <div class="main-footer__row">
             <nav class="main-footer__menu">
                 <ul class="main-footer__list">
-                    <li class="main-footer__item"><a href="{{route('service')}}" class="main-footer__link">Услуги и
+                    <li class="main-footer__item"><a href="{{route('services')}}" class="main-footer__link">Услуги и
                             цены</a></li>
                     <li class="main-footer__item"><a href="{{route('team')}}" class="main-footer__link">Наша команда</a>
                     </li>

@@ -29,7 +29,9 @@ Route::get('/articles', 'HomeController@article')->name('article');
 
 Route::get('/sterilization', 'HomeController@sterilization')->name('sterilization');
 
-Route::get('/services', 'HomeController@service')->name('service');
+Route::get('/services', 'HomeController@services')->name('services');
+
+Route::get('/service', 'HomeController@service')->name('service');
 
 Auth::routes();
 

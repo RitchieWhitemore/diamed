@@ -51,6 +51,11 @@ class HomeController extends Controller
         return view('public.sterilization');
     }
 
+    public function services()
+    {
+        return view('public.services');
+    }
+
     public function service()
     {
         return view('public.service');

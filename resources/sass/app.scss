@@ -24,6 +24,7 @@
 @import "block/main-footer";
 @import "block/review";
 @import "block/pagination";
+@import "block/price";
 
 @import "page/stock";
 @import "page/info";
@@ -33,7 +34,12 @@
 @import "page/review-page";
 @import "page/sterilization";
 @import "page/services-page";
+@import "page/service-page";
 
+
+body {
+  background-color: #fafafa;
+}
 
 main {
   position: relative;

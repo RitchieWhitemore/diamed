@@ -39,11 +39,23 @@
   border-radius: 15px;
 }
 
+.btn__price {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  display: inline-block;
+  color: white !important;
+}
+
 .btn__up {
   background-color: transparent;
   border: none;
   font-size: 24px;
   color: $font-color-aqua;
+}
+
+.btn__wrapper {
+  text-align: center;
 }
 
 @media (min-width: 992px) {
