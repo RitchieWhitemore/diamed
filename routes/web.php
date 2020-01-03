@@ -33,6 +33,8 @@ Route::get('/services', 'HomeController@services')->name('services');
 
 Route::get('/service', 'HomeController@service')->name('service');
 
+Route::get('/price', 'HomeController@price')->name('price');
+
 Auth::routes();
 
 Route::group(

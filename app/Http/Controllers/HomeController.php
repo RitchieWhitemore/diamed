@@ -60,4 +60,9 @@ class HomeController extends Controller
     {
         return view('public.service');
     }
+
+    public function price()
+    {
+        return view('public.price');
+    }
 }
