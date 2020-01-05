@@ -65,4 +65,9 @@ class HomeController extends Controller
     {
         return view('public.price');
     }
+
+    public function vacancy()
+    {
+        return view('public.vacancy');
+    }
 }

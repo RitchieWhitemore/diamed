@@ -35,6 +35,8 @@ Route::get('/service', 'HomeController@service')->name('service');
 
 Route::get('/price', 'HomeController@price')->name('price');
 
+Route::get('/vacancies', 'HomeController@vacancy')->name('vacancy');
+
 Auth::routes();
 
 Route::group(

@@ -1,0 +1,20 @@
+.vacancy__text {
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 300;
+  color: $font-color-grey;
+
+  a {
+    color: $font-color-aqua;
+    text-decoration: underline;
+  }
+}
+
+.vacancy__right-column {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+@media (min-width: 992px) {
+
+}

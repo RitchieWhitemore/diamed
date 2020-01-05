@@ -31,9 +31,14 @@
   color: $font-color-aqua;
 }
 
-.page__content p {
+.page__content p, .page__text {
   font-size: 12px;
   color: $font-color-grey;
+
+  a {
+    color: $font-color-aqua;
+    text-decoration: underline;
+  }
 }
 
 .page__video-wrapper {
@@ -43,6 +48,20 @@
   iframe {
     width: 290px;
     height: 191px;
+    border-radius: 10px;
+  }
+}
+
+.page__image-wrapper {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  width: 288px;
+  height: 190px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
   }
 }
@@ -79,5 +98,18 @@
       height: 377px;
       border-radius: 20px;
     }
+  }
+
+  .page__image-wrapper {
+    margin: 0;
+    margin-right: 125px;
+    width: 571px;
+    height: 377px;
+  }
+
+  .page__flex {
+    margin-bottom: 125px;
+    display: flex;
+    align-items: center;
   }
 }

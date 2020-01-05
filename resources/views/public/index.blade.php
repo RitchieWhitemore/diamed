@@ -103,7 +103,7 @@
                     <div class="col"><a href="{{route('sterilization')}}">Стерилизация</a></div>
                 </div>
                 <div class="row links">
-                    <div class="col"><a href="#">Вакансии</a></div>
+                    <div class="col"><a href="{{route('vacancy')}}">Вакансии</a></div>
                     <div class="col"><a href="{{route('info')}}">Информация для клиентов</a></div>
                 </div>
             </div>
