@@ -35,7 +35,8 @@
   color: $font-color-grey;
 }
 
-.modal .form-control {
+.modal .form-control,
+.faq .form-control {
   position: relative;
   padding: 8px 15px;
   padding-bottom: 7px;
@@ -51,7 +52,8 @@
 
 .form-check-input + span {
   position: absolute;
-  left: 18px;
+  left: 0;
+  top: 2px;
   display: inline-block;
   flex-shrink: 0;
   margin-right: 10px;
@@ -77,8 +79,10 @@
 }
 
 .form-check-label {
+  position: relative;
   padding-left: 30px;
   font-weight: 300;
+  font-size: 14px;
 
   a {
     color: $font-color-grey;

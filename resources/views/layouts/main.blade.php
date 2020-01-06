@@ -45,7 +45,9 @@
                 <li class="main-nav__item"><a href="{{route('stock')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'stock' ? 'main-nav__link--active' : ''}}">Акции</a>
                 </li>
-                <li class="main-nav__item"><a href="#" class="main-nav__link">Вопросы</a></li>
+                <li class="main-nav__item"><a href="{{route('faq')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'faq' ? 'main-nav__link--active' : ''}}">Вопросы</a>
+                </li>
                 <li class="main-nav__item"><a href="{{route('contact')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'contact' ? 'main-nav__link--active' : ''}}">Контакты</a>
                 </li>

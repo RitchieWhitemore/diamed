@@ -70,4 +70,9 @@ class HomeController extends Controller
     {
         return view('public.vacancy');
     }
+
+    public function faq()
+    {
+        return view('public.faq');
+    }
 }

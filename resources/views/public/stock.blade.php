@@ -54,7 +54,7 @@
                 </li>
             </ul>
 
-            <button class="stock__btn btn btn--auqa collapsed" type="button" data-toggle="collapse"
+            <button class="stock__btn btn btn--aqua collapsed" type="button" data-toggle="collapse"
                     data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Подробнее
             </button>

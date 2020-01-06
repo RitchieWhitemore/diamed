@@ -36,13 +36,15 @@
 @import "page/services-page";
 @import "page/service-page";
 @import "page/vacancy";
+@import "page/faq";
 
 
 body {
-  background-color: #fafafa;
+
 }
 
 main {
+  background-color: #fafafa;
   position: relative;
   top: -31px;
 
