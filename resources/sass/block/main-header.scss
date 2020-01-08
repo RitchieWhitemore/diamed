@@ -4,7 +4,7 @@
   width: 100%;
   background-image: url("/img/background-header.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
   z-index: 10;
 }
 
@@ -15,10 +15,12 @@
 }
 
 .main-header__btn-menu {
+  padding: 0;
+  margin: 0;
+  margin-top: 11px;
   position: relative;
   top: -3px;
   height: 35px;
-  margin-top: 11px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -32,7 +34,7 @@
 }
 
 .main-header__btn-menu-bar1, .main-header__btn-menu-bar2, .main-header__btn-menu-bar3 {
-  width: 29px;
+  width: 30px;
   height: 5px;
   border-radius: 2.6px;
   background-color: #1bbfba;
@@ -55,6 +57,7 @@
 }
 
 .main-header__logo-wrapper {
+  padding-left: 2px;
   padding-top: 7px;
 }
 

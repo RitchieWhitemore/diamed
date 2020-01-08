@@ -43,9 +43,13 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
+            'text' => 'nullable|string',
             'parent' => 'nullable|integer|exists:page_categories,id',
             'hidden' => 'integer',
             'slug' => 'nullable|string|exists:page_categories,slug|unique:page_categories,slug',
+            'meta_title' => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
+            'meta_keywords' => 'nullable|string|max:255',
         ]);
         $category = Category::create($request->all());
 
@@ -81,22 +85,19 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
+            'text' => 'nullable|string',
             'parent' => 'nullable|integer|exists:page_categories,id',
             'hidden' => 'integer',
             'slug' => [
                 'nullable',
                 'string',
                 Rule::unique('page_categories', 'slug')->ignore($category->id),
-            ]
+            ],
+            'meta_title' => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
+            'meta_keywords' => 'nullable|string|max:255',
         ]);
-        $category->update([
-            'name' => $request['name'],
-            'menu_name' => $request['menu_name'],
-            'hidden' => $request['hidden'],
-            'parent_id' => $request['parent'],
-            //'slug' => !empty($request['slug']) ? $request['slug'] : '',
-            'slug' => $request['slug'],
-        ]);
+        $category->update($request->all());
 
         return redirect()->route('admin.categories.show', $category);
     }

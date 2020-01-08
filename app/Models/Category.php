@@ -14,6 +14,10 @@ use Kalnoy\Nestedset\NodeTrait;
  * @property string $name
  * @property string $menu_name
  * @property string $slug
+ * @property string $text
+ * @property string $meta_title
+ * @property string $meat_description
+ * @property string $meta_keywords
  * @property integer $hidden
  */
 class Category extends Model
@@ -26,7 +30,17 @@ class Category extends Model
     const HIDDEN_NO = 0;
     const HIDDEN_YES = 1;
 
-    protected $fillable = ['parent_id', 'name', 'menu_name', 'hidden', 'slug'];
+    protected $fillable = [
+        'parent_id',
+        'name',
+        'menu_name',
+        'text',
+        'hidden',
+        'slug',
+        'meta_title',
+        'meta_description',
+        'meta_keywords'
+    ];
 
     /**
      * The table associated with the model.
