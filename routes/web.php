@@ -39,7 +39,10 @@ Route::get('/vacancies', 'HomeController@vacancy')->name('vacancy');
 
 Route::get('/faq', 'HomeController@faq')->name('faq');
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+]);
 
 Route::group(
     [
