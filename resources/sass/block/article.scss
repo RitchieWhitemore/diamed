@@ -32,6 +32,10 @@
   font-size: 12px;
   color: $font-color-grey;
 
+  &:hover {
+    color: $color-hover-aqua;
+  }
+
   &::before {
     margin-bottom: 10px;
     display: block;
@@ -41,6 +45,10 @@
     background-color: #acacac;
     border-radius: 2px;
   }
+}
+
+.articles__item a {
+  text-decoration: none;
 }
 
 .article__btn {
