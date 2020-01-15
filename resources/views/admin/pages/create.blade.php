@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Редактировать категорию')
+@section('title', 'Добавить страницу')
 
 @section('content_header')
-    <h1>Редактировать категорию</h1>
+    <h1>Добавить страницу</h1>
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
+    {!! Form::open(['route' => 'admin.pages.store', 'method' => 'post']) !!}
     <div class="row">
         <div class="col-sm-6 col-12">
             <div class="form-group">
                 <label for="name" class="col-form-label">Наименование</label>
                 <input id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                       value="{{ old('name', $category->name) }}">
+                       value="{{ old('name') }}">
                 @if ($errors->has('name'))
                     <span class="invalid-feedback"><strong>{{ $errors->first('name') }}</strong></span>
                 @endif
@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label for="slug" class="col-form-label">Псевдоним</label>
                 <input id="slug" class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}"
-                       name="slug" value="{{ old('slug', $category->slug) }}">
+                       name="slug" value="{{ old('slug') }}">
                 @if ($errors->has('slug'))
                     <span class="invalid-feedback"><strong>{{ $errors->first('slug') }}</strong></span>
                 @endif
@@ -58,7 +58,7 @@
                                         <label for="text" class="col-form-label">Текст</label>
                                         <textarea id="text"
                                                   class="form-control{{ $errors->has('text') ? ' is-invalid' : '' }}"
-                                                  name="text" rows="10">{{ old('text', $category->text) }}</textarea>
+                                                  name="text" rows="10"><{{ old('text') }}/textarea>
                                         @if ($errors->has('text'))
                                             <span class="invalid-feedback"><strong>{{ $errors->first('text') }}</strong></span>
                                         @endif
@@ -66,21 +66,20 @@
                                 </div>
                                 <div class="col-sm-4 col-12">
                                     <div class="form-group">
-                                        <label for="parent" class="col-form-label">Родитель</label>
-                                        <select id="parent"
-                                                class="form-control{{ $errors->has('parent') ? ' is-invalid' : '' }}"
-                                                name="parent_id">
+                                        <label for="category" class="col-form-label">Категория</label>
+                                        <select id="category"
+                                                class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}"
+                                                name="category_id">
                                             <option value=""></option>
-                                            @foreach ($parents as $parent)
-                                                <option value="{{ $parent->id }}" {{ ($parent->id == $category->getParentId()) || ($parent->id == old('parent')) ? ' selected' : '' }}
-                                                        {{ $parent->id == $category->id ? ' disabled' : '' }}>
-                                                    @for ($i = 0; $i < $parent->depth; $i++) &mdash; @endfor
-                                                    {{ $parent->name }}
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}" {{ $category->id == old('category') ? ' selected' : '' }}>
+                                                    @for ($i = 0; $i < $category->depth; $i++) &mdash; @endfor
+                                                    {{ $category->name }}
                                                 </option>
                                             @endforeach;
                                         </select>
-                                        @if ($errors->has('parent'))
-                                            <span class="invalid-feedback"><strong>{{ $errors->first('parent') }}</strong></span>
+                                        @if ($errors->has('category'))
+                                            <span class="invalid-feedback"><strong>{{ $errors->first('category') }}</strong></span>
                                         @endif
                                     </div>
 
@@ -88,16 +87,15 @@
                                         <label for="menu_name" class="col-form-label">Наименование для меню</label>
                                         <input id="menu_name"
                                                class="form-control{{ $errors->has('menu_name') ? ' is-invalid' : '' }}"
-                                               name="menu_name" value="{{ old('menu_name', $category->menu_name) }}">
+                                               name="menu_name" value="{{ old('menu_name') }}">
                                         @if ($errors->has('menu_name'))
                                             <span class="invalid-feedback"><strong>{{ $errors->first('menu_name') }}</strong></span>
                                         @endif
                                     </div>
 
-                                    {{ $category->attributes['hidden']}}
                                     <div class="form-group">
                                         {!!Form::label('hidden', 'Скрыто')!!}
-                                        {!! Form::select('hidden', \App\Models\Category::getHiddenArray(), old('hidden', $category->getAttributes()['hidden']), ['class' => 'form-control']) !!}
+                                        {!! Form::select('hidden', \App\Models\Page::getHiddenArray(), old('hidden'), ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +141,6 @@
         </div>
         <!-- /.col -->
     </div>
-
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Сохранить</button>
     </div>

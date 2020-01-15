@@ -1,14 +1,13 @@
 <?php
 
+
 namespace App\Models;
 
-use Cviebrock\EloquentSluggable\Services\SlugService;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-use Kalnoy\Nestedset\NodeTrait;
 
 /**
- * Class Category
+ * Class Page
  * @package App\Models
  *
  * @property string $name
@@ -19,27 +18,16 @@ use Kalnoy\Nestedset\NodeTrait;
  * @property string $meat_description
  * @property string $meta_keywords
  * @property integer $hidden
- *
- * @property int|null $parent_id
- *
- * @property int $depth
- * @property Category $parent
- * @property Category[] $children
- *
- * @property Page[] $pages
  */
-class Category extends Model
+class Page extends Model
 {
-    use Sluggable, NodeTrait {
-        NodeTrait::replicate as replicateNode;
-        Sluggable::replicate as replicateSlug;
-    }
+    use Sluggable;
 
     const HIDDEN_NO = 0;
     const HIDDEN_YES = 1;
 
     protected $fillable = [
-        'parent_id',
+        'category_id',
         'name',
         'menu_name',
         'text',
@@ -55,7 +43,7 @@ class Category extends Model
      *
      * @var string
      */
-    protected $table = 'page_categories';
+    protected $table = 'pages';
 
     /**
      * Return the sluggable configuration array for this model.
@@ -71,14 +59,6 @@ class Category extends Model
         ];
     }
 
-    public function replicate(array $except = null)
-    {
-        $instance = $this->replicateNode($except);
-        (new SlugService())->slug($instance, true);
-
-        return $instance;
-    }
-
     public static function getHiddenArray()
     {
         return [
@@ -89,16 +69,16 @@ class Category extends Model
 
     public function getHiddenAttribute($value)
     {
-        return \Arr::get(Category::getHiddenArray(), $value);
+        return \Arr::get(Page::getHiddenArray(), $value);
     }
 
-    public function getParentName()
+    public function category()
     {
-        return isset($this->parent) ? $this->parent->name : '';
+        return $this->belongsTo(Category::class);
     }
 
-    public function pages()
+    public function getCategoryName()
     {
-        return $this->hasMany(Page::class);
+        return '';
     }
 }

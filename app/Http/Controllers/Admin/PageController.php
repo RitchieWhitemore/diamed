@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class CategoryController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $pages = Page::all();
 
-        return view('admin.categories.index', ['categories' => $categories]);
+        return view('admin.pages.index', ['pages' => $pages]);
     }
 
     /**
@@ -28,8 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $parents = Category::defaultOrder()->withDepth()->get();
-        return view('admin.categories.create', compact('parents'));
+        $categories = Category::defaultOrder()->withDepth()->get();
+        return view('admin.pages.create', compact('categories'));
     }
 
     /**
@@ -44,75 +45,72 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
-            'parent' => 'nullable|integer|exists:page_categories,id',
+            'category_id' => 'nullable|integer',
             'hidden' => 'integer',
-            'slug' => 'nullable|string|exists:page_categories,slug|unique:page_categories,slug',
+            'slug' => 'nullable|string|exists:pages,slug|unique:pages,slug',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
         ]);
-        $category = Category::create($request->all());
+        $page = Page::create($request->all());
 
-        return redirect()->route('admin.categories.show', $category);
+        return redirect()->route('admin.pages.show', $page);
     }
 
     /**
-     * @param Category $category
+     * @param Page $page
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Category $category)
+    public function show(Page $page)
     {
-        return view('admin.categories.show', compact('category'));
+        return view('admin.pages.show', ['model' => $page]);
     }
 
     /**
-     * @param Category $category
+     * @param Page $page
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Category $category)
+    public function edit(Page $page)
     {
-        $parents = Category::defaultOrder()->withDepth()->get();
-        return view('admin.categories.edit', compact('category', 'parents'));
+        $categories = Category::defaultOrder()->withDepth()->get();
+        return view('admin.pages.edit', ['model' => $page, 'categories' => $categories]);
     }
 
     /**
      * @param Request $request
-     * @param Category $category
+     * @param Page $page
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Page $page)
     {
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
-            'parent' => 'nullable|integer|exists:page_categories,id',
+            'category_id' => 'integer',
             'hidden' => 'integer',
             'slug' => [
                 'nullable',
                 'string',
-                Rule::unique('page_categories', 'slug')->ignore($category->id),
+                Rule::unique('pages', 'slug')->ignore($page->id),
             ],
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
         ]);
-        $category->update($request->all());
+        $page->update($request->all());
 
-        return redirect()->route('admin.categories.show', $category);
+        return redirect()->route('admin.pages.show', $page);
     }
 
     /**
-     * @param Category $category
+     * @param Page $page
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy(Category $category)
+    public function destroy(Page $page)
     {
-        if ($category->children()->count() > 0 || $category->pages()->count() > 0) {
-            return redirect()->route('admin.categories.index')->with('error', 'У этой категории есть подчиненные');
-        }
-        $category->delete();
-        return redirect()->route('admin.categories.index');
+        $page->delete();
+        return redirect()->route('admin.pages.index');
     }
 }

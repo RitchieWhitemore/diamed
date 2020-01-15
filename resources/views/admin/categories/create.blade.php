@@ -69,7 +69,7 @@
                                         <label for="parent" class="col-form-label">Родитель</label>
                                         <select id="parent"
                                                 class="form-control{{ $errors->has('parent') ? ' is-invalid' : '' }}"
-                                                name="parent">
+                                                name="parent_id">
                                             <option value=""></option>
                                             @foreach ($parents as $parent)
                                                 <option value="{{ $parent->id }}" {{ $parent->id == old('parent') ? ' selected' : '' }}>
@@ -117,8 +117,7 @@
                                 <label for="meta_description" class="col-form-label">Meta description</label>
                                 <textarea id="meta_description"
                                           class="form-control{{ $errors->has('meta_description') ? ' is-invalid' : '' }}"
-                                          name="meta_description">
-                                    {{ old('meta_description') }}"</textarea>
+                                          name="meta_description">{{ old('meta_description') }}</textarea>
                                 @if ($errors->has('meta_description'))
                                     <span class="invalid-feedback"><strong>{{ $errors->first('meta_description') }}</strong></span>
                                 @endif

@@ -179,6 +179,9 @@
 
                         @section('breadcrumbs', Breadcrumbs::render())
                         @yield('breadcrumbs')
+                        <div class="content-header">
+                            @include('vendor.adminlte.partials.flash')
+                        </div>
 
                         <div class="content-header">
                             <div class="{{config('adminlte.classes_content_header', 'container-fluid')}}">
