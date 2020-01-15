@@ -54,8 +54,9 @@
   margin-bottom: 12px;
   margin-top: auto;
   padding: 5px 12px;
+  padding-bottom: 3px;
   background-color: white;
-  border: 2px solid $border-color-aqua;
+  border: 1px solid $border-color-aqua;
   border-radius: 14px;
   font-size: 11px;
   color: $border-color-aqua
@@ -68,6 +69,10 @@
   text-decoration: underline;
   display: block;
   text-align: center;
+
+  &:hover {
+    color: $color-hover-aqua;
+  }
 }
 
 .member__cert-gallery {
@@ -96,6 +101,7 @@
 
   .member__btn {
     font-size: 14px;
+    border-radius: 18px;
   }
 
   .member__text--experience {

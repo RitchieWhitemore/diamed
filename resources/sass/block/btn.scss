@@ -12,6 +12,10 @@
   border-radius: 17px;
   box-shadow: 0 4px 10px rgba(226, 41, 76, 0.4);
 
+  &:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
   &--aqua {
     background-color: #1bbfba;
     box-shadow: 0 4px 10px rgba(27, 191, 186, 0.4);
@@ -37,6 +41,11 @@
   border: none;
   outline: none;
   border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 .btn__price {

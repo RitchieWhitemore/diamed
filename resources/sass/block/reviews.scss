@@ -52,6 +52,10 @@
   font-size: 12px;
   color: white;
   text-decoration: underline;
+
+  &:hover {
+    color: $font-color-grey;
+  }
 }
 
 .reviews__video {

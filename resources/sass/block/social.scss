@@ -24,6 +24,10 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  &:hover {
+    background-color: $color-hover-aqua;
+  }
+
   &--vk {
     background-image: url("/img/vk.png");
   }
@@ -39,6 +43,10 @@
 
 .social__list--grey .social__link {
   background-color: #6c6e73;
+
+  &:hover {
+    background-color: #1bbfba;
+  }
 }
 
 @media (min-width: 992px) {

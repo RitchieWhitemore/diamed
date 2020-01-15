@@ -41,6 +41,11 @@
 .main-footer__link {
   font-size: 12px;
   color: #bcbcbc;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .main-footer__social-wrapper {

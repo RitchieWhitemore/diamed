@@ -44,6 +44,11 @@
 
 .main-nav__link {
   color: $font-color-black;
+
+  &:hover {
+    color: $font-color-aqua;
+    text-decoration: none;
+  }
 }
 
 .main-nav__link--active {

@@ -34,12 +34,16 @@
 }
 
 .director__mail {
-  color: $font-color-aqua;
+  color: $font-color-grey;
   text-decoration: underline;
   font-size: 12px;
 
   i {
     margin-right: 10px;
+  }
+
+  &:hover {
+    color: $font-color-aqua;
   }
 }
 
