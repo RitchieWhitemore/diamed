@@ -28,8 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $parents = Category::defaultOrder()->withDepth()->get();
-        return view('admin.categories.create', compact('parents'));
+        return view('admin.categories.create');
     }
 
     /**

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -29,8 +28,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        $categories = Category::defaultOrder()->withDepth()->get();
-        return view('admin.pages.create', compact('categories'));
+        return view('admin.pages.create');
     }
 
     /**
@@ -45,7 +43,7 @@ class PageController extends Controller
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
-            'category_id' => 'nullable|integer',
+            'category_id' => 'integer',
             'hidden' => 'integer',
             'slug' => 'nullable|string|exists:pages,slug|unique:pages,slug',
             'meta_title' => 'nullable|string|max:255',
@@ -72,8 +70,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        $categories = Category::defaultOrder()->withDepth()->get();
-        return view('admin.pages.edit', ['model' => $page, 'categories' => $categories]);
+        return view('admin.pages.edit', ['model' => $page]);
     }
 
     /**

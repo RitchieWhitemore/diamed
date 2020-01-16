@@ -31,10 +31,9 @@
                     <a href="{{route('admin.categories.edit', $category)}}" title="Редактировать"
                        aria-label="Редактировать">
                         <i class="fas fa-pen"></i></a>
-                    {{ Form::open(['route' => ['admin.categories.destroy', $category], 'class' => 'pull-right admin-delete-form']) }}
-                    {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::button('<i class="fas fa-times"></i>', ['type' => 'submit', 'data-confirm' => 'Вы уверены?']) }}
-                    {{ Form::close() }}
+                    {!! Form::open()->route('admin.categories.destroy', [$category])->method('delete')->attrs(['class' => 'pull-right admin-delete-form']) !!}
+                    {!! Form::submit('<i class="fas fa-times"></i>')->attrs(['data-confirm' => 'Вы уверены?']) !!}
+                    {!! Form::close() !!}
                 </td>
             </tr>
         @endforeach

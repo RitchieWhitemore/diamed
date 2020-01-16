@@ -6,6 +6,15 @@
     background: none;
     border: none;
     outline: none;
+    padding: 0;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+
+.admin-delete-form button:hover,
+.admin-delete-form button:active,
+.admin-delete-form .btn-primary:not(:disabled):not(.disabled):active{
+    background-color: transparent;
 }
 
 .admin-delete-form button i {

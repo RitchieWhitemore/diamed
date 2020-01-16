@@ -101,4 +101,23 @@ class Category extends Model
     {
         return $this->hasMany(Page::class);
     }
+
+    /**
+     * @return Category[]
+     */
+    public static function getCategoriesForDropdown()
+    {
+        $categories = self::defaultOrder()->withDepth()->get();
+
+        foreach ($categories as $category) {
+            $indent = '';
+            for ($i = 0; $i < $category->depth; $i++) {
+                $indent .= ' &mdash; ';
+            }
+
+            $category->name = $indent . $category->name;
+        }
+
+        return $categories->prepend('Выберите категорию', '');
+    }
 }

@@ -37,10 +37,9 @@
                     <a href="{{route('admin.pages.edit', $page)}}" title="Редактировать"
                        aria-label="Редактировать">
                         <i class="fas fa-pen"></i></a>
-                    {{ Form::open(['route' => ['admin.pages.destroy', $page], 'class' => 'pull-right admin-delete-form']) }}
-                    {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::button('<i class="fas fa-times"></i>', ['type' => 'submit', 'data-confirm' => 'Вы уверены?']) }}
-                    {{ Form::close() }}
+                    {!! Form::open()->route('admin.pages.destroy', [$page])->method('delete')->attrs(['class' => 'pull-right admin-delete-form']) !!}
+                    {!! Form::submit('<i class="fas fa-times"></i>')->attrs(['data-confirm' => 'Вы уверены?']) !!}
+                    {!! Form::close() !!}
                 </td>
             </tr>
         @endforeach
