@@ -39,10 +39,10 @@
                         <div class="tab-pane fade active show" id="custom-tabs-three-home" role="tabpanel"
                              aria-labelledby="custom-tabs-three-home-tab">
                             <div class="row">
-                                <div class="col-sm-8 col-12">
+                                <div class="col-sm-10 col-12">
                                     {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
                                 </div>
-                                <div class="col-sm-4 col-12">
+                                <div class="col-sm-2 col-12">
 
                                     {!!Form::select('category_id', 'Категория', \App\Models\Category::getCategoriesForDropdown())!!}
 
