@@ -50,7 +50,7 @@
                 </tr>
                 <tr>
                     <th>Текст</th>
-                    <td>{{ $category->text }}</td>
+                    <td class="html-viewer">{!! Purifier::clean($category->text); !!}</td>
                 </tr>
                 <tr>
                     <th>Скрыто</th>

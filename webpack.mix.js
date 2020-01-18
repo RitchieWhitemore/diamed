@@ -19,4 +19,9 @@ mix.options({processCssUrls: false})
     .sass('resources/sass/bootstrap.scss', 'public/css')
     .version();
 
+mix.options({processCssUrls: false})
+    .js('resources/admin/js/admin.js', 'public/js/admin')
+    .sass('resources/admin/sass/admin.scss', 'public/css/admin')
+    .version();
+
 mix.browserSync('diamed.loc');

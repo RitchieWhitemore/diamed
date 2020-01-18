@@ -40,7 +40,7 @@
                              aria-labelledby="custom-tabs-three-home-tab">
                             <div class="row">
                                 <div class="col-sm-8 col-12">
-                                    {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])!!}
+                                    {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
                                 </div>
                                 <div class="col-sm-4 col-12">
                                     {{--<div class="form-group">

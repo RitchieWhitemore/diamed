@@ -24,8 +24,13 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0-9",
+    "admin-lte": "^3.0.2",
     "bxslider": "^4.2.14",
     "jquery": "^3.4.1",
-    "simplelightbox": "^1.17.3"
+    "jquery-ui": "^1.12.1",
+    "simplelightbox": "^1.17.3",
+    "summernote": "^0.8.15",
+    "webpack-jquery-ui": "^2.0.1"
   }
 }
