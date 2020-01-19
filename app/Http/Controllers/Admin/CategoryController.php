@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Str;
 
 class CategoryController extends Controller
 {
@@ -43,6 +44,7 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
+            'image' => 'nullable|image',
             'parent' => 'nullable|integer|exists:page_categories,id',
             'hidden' => 'integer',
             'slug' => 'nullable|string|exists:page_categories,slug|unique:page_categories,slug',
@@ -51,6 +53,19 @@ class CategoryController extends Controller
             'meta_keywords' => 'nullable|string|max:255',
         ]);
         $category = Category::create($request->all());
+
+        if (isset($request['image'])) {
+            $fileName = Str::before($request->file('image')->getClientOriginalName(),
+                '.' . $request->file('image')->getClientOriginalExtension());
+            $fileName = Str::slug($fileName);
+
+            $category->clearMediaCollectionExcept('images', $category->getFirstMedia());
+            $category->addMediaFromRequest('image')
+                ->preservingOriginal()
+                ->usingName($fileName)
+                ->usingFileName($fileName . '.' . $request->file('image')->getClientOriginalExtension())
+                ->toMediaCollection('images');
+        }
 
         return redirect()->route('admin.categories.show', $category);
     }
@@ -84,6 +99,7 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
+            'image' => 'nullable|image',
             'text' => 'nullable|string',
             'parent' => 'nullable|integer|exists:page_categories,id',
             'hidden' => 'integer',
@@ -96,7 +112,22 @@ class CategoryController extends Controller
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
         ]);
+
+
         $category->update($request->all());
+
+        if (isset($request['image'])) {
+            $fileName = Str::before($request->file('image')->getClientOriginalName(),
+                '.' . $request->file('image')->getClientOriginalExtension());
+            $fileName = Str::slug($fileName);
+
+            $category->clearMediaCollectionExcept('images', $category->getFirstMedia());
+            $category->addMediaFromRequest('image')
+                ->preservingOriginal()
+                ->usingName($fileName)
+                ->usingFileName($fileName . '.' . $request->file('image')->getClientOriginalExtension())
+                ->toMediaCollection('images');
+        }
 
         return redirect()->route('admin.categories.show', $category);
     }

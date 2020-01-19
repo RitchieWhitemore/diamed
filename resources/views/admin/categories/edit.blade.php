@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    {!! Form::open()->route('admin.categories.update', [$category])->method('put')->fill($category) !!}
+    {!! Form::open()->multipart()->route('admin.categories.update', [$category])->method('put')->fill($category) !!}
     <div class="row">
         <div class="col-sm-6 col-12">
             {!!Form::text('name', 'Наименование')!!}
@@ -40,7 +40,12 @@
                              aria-labelledby="custom-tabs-three-home-tab">
                             <div class="row">
                                 <div class="col-sm-10 col-12">
+                                    @if ($src = $category->getFirstMedia('images')->getUrl('thumb-admin'))
+                                        <img src="{{$src}}">
+                                    @endif
+                                    {!! Form::file('image', 'Изображение') !!}
                                     {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
+
                                 </div>
                                 <div class="col-sm-2 col-12">
                                     {{--<div class="form-group">

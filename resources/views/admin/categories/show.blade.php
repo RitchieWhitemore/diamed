@@ -49,6 +49,12 @@
                     <td>{{ $category->slug }}</td>
                 </tr>
                 <tr>
+                    <th>Изображение</th>
+                    <td>@if ($src = $category->getFirstMedia('images')->getUrl('thumb-admin'))
+                            <img src="{{$src}}">
+                        @endif</td>
+                </tr>
+                <tr>
                     <th>Текст</th>
                     <td class="html-viewer">{!! Purifier::clean($category->text); !!}</td>
                 </tr>

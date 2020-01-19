@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    {!! Form::open()->url(route('admin.categories.store')) !!}
+    {!! Form::open()->multipart()->url(route('admin.categories.store')) !!}
     <div class="row">
         <div class="col-sm-6 col-12">
             {!!Form::text('name', 'Наименование')!!}
@@ -40,6 +40,7 @@
                              aria-labelledby="custom-tabs-three-home-tab">
                             <div class="row">
                                 <div class="col-sm-10 col-12">
+                                    {!! Form::file('image', 'Изображение') !!}
                                     {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
                                 </div>
                                 <div class="col-sm-2 col-12">

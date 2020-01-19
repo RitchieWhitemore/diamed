@@ -6,6 +6,9 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 
 /**
  * Class Category
@@ -28,12 +31,14 @@ use Kalnoy\Nestedset\NodeTrait;
  *
  * @property Page[] $pages
  */
-class Category extends Model
+class Category extends Model implements HasMedia
 {
     use Sluggable, NodeTrait {
         NodeTrait::replicate as replicateNode;
         Sluggable::replicate as replicateSlug;
     }
+
+    use HasMediaTrait;
 
     const HIDDEN_NO = 0;
     const HIDDEN_YES = 1;
@@ -100,6 +105,13 @@ class Category extends Model
     public function pages()
     {
         return $this->hasMany(Page::class);
+    }
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb-admin')
+            ->width(100)
+            ->height(100);
     }
 
     /**
