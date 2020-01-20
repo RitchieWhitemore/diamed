@@ -59,6 +59,7 @@ Route::group(
 
         Route::resource('categories', 'CategoryController');
         Route::resource('pages', 'PageController');
+        Route::resource('sliders', 'SliderController');
     }
 );
 

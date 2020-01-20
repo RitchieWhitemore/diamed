@@ -195,6 +195,12 @@ return [
             'icon' => 'far fa-fw fa-file',
             'active' => ['admin/pages', 'admin/pages/*']
         ],
+        [
+            'text' => 'Слайдер',
+            'url' => 'admin/sliders',
+            'icon' => 'far fa-fw fa-image',
+            'active' => ['admin/sliders', 'admin/sliders/*']
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Page;
+use App\models\Slider;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 
 // Admin
@@ -50,4 +51,25 @@ Breadcrumbs::for('admin.pages.show', function (Crumbs $crumbs, Page $page) {
 Breadcrumbs::for('admin.pages.edit', function (Crumbs $crumbs, Page $page) {
     $crumbs->parent('admin.pages.index');
     $crumbs->push('Редактирование: ' . $page->name, route('admin.pages.edit', $page));
+});
+
+// Admin - Slider
+Breadcrumbs::register('admin.sliders.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Слайдер', route('admin.sliders.index'));
+});
+
+Breadcrumbs::register('admin.sliders.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.sliders.index');
+    $crumbs->push('Добавить слайд', route('admin.sliders.create'));
+});
+
+Breadcrumbs::for('admin.sliders.show', function (Crumbs $crumbs, Slider $slider) {
+    $crumbs->parent('admin.sliders.index');
+    $crumbs->push($slider->name, route('admin.sliders.show', $slider));
+});
+
+Breadcrumbs::for('admin.sliders.edit', function (Crumbs $crumbs, Slider $slider) {
+    $crumbs->parent('admin.sliders.index');
+    $crumbs->push('Редактирование: ' . $slider->name, route('admin.sliders.edit', $slider));
 });
