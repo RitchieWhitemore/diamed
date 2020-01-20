@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                     <th>Слайд для desktop</th>
-                    <td>@if ($src = $model->getFirstMedia('desktop_slide')->getUrl('thumb-admin'))
+                    <td>@if ($model->getFirstMedia('desktop_slide') && $src = $model->getFirstMedia('desktop_slide')->getUrl('thumb-admin'))
                             <img src="{{$src}}">
                         @endif
                     </td>

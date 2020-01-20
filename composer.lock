@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
     "This file is @generated automatically"
   ],
-  "content-hash": "a0e7a1d38fcee5d7191736e7e6d55c1d",
+  "content-hash": "aa560948d55b053e736ab06d08c48837",
   "packages": [
     {
       "name": "almasaeed2010/adminlte",
@@ -2515,6 +2515,56 @@
         "uuid"
       ],
       "time": "2019-12-17T08:18:51+00:00"
+    },
+    {
+      "name": "spatie/eloquent-sortable",
+      "version": "3.7.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/spatie/eloquent-sortable.git",
+        "reference": "0eb944f90dd88756f93d916bf387e232190a7acf"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/0eb944f90dd88756f93d916bf387e232190a7acf",
+        "reference": "0eb944f90dd88756f93d916bf387e232190a7acf",
+        "shasum": ""
+      },
+      "require": {
+        "laravel/framework": "~5.8.0|^6.0",
+        "php": "^7.2"
+      },
+      "require-dev": {
+        "orchestra/testbench": "~3.8.0|^4.0",
+        "phpunit/phpunit": "^8.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Spatie\\EloquentSortable\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Freek Van der Herten",
+          "email": "freek@spatie.be"
+        }
+      ],
+      "description": "Sortable behaviour for eloquent models",
+      "homepage": "https://github.com/spatie/eloquent-sortable",
+      "keywords": [
+        "behaviour",
+        "eloquent",
+        "laravel",
+        "model",
+        "sort",
+        "sortable"
+      ],
+      "time": "2019-09-04T10:53:31+00:00"
     },
     {
       "name": "spatie/image",

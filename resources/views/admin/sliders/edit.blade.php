@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-2">
-                                            @if ($src = $model->getFirstMedia('desktop_slide')->getUrl('thumb-admin'))
+                                            @if ($model->getFirstMedia('desktop_slide') && $src = $model->getFirstMedia('desktop_slide')->getUrl('thumb-admin'))
                                                 <img src="{{$src}}">
                                             @endif
                                         </div>

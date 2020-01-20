@@ -20,6 +20,7 @@
         <thead>
         <tr>
             <th>ID</th>
+            <th>Сортировка</th>
             <th>Наименование</th>
             <th>Конец показа</th>
             <th>Скрыт</th>
@@ -31,6 +32,14 @@
         @foreach ($sliders as $model)
             <tr>
                 <td>{{ $model->id }}</td>
+                <td class="d-flex">
+                    {!! Form::open()->route('admin.sliders.up', [$model])->attrs(['style' => 'margin-right: 10px']) !!}
+                    {!! Form::submit('<span class="fa fa-angle-double-up"></span>') !!}
+                    {!! Form::close() !!}
+                    {!! Form::open()->route('admin.sliders.down', [$model]) !!}
+                    {!! Form::submit('<span class="fa fa-angle-double-down"></span>') !!}
+                    {!! Form::close() !!}
+                </td>
                 <td><a href="{{ route('admin.sliders.show', $model) }}">{{ $model->name }}</a></td>
                 <td>{{ $model->end_show}}</td>
                 <td>{{ $model->getHiddenValue() }}</td>

@@ -59,6 +59,10 @@ Route::group(
 
         Route::resource('categories', 'CategoryController');
         Route::resource('pages', 'PageController');
+
+
+        Route::post('sliders/{slider}/up', 'SliderController@up')->name('sliders.up');
+        Route::post('sliders/{slider}/down', 'SliderController@down')->name('sliders.down');
         Route::resource('sliders', 'SliderController');
     }
 );

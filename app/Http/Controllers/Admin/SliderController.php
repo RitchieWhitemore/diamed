@@ -16,7 +16,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::all();
+        $sliders = Slider::ordered()->get();
 
         return view('admin.sliders.index', compact('sliders'));
     }
@@ -43,7 +43,7 @@ class SliderController extends Controller
             'name' => ['required'],
             'end_show' => ['nullable', 'date'],
             'mobile_slide' => ['nullable', 'image'],
-            'desktop_slide' => ['image'],
+            'desktop_slide' => ['required', 'image'],
             'hidden' => 'integer'
         ]);
 
@@ -87,7 +87,7 @@ class SliderController extends Controller
             'name' => ['required'],
             'end_show' => ['nullable', 'date'],
             'mobile_slide' => ['nullable', 'image'],
-            'desktop_slide' => ['image'],
+            'desktop_slide' => ['required', 'image'],
             'hidden' => 'integer'
         ]);
 
@@ -108,6 +108,26 @@ class SliderController extends Controller
     {
         $slider->delete();
         $slider->clearMediaCollection();
+        return redirect()->route('admin.sliders.index');
+    }
+
+    /**
+     * @param Slider $slider
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function up(Slider $slider)
+    {
+        $slider->moveOrderUp();
+        return redirect()->route('admin.sliders.index');
+    }
+
+    /**
+     * @param Slider $slider
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function down(Slider $slider)
+    {
+        $slider->moveOrderDown();
         return redirect()->route('admin.sliders.index');
     }
 

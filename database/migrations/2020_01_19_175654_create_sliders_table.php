@@ -18,6 +18,7 @@ class CreateSlidersTable extends Migration
             $table->string('name');
             $table->timestamp('end_show')->nullable();
             $table->smallInteger('hidden');
+            $table->integer('order_column');
             $table->timestamps();
         });
     }

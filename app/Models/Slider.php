@@ -5,6 +5,8 @@ namespace App\models;
 use App\traits\HiddenInterface;
 use App\traits\HiddenTrait;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
@@ -18,9 +20,9 @@ use Spatie\MediaLibrary\Models\Media;
  * @property string $end_show
  * @property integer $hidden
  */
-class Slider extends Model implements HiddenInterface, HasMedia
+class Slider extends Model implements HiddenInterface, HasMedia, Sortable
 {
-    use HiddenTrait, HasMediaTrait;
+    use HiddenTrait, HasMediaTrait, SortableTrait;
 
     protected $fillable = ['name', 'end_show', 'hidden'];
 
