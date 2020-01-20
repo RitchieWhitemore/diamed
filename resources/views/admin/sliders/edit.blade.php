@@ -19,7 +19,7 @@
             {!!Form::text('name', 'Наименование')!!}
         </div>
         <div class="col-sm-6 col-12">
-            {!!Form::date('end_show', 'Дата окончания', $model->end_show)!!}
+            {!!Form::date('end_show', 'Дата окончания', $model->getEndShow())!!}
         </div>
     </div>
     <div class="row">

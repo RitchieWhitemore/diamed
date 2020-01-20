@@ -35,8 +35,11 @@ class Slider extends Model implements HiddenInterface, HasMedia, Sortable
             ->height(100);
     }
 
-    public function getEndShowAttribute($value)
+    /**
+     * @return string
+     */
+    public function getEndShow()
     {
-        return isset($value) ? $value->format('Y-m-d') : '';
+        return $this->end_show ? $this->end_show->format('Y-m-d') : '';
     }
 }

@@ -21,6 +21,7 @@
         <tr>
             <th>ID</th>
             <th>Сортировка</th>
+            <th>Изображение</th>
             <th>Наименование</th>
             <th>Конец показа</th>
             <th>Скрыт</th>
@@ -40,8 +41,12 @@
                     {!! Form::submit('<span class="fa fa-angle-double-down"></span>') !!}
                     {!! Form::close() !!}
                 </td>
+                <td>@if ($model->getFirstMedia('desktop_slide') && $src = $model->getFirstMedia('desktop_slide')->getUrl('thumb-admin'))
+                        <img src="{{$src}}">
+                    @endif
+                </td>
                 <td><a href="{{ route('admin.sliders.show', $model) }}">{{ $model->name }}</a></td>
-                <td>{{ $model->end_show}}</td>
+                <td>{{ $model->getEndShow()}}</td>
                 <td>{{ $model->getHiddenValue() }}</td>
                 <td class="action-column">
                     <a href="{{route('admin.sliders.show', $model)}}" title="Просмотр" aria-label="Просмотр">

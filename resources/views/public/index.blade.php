@@ -1,17 +1,29 @@
+<?php
+/**
+ * @var $sliders \App\models\Slider[]
+ */
+?>
+
 @extends('layouts.main')
 
 @section('content')
     <section class="slider">
         <ul id="main-slider" class="slider__list">
-            <li class="slider__item">
-                <picture>
-                    <source media="(min-width:540px" )="" srcset="/img/slider.jpg">
-                    <img src="/img/slider-mobile.png" alt="">
-                </picture>
-            </li>
-            <li class="slider__item"><img src="/img/slider41.jpg"></li>
-            <li class="slider__item"><img src="/img/slider42.jpg"></li>
-            <li class="slider__item"><img src="/img/slider43.jpg"></li>
+            @foreach ($sliders as $slider)
+                <li class="slider__item">
+                    <picture>
+                        @if ($slider->getFirstMedia('desktop_slide'))
+                            <source media="(min-width:540px)"
+                                    srcset="{{$slider->getFirstMedia('desktop_slide')->getUrl()}}">
+                        @endif
+                        @if ($slider->getFirstMedia('mobile_slide'))
+                            <img src="{{$slider->getFirstMedia('mobile_slide')->getUrl()}}" alt="">
+                        @elseif ($slider->getFirstMedia('desktop_slide'))
+                            <img src="{{$slider->getFirstMedia('desktop_slide')->getUrl()}}" alt="">
+                        @endif
+                    </picture>
+                </li>
+            @endforeach
         </ul>
     </section>
     <section class="slogan">

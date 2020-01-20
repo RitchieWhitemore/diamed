@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <th>Дата окончания показа</th>
-                    <td>{{ $model->end_show }}</td>
+                    <td>{{ $model->getEndShow() }}</td>
                 </tr>
                 <tr>
                     <th>Слайд для мобильного</th>

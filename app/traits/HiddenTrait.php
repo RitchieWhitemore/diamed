@@ -4,6 +4,8 @@
 namespace App\traits;
 
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait HiddenTrait
 {
     public static function getHiddenArray()
@@ -17,5 +19,10 @@ trait HiddenTrait
     public function getHiddenValue()
     {
         return \Arr::get(self::getHiddenArray(), $this->getAttribute('hidden'));
+    }
+
+    public function scopeNotHidden(Builder $query)
+    {
+        return $query->where('hidden', self::HIDDEN_NO);
     }
 }

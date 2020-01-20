@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Str;
 
 class SliderController extends Controller
@@ -87,7 +88,12 @@ class SliderController extends Controller
             'name' => ['required'],
             'end_show' => ['nullable', 'date'],
             'mobile_slide' => ['nullable', 'image'],
-            'desktop_slide' => ['required', 'image'],
+            'desktop_slide' => [
+                Rule::requiredIf(function () use ($slider) {
+                    return !$slider->getFirstMedia('desktop_slide');
+                }),
+                'image'
+            ],
             'hidden' => 'integer'
         ]);
 
