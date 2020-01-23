@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Page
- * @package App\Models
  *
+ * @package App\Models
  * @property string $name
  * @property string $menu_name
  * @property string $slug
@@ -18,6 +18,29 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $meat_description
  * @property string $meta_keywords
  * @property integer $hidden
+ * @property int $id
+ * @property int $category_id
+ * @property string|null $meta_description
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Category $category
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page findSimilarSlugs($attribute, $config, $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereHidden($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereMenuName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereMetaDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereMetaKeywords($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereMetaTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Page extends Model
 {

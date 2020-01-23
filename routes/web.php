@@ -64,6 +64,10 @@ Route::group(
         Route::post('sliders/{slider}/up', 'SliderController@up')->name('sliders.up');
         Route::post('sliders/{slider}/down', 'SliderController@down')->name('sliders.down');
         Route::resource('sliders', 'SliderController');
+
+        Route::post('specialists/{specialist}/up', 'SpecialistController@up')->name('specialists.up');
+        Route::post('specialists/{specialist}/down', 'SpecialistController@down')->name('specialists.down');
+        Route::resource('specialists', 'SpecialistController');
     }
 );
 

@@ -12,8 +12,8 @@ use Spatie\MediaLibrary\Models\Media;
 
 /**
  * Class Category
- * @package App\Models
  *
+ * @package App\Models
  * @property string $name
  * @property string $menu_name
  * @property string $slug
@@ -22,14 +22,41 @@ use Spatie\MediaLibrary\Models\Media;
  * @property string $meat_description
  * @property string $meta_keywords
  * @property integer $hidden
- *
  * @property int|null $parent_id
- *
  * @property int $depth
  * @property Category $parent
  * @property Category[] $children
- *
  * @property Page[] $pages
+ * @property int $id
+ * @property int $_lft
+ * @property int $_rgt
+ * @property string|null $meta_description
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read int|null $children_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
+ * @property-read int|null $media_count
+ * @property-read int|null $pages_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category d()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category findSimilarSlugs($attribute, $config, $slug)
+ * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category newModelQuery()
+ * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category newQuery()
+ * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereHidden($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereLft($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereMenuName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereMetaDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereMetaKeywords($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereMetaTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereParentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereRgt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Category extends Model implements HasMedia
 {

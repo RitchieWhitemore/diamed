@@ -201,6 +201,12 @@ return [
             'icon' => 'far fa-fw fa-image',
             'active' => ['admin/sliders', 'admin/sliders/*']
         ],
+        [
+            'text' => 'Специалисты',
+            'url' => 'admin/specialists',
+            'icon' => 'far fa-fw fa-user',
+            'active' => ['admin/specialists', 'admin/specialists/*']
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

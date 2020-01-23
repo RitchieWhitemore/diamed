@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Models\Page;
 use App\models\Slider;
+use App\models\Specialist;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 
 // Admin
@@ -72,4 +73,25 @@ Breadcrumbs::for('admin.sliders.show', function (Crumbs $crumbs, Slider $slider)
 Breadcrumbs::for('admin.sliders.edit', function (Crumbs $crumbs, Slider $slider) {
     $crumbs->parent('admin.sliders.index');
     $crumbs->push('Редактирование: ' . $slider->name, route('admin.sliders.edit', $slider));
+});
+
+// Admin - Slider
+Breadcrumbs::register('admin.specialists.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Слайдер', route('admin.specialists.index'));
+});
+
+Breadcrumbs::register('admin.specialists.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.specialists.index');
+    $crumbs->push('Добавить специалиста', route('admin.specialists.create'));
+});
+
+Breadcrumbs::for('admin.specialists.show', function (Crumbs $crumbs, Specialist $specialist) {
+    $crumbs->parent('admin.specialists.index');
+    $crumbs->push($specialist->last_name, route('admin.specialists.show', $specialist));
+});
+
+Breadcrumbs::for('admin.specialists.edit', function (Crumbs $crumbs, Specialist $specialist) {
+    $crumbs->parent('admin.specialists.index');
+    $crumbs->push('Редактирование: ' . $specialist->last_name, route('admin.specialists.edit', $specialist));
 });
