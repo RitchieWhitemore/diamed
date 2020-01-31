@@ -75,10 +75,10 @@ Breadcrumbs::for('admin.sliders.edit', function (Crumbs $crumbs, Slider $slider)
     $crumbs->push('Редактирование: ' . $slider->name, route('admin.sliders.edit', $slider));
 });
 
-// Admin - Slider
+// Admin - Specialist
 Breadcrumbs::register('admin.specialists.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.home');
-    $crumbs->push('Слайдер', route('admin.specialists.index'));
+    $crumbs->push('Специалисты', route('admin.specialists.index'));
 });
 
 Breadcrumbs::register('admin.specialists.create', function (Crumbs $crumbs) {

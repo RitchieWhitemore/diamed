@@ -59,6 +59,16 @@
                                 {!! Form::file('specialist_photo', 'Фото специалиста') !!}
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="document">Сертификаты</label>
+                                    <div class="needsclick dropzone" id="document-dropzone">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -68,3 +78,55 @@
     </div>
     <!-- /.col -->
 </div>
+
+@section('js')
+    <script>
+        var uploadedDocumentMap = {};
+
+        Dropzone.options.documentDropzone = {
+            url: '{{ route('admin.specialists.storeMedia') }}',
+            //method: 'put',
+            //paramName: 'media',
+            maxFilesize: 2, // MB
+            addRemoveLinks: true,
+            //autoProcessQueue: false,
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            success: function (file, response) {
+                $('form').append('<input type="hidden" name="certificate[]" value="' + response.name + '">')
+                uploadedDocumentMap[file.name] = response.name
+            },
+            removedfile: function (file) {
+                file.previewElement.remove();
+                var name = '';
+                if (typeof file.file_name !== 'undefined') {
+                    name = file.file_name
+                } else {
+                    name = uploadedDocumentMap[file.name]
+                }
+                $('form').find('input[name="certificate[]"][value="' + name + '"]').remove()
+            },
+            init: function () {
+                        @if(isset($model) && $model->certificate)
+                var files = {!! json_encode($model->certificate) !!};
+                var filePath = [
+                    @foreach($model->certificate as $media)
+                        "{!! $media->getUrl('thumb-admin') !!}",
+                    @endforeach
+                ];
+                for (var i in files) {
+                    var file = files[i];
+                    this.options.addedfile.call(this, file);
+                    this.options.thumbnail.call(this, file, filePath[i]);
+                    file.previewElement.classList.add('dz-complete');
+                    $('form').append('<input type="hidden" name="certificate[]" value="' + file.file_name + '">')
+                }
+                @endif
+                    this.on("processing", function (file) {
+                    this.options.url = "{{ route('admin.specialists.storeMedia') }}";
+                });
+            }
+        }
+    </script>
+@stop

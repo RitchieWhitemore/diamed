@@ -27,6 +27,7 @@
     "@fortawesome/fontawesome-free": "^5.1.0-9",
     "admin-lte": "^3.0.2",
     "bxslider": "^4.2.14",
+    "dropzone": "^5.5.1",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "simplelightbox": "^1.17.3",

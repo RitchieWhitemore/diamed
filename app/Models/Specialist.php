@@ -23,6 +23,7 @@ use Spatie\MediaLibrary\Models\Media;
  * @property string $first_name
  * @property string|null $middle_name
  * @property string $description
+ * @property Media[] $certificate
  * @property Carbon|null $begin_work
  * @property int $order_column
  * @property int $hidden
@@ -58,6 +59,11 @@ class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
     ];
 
     protected $dates = ['begin_work'];
+
+    public function certificate()
+    {
+        return $this->morphMany(Media::class, 'model')->where('collection_name', '=', 'certificate');
+    }
 
     public function registerMediaConversions(Media $media = null)
     {

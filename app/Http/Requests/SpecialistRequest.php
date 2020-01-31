@@ -32,13 +32,14 @@ class SpecialistRequest extends FormRequest
             'description' => 'required|string',
             'begin_work' => 'date',
             'specialist_photo' => 'required|image',
+            //'certificate' => 'image',
             'hidden' => 'integer'
         ];
 
-        if ($this->method() == 'path') {
+        if ($this->isMethod('PUT')) {
             $rules['specialist_photo'] = [
                 Rule::requiredIf(function () {
-                    return !$this->specialist_photo->getFirstMedia('desktop_slide');
+                    return $this->has(['specialist_photo']);
                 }),
                 'image'
             ];
