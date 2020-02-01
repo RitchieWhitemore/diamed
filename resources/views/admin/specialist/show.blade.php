@@ -33,8 +33,8 @@
                     <td>{{ $model->id }}</td>
                 </tr>
                 <tr>
-                    <th>Фамилия</th>
-                    <td>{{ $model->last_name }}</td>
+                    <th>Фамилия Имя Отчество</th>
+                    <td>{{ $model->fullName }}</td>
                 </tr>
                 <tr>
                     <th>Дата начала карьеры</th>
