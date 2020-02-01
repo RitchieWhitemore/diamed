@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\models\Slider;
+use App\models\Specialist;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -19,7 +20,10 @@ class HomeController extends Controller
                     ->orWhere('end_show', null);
             })
             ->limit(10)->get();
-        return view('public.index', compact('sliders'));
+
+        $specialists = Specialist::ordered()->notHidden()->limit(4)->get();
+
+        return view('public.index', compact('sliders', 'specialists'));
     }
 
     public function stock()
@@ -34,7 +38,9 @@ class HomeController extends Controller
 
     public function team()
     {
-        return view('public.team');
+        $specialists = Specialist::ordered()->notHidden()->get();
+
+        return view('public.team', compact('specialists'));
     }
 
     public function contact()

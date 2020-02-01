@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
+use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
@@ -70,6 +71,19 @@ class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
         $this->addMediaConversion('thumb-admin')
             ->width(100)
             ->height(100);
+
+        $this->addMediaConversion('public')
+            ->width(200)
+            ->height(259)
+            ->crop(Manipulations::CROP_TOP, 200, 259);
+
+        $this->addMediaConversion('public-mobile')
+            ->width(154)
+            ->height(199)
+            ->crop(Manipulations::CROP_TOP, 154, 199);
+
+        $this->addMediaConversion('certificate')
+            ->width(896);
     }
 
     /**
@@ -78,6 +92,11 @@ class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
     public function getBeginWork()
     {
         return $this->begin_work ? $this->begin_work->format('d-m-Y') : '';
+    }
+
+    public function getExperience()
+    {
+        return $this->begin_work->diffInYears(Carbon::now());
     }
 
     public function getFullNameAttribute()
