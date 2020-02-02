@@ -207,6 +207,12 @@ return [
             'icon' => 'far fa-fw fa-user',
             'active' => ['admin/specialists', 'admin/specialists/*']
         ],
+        [
+            'text' => 'Вопросы',
+            'url' => 'admin/questions',
+            'icon' => 'fas fa-fw fa-question',
+            'active' => ['admin/questions', 'admin/questions/*']
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

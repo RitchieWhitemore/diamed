@@ -69,6 +69,10 @@ Route::group(
         Route::post('specialists/{specialist}/down', 'SpecialistController@down')->name('specialists.down');
         Route::post('specialist/media', 'SpecialistController@storeMedia')->name('specialists.storeMedia');
         Route::resource('specialists', 'SpecialistController');
+
+        Route::post('questions/{question}/up', 'QuestionController@up')->name('questions.up');
+        Route::post('questions/{question}/down', 'QuestionController@down')->name('questions.down');
+        Route::resource('questions', 'QuestionController');
     }
 );
 

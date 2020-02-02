@@ -45,6 +45,11 @@ use Spatie\MediaLibrary\Models\Media;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist whereOrderColumn($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $certificate_count
+ * @property-read mixed $full_name
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
+ * @property-read int|null $media_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist notHidden()
  */
 class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
 {

@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Question;
 use App\models\Slider;
 use App\models\Specialist;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
@@ -94,4 +95,25 @@ Breadcrumbs::for('admin.specialists.show', function (Crumbs $crumbs, Specialist 
 Breadcrumbs::for('admin.specialists.edit', function (Crumbs $crumbs, Specialist $specialist) {
     $crumbs->parent('admin.specialists.index');
     $crumbs->push('Редактирование: ' . $specialist->last_name, route('admin.specialists.edit', $specialist));
+});
+
+// Admin - Question
+Breadcrumbs::register('admin.questions.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Вопросы', route('admin.questions.index'));
+});
+
+Breadcrumbs::register('admin.questions.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.questions.index');
+    $crumbs->push('Добавить вопрос', route('admin.questions.create'));
+});
+
+Breadcrumbs::for('admin.questions.show', function (Crumbs $crumbs, Question $question) {
+    $crumbs->parent('admin.questions.index');
+    $crumbs->push($question->id, route('admin.questions.show', $question));
+});
+
+Breadcrumbs::for('admin.questions.edit', function (Crumbs $crumbs, Question $question) {
+    $crumbs->parent('admin.questions.index');
+    $crumbs->push('Редактирование: ' . $question->id, route('admin.questions.edit', $question));
 });
