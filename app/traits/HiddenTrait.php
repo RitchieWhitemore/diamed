@@ -6,6 +6,12 @@ namespace App\traits;
 
 use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * Trait HiddenTrait
+ * @package App\traits
+ *
+ * @method HiddenTrait notHidden()
+ */
 trait HiddenTrait
 {
     public static function getHiddenArray()

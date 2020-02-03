@@ -40,7 +40,8 @@ Route::get('/price', 'HomeController@price')->name('price');
 
 Route::get('/vacancies', 'HomeController@vacancy')->name('vacancy');
 
-Route::get('/faq', 'HomeController@faq')->name('faq');
+Route::get('/faq', 'QuestionController@index')->name('faq');
+Route::post('/faq', 'QuestionController@store');
 
 Auth::routes([
     'register' => false,
