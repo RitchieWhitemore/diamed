@@ -3,6 +3,8 @@
 
 namespace App\Models;
 
+use App\traits\HiddenInterface;
+use App\traits\HiddenTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,12 +44,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Page extends Model
+class Page extends Model implements HiddenInterface
 {
-    use Sluggable;
-
-    const HIDDEN_NO = 0;
-    const HIDDEN_YES = 1;
+    use Sluggable, HiddenTrait;
 
     protected $fillable = [
         'category_id',
@@ -61,12 +60,6 @@ class Page extends Model
         'meta_keywords'
     ];
 
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'pages';
 
     /**
      * Return the sluggable configuration array for this model.
@@ -80,19 +73,6 @@ class Page extends Model
                 'source' => 'name'
             ]
         ];
-    }
-
-    public static function getHiddenArray()
-    {
-        return [
-            self::HIDDEN_NO => 'Нет',
-            self::HIDDEN_YES => 'Да'
-        ];
-    }
-
-    public function getHiddenAttribute($value)
-    {
-        return \Arr::get(Page::getHiddenArray(), $value);
     }
 
     public function category()

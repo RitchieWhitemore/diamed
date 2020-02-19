@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                     <th>Скрыто</th>
-                    <td>{{ $model->hidden }}</td>
+                    <td>{{ $model->getHiddenValue() }}</td>
                 </tr>
                 </tbody>
             </table>
