@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Question;
+use App\Models\Service;
 use App\models\Slider;
 use App\models\Specialist;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
@@ -116,4 +117,25 @@ Breadcrumbs::for('admin.questions.show', function (Crumbs $crumbs, Question $que
 Breadcrumbs::for('admin.questions.edit', function (Crumbs $crumbs, Question $question) {
     $crumbs->parent('admin.questions.index');
     $crumbs->push('Редактирование: ' . $question->id, route('admin.questions.edit', $question));
+});
+
+// Admin - Service
+Breadcrumbs::register('admin.services.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Услуги', route('admin.services.index'));
+});
+
+Breadcrumbs::register('admin.services.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.services.index');
+    $crumbs->push('Добавить услугу', route('admin.services.create'));
+});
+
+Breadcrumbs::for('admin.services.show', function (Crumbs $crumbs, Service $service) {
+    $crumbs->parent('admin.services.index');
+    $crumbs->push($service->name, route('admin.services.show', $service));
+});
+
+Breadcrumbs::for('admin.services.edit', function (Crumbs $crumbs, Service $service) {
+    $crumbs->parent('admin.services.index');
+    $crumbs->push('Редактирование: ' . $service->name, route('admin.services.edit', $service));
 });

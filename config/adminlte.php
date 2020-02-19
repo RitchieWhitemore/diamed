@@ -184,6 +184,12 @@ return [
             'can' => 'manage-blog',
         ],
         [
+            'text' => 'Услуги',
+            'url' => 'admin/services',
+            'icon' => 'far fa-fw fa-file',
+            'active' => ['admin/services', 'admin/services/*']
+        ],
+        [
             'text' => 'Категории',
             'url' => 'admin/categories',
             'icon' => 'far fa-fw fa-folder',

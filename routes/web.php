@@ -63,6 +63,11 @@ Route::group(
         Route::resource('categories', 'CategoryController');
         Route::resource('pages', 'PageController');
 
+        Route::resource('services', 'ServiceController');
+
+        Route::post('prices/{price}/up', 'PriceController@up')->name('prices.up');
+        Route::post('prices/{price}/down', 'PriceController@down')->name('prices.down');
+        Route::resource('prices', 'PriceController');
 
         Route::post('sliders/{slider}/up', 'SliderController@up')->name('sliders.up');
         Route::post('sliders/{slider}/down', 'SliderController@down')->name('sliders.down');

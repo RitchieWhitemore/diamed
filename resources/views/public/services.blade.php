@@ -51,7 +51,9 @@
         <footer class="services__footer">
             <div class="services__btn-wrapper">
                 <p>Не знаете какая услуга Вам подходит?</p>
-                <button class="services__btn btn__service">Записаться на консультацию</button>
+                <button class="services__btn btn__service" data-toggle="modal" data-target="#signup-modal">Записаться на
+                    консультацию
+                </button>
             </div>
         </footer>
         <div class="container">
