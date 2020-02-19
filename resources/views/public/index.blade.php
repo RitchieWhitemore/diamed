@@ -30,7 +30,7 @@
     <section class="slogan">
         <h2>Ваши улыбки - наша работа!</h2>
         <div class="slogan__button-wrapper">
-            <button class="btn" data-toggle="modal" data-target="#exampleModal">Записаться</button>
+            <button class="btn" data-toggle="modal" data-target="#signup-modal">Записаться</button>
             <button class="slogan__whatsapp btn__whatsapp"></button>
         </div>
     </section>
@@ -81,7 +81,9 @@
         <footer class="services__footer">
             <div class="services__btn-wrapper">
                 <p>Не знаете какая услуга Вам подходит?</p>
-                <button class="services__btn btn__service">Записаться на консультацию</button>
+                <button class="services__btn btn__service" data-toggle="modal" data-target="#signup-modal">Записаться на
+                    консультацию
+                </button>
             </div>
         </footer>
         <div class="services__illustration">
@@ -262,11 +264,11 @@
         </header>
         <div class="signup__wrapper">
             <div class="signup__form-wrapper">
-                <form class="signup__form">
-                    <input type="text" name="name" placeholder="Ваше имя">
-                    <input type="text" name="phone" placeholder="Телефон">
-                    <button type="submit" class="btn btn--auqa">Записаться</button>
-                </form>
+                {!! Form::open()->url(route('signup'))->attrs(['class' => 'signup__form']) !!}
+                {!! Form::text('name')->placeholder('Ваше имя')->required() !!}
+                {!! Form::tel('phone')->placeholder('Телефон')->required() !!}
+                {!! Form::submit("Записаться")->color('')->attrs(['class' => 'btn--aqua']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
 

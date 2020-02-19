@@ -16,8 +16,9 @@ mix.options({processCssUrls: false})
     .js('resources/js/scripts.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/fonts.scss', 'public/css')
-    .sass('resources/sass/bootstrap.scss', 'public/css')
-    .version();
+    //.sass('resources/sass/bootstrap.scss', 'public/css')
+    .version()
+    .sourceMaps();
 
 mix.options({processCssUrls: false})
     .js('resources/admin/js/admin.js', 'public/js/admin')

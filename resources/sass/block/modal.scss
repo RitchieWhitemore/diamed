@@ -35,6 +35,10 @@
   color: $font-color-grey;
 }
 
+.modal__signup-form label {
+  display: none;
+}
+
 .modal .form-control,
 .faq .form-control {
   position: relative;
@@ -148,9 +152,8 @@
 }
 
 @media (min-width: 768px) {
-  .modal {
-    left: 50%;
-    transform: translateX(-25%);
+  .modal-dialog {
+    margin: auto;
   }
 
   .modal-title {

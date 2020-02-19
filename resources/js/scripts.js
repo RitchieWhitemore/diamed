@@ -45,5 +45,56 @@ $(function () {
             var gallery = $(this).siblings('.member__cert-gallery').find('a').simpleLightbox();
             gallery.open();
         });
+
+
+        //modal
+
+        $('.modal__signup-form').submit(function (e) {
+
+            var $form = $(this);
+
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#signup-modal').modal('hide');
+                        $('#success-modal').modal('show');
+                    }
+                },
+                error: function (data) {
+
+                }
+            });
+            e.preventDefault();
+        });
+
+        //signup-form
+
+        $('.signup__form').submit(function (e) {
+
+            var $form = $(this);
+
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#signup-modal').modal('hide');
+                        $('#success-modal').modal('show');
+                    }
+                },
+                error: function (data) {
+                    if (data.responseJSON.errors) {
+                        $.each(data.responseJSON.errors, function (key, value) {
+                            //alert( key + ": " + value );
+                        });
+                    }
+                }
+            });
+            e.preventDefault();
+        })
     });
 });

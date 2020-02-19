@@ -4,10 +4,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\SignupMail;
 use App\models\Slider;
 use App\models\Specialist;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -86,5 +89,17 @@ class HomeController extends Controller
     public function vacancy()
     {
         return view('public.vacancy');
+    }
+
+    public function signup(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string',
+            'phone' => 'required|string',
+        ]);
+
+        Mail::to('richib@yandex.ru')->send(new SignupMail($request->get('name'), $request->get('phone')));
+
+        return ['success' => true];
     }
 }

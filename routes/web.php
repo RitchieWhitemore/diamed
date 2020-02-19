@@ -43,6 +43,8 @@ Route::get('/vacancies', 'HomeController@vacancy')->name('vacancy');
 Route::get('/faq', 'QuestionController@index')->name('faq');
 Route::post('/faq', 'QuestionController@store');
 
+Route::post('/signup', 'HomeController@signup')->name('signup');
+
 Auth::routes([
     'register' => false,
     'reset' => false,
