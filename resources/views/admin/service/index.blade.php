@@ -32,6 +32,8 @@
                 <td><a href="{{ route('admin.services.show', $model) }}">{{ $model->name }}</a></td>
                 <td>{{ $model->slug }}</td>
                 <td class="action-column">
+                    <a href="{{route('admin.services.prices.index', $model)}}" title="Цены" aria-label="Цены">
+                        <i class="fas fa-dollar-sign"></i></a>
                     <a href="{{route('admin.services.show', $model)}}" title="Просмотр" aria-label="Просмотр">
                         <i class="far fa-eye"></i></a>
                     <a href="{{route('admin.services.edit', $model)}}" title="Редактировать"

@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class PriceRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'name' => 'required|string|max:255',
+            'description' => 'string|nullable',
+            'value' => 'required|string|max:255',
+            'hidden' => 'required|integer',
+            'show_on_service' => 'required|integer',
+            'service_id' => 'required|integer'
+        ];
+    }
+}

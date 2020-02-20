@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Price;
 use App\Models\Question;
 use App\Models\Service;
 use App\models\Slider;
@@ -138,4 +139,29 @@ Breadcrumbs::for('admin.services.show', function (Crumbs $crumbs, Service $servi
 Breadcrumbs::for('admin.services.edit', function (Crumbs $crumbs, Service $service) {
     $crumbs->parent('admin.services.index');
     $crumbs->push('Редактирование: ' . $service->name, route('admin.services.edit', $service));
+});
+
+// Admin - Price
+Breadcrumbs::register('admin.services.prices.index', function (Crumbs $crumbs, Service $service) {
+    $crumbs->parent('admin.services.show', $service);
+    $crumbs->push('Цены', route('admin.services.index', $service));
+});
+
+Breadcrumbs::register('admin.services.prices.create', function (Crumbs $crumbs, Service $service) {
+    $crumbs->parent('admin.services.show', $service);
+    $crumbs->push('Цены', route('admin.services.prices.index', [$service]));
+    $crumbs->push('Добавить цену', route('admin.services.prices.create', $service));
+});
+
+Breadcrumbs::for('admin.services.prices.show', function (Crumbs $crumbs, Service $service, Price $price) {
+    $crumbs->parent('admin.services.show', $service);
+    $crumbs->push('Цены', route('admin.services.prices.index', [$service]));
+    $crumbs->push($price->name, route('admin.services.prices.show', ['service' => $service, 'price' => $price]));
+});
+
+Breadcrumbs::for('admin.services.prices.edit', function (Crumbs $crumbs, Service $service, Price $price) {
+    $crumbs->parent('admin.services.show', $service);
+    $crumbs->push('Цены', route('admin.services.prices.index', [$service]));
+    $crumbs->push('Редактирование: ' . $price->name,
+        route('admin.services.edit', ['service' => $service, 'price' => $price]));
 });

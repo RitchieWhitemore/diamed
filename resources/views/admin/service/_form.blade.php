@@ -28,11 +28,6 @@
                            href="#custom-tabs-three-seo" role="tab" aria-controls="custom-tabs-three-seo"
                            aria-selected="false">SEO</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-three-price-tab" data-toggle="pill"
-                           href="#custom-tabs-three-price" role="tab" aria-controls="custom-tabs-three-price"
-                           aria-selected="false">Цены</a>
-                    </li>
                 </ul>
             </div>
             <div class="card-body">
@@ -59,11 +54,6 @@
                         {!! Form::text('meta_description', 'Meta description') !!}
 
                         {!! Form::text('meta_keywords', 'Meta keywords') !!}
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-three-price" role="tabpanel"
-                         aria-labelledby="custom-tabs-three-price-tab">
-
-
                     </div>
                 </div>
             </div>
