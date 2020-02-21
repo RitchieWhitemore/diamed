@@ -32,11 +32,11 @@ Route::get('/articles', 'HomeController@article')->name('article');
 
 Route::get('/sterilization', 'HomeController@sterilization')->name('sterilization');
 
-Route::get('/services', 'HomeController@services')->name('services');
-
-Route::get('/service', 'HomeController@service')->name('service');
-
-Route::get('/price', 'HomeController@price')->name('price');
+Route::group(['prefix' => 'services', 'as' => 'services.'], function () {
+    Route::get('/', 'ServiceController@index')->name('index');
+    Route::get('/{slug}', 'ServiceController@view')->name('view');
+    Route::get('/{slug}/prices', 'ServiceController@prices')->name('price');
+});
 
 Route::get('/vacancies', 'HomeController@vacancy')->name('vacancy');
 

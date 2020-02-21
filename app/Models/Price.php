@@ -38,6 +38,8 @@ use Spatie\EloquentSortable\SortableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Price whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Price whereValue($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Service $service
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Price showOnService()
  */
 class Price extends Model implements HiddenInterface, Sortable
 {

@@ -38,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Service whereText($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Service whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
+ * @property-read int|null $prices_count
  */
 class Service extends Model implements HiddenInterface
 {
@@ -66,5 +68,10 @@ class Service extends Model implements HiddenInterface
                 'source' => 'name'
             ]
         ];
+    }
+
+    public function prices()
+    {
+        return $this->hasMany(Price::class);
     }
 }

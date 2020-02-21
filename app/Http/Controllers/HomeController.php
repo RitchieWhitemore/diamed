@@ -71,21 +71,6 @@ class HomeController extends Controller
         return view('public.sterilization');
     }
 
-    public function services()
-    {
-        return view('public.services');
-    }
-
-    public function service()
-    {
-        return view('public.service');
-    }
-
-    public function price()
-    {
-        return view('public.price');
-    }
-
     public function vacancy()
     {
         return view('public.vacancy');

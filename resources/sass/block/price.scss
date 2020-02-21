@@ -42,6 +42,7 @@
     color: $font-color-red;
     font-size: 14px;
     font-weight: normal;
+    cursor: pointer;
 
     &.collapsed {
       color: $font-color-grey;

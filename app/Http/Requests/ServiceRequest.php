@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Service;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -38,11 +37,11 @@ class ServiceRequest extends FormRequest
         ];
 
         if ($this->isMethod('PUT')) {
-            $serviceId = Service::whereSlug($request->get('slug'))->first()->id;
+            $service = $this->route()->parameter('service');;
             $rules['slug'] = [
                 'nullable',
                 'string',
-                Rule::unique('services', 'slug')->ignore($serviceId),
+                Rule::unique('services', 'slug')->ignore($service),
             ];
         }
 
