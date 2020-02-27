@@ -12,6 +12,7 @@ try {
 
     require('bootstrap');
     require('webpack-jquery-ui');
+    require('select2/dist/js/select2.full');
     require('summernote/dist/summernote-bs4');
     require('admin-lte/dist/js/adminlte');
     window.Dropzone = require('dropzone/dist/dropzone');

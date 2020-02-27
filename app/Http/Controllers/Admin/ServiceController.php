@@ -40,6 +40,8 @@ class ServiceController extends Controller
     {
         $service = Service::create($request->all());
 
+        $service->specialists()->attach($request->get('specialists'));
+
         return redirect()->route('admin.services.show', compact('service'));
     }
 
@@ -75,6 +77,8 @@ class ServiceController extends Controller
     public function update(ServiceRequest $request, Service $service)
     {
         $service->update($request->all());
+
+        $service->specialists()->sync($request->get('specialists'));
 
         return redirect()->route('admin.services.show', $service);
     }

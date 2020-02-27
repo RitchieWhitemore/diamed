@@ -30,6 +30,7 @@
     "dropzone": "^5.5.1",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
+    "select2": "^4.0.13",
     "simplelightbox": "^1.17.3",
     "summernote": "^0.8.15",
     "webpack-jquery-ui": "^2.0.1"

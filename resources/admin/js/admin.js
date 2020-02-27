@@ -54,4 +54,6 @@ $(document).ready(function () {
         },
         height: 300
     });
+
+    $('.selectpicker').select2();
 });

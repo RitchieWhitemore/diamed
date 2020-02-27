@@ -42,6 +42,8 @@
 
                                 {!! Form::text('menu_name', 'Наименование для меню') !!}
 
+                                {!! Form::select('specialists[]', 'Специалисты', \App\models\Specialist::pluck('name', 'id'), $model->specialistListIds())->multiple()->attrs(['class' => 'selectpicker']) !!}
+
                                 {!! Form::select('hidden', 'Скрыто', \App\Models\Page::getHiddenArray()) !!}
                             </div>
                         </div>
