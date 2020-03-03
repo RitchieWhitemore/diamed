@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Mail\SignupMail;
+use App\Models\Review;
 use App\models\Slider;
 use App\models\Specialist;
 use Carbon\Carbon;
@@ -58,7 +59,8 @@ class HomeController extends Controller
 
     public function review()
     {
-        return view('public.review');
+        $reviews = Review::notHidden()->paginate(15);
+        return view('public.review', compact('reviews'));
     }
 
     public function article()

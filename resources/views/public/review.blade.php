@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var $reviews \App\Models\Review
+ */
+?>
+
 @extends('layouts.main')
 
 @section('content')
@@ -26,107 +32,40 @@
                 <button class="btn review-page__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв
                 </button>
             </div>
-
-            <ul class="review-page__list">
-                <li class="review-page__item review">
-                    <div class="review__header">
-                        <h3 class="review__title">Выражаю благодарность</h3>
-                        <ul class="review__rating">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                        </ul>
-                    </div>
-                    <div class="review__text">
-                        <p>В клинике мне очень понравилось. Внимательное и доброжелательное отношение к пациентам. Для
-                            меня не один раз находили время для приема, не по предварительной записи. Доктор
-                            Константинова Юлия Евгеньевна очень старательно, внимательно и ответственно подходит к
-                            своему делу.</p>
-                        <p>P.S. Сделали скидку по программе партнерства, как участнику сообщества автомобилистов г.
-                            Александров. А так-же, порадовал презент от самой клиники.</p>
-                    </div>
-                    <div class="review__footer">
-                        <audio controls="controls" class="review__audio">
-                            <source src="track.ogg" type="audio/ogg"/>
-                            <source src="track.mp3" type="audio/mpeg"/>
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="review__author">Виталий</p>
-                    </div>
-                </li>
-
-                <li class="review-page__item review">
-                    <div class="review__header">
-                        <h3 class="review__title">Выражаю благодарность</h3>
-                        <ul class="review__rating">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                        </ul>
-                    </div>
-                    <div class="review__text">
-                        <p>В клинике мне очень понравилось. Внимательное и доброжелательное отношение к пациентам. Для
-                            меня не один раз находили время для приема, не по предварительной записи. Доктор
-                            Константинова Юлия Евгеньевна очень старательно, внимательно и ответственно подходит к
-                            своему делу.</p>
-                        <p>P.S. Сделали скидку по программе партнерства, как участнику сообщества автомобилистов г.
-                            Александров. А так-же, порадовал презент от самой клиники.</p>
-                    </div>
-                    <div class="review__footer">
-                        <audio controls="controls" class="review__audio">
-                            <source src="track.ogg" type="audio/ogg"/>
-                            <source src="track.mp3" type="audio/mpeg"/>
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="review__author">Виталий</p>
-                    </div>
-                </li>
-
-                <li class="review-page__item review">
-                    <div class="review__header">
-                        <h3 class="review__title">Выражаю благодарность</h3>
-                        <ul class="review__rating">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                        </ul>
-                    </div>
-                    <div class="review__text">
-                        <p>В клинике мне очень понравилось. Внимательное и доброжелательное отношение к пациентам. Для
-                            меня не один раз находили время для приема, не по предварительной записи. Доктор
-                            Константинова Юлия Евгеньевна очень старательно, внимательно и ответственно подходит к
-                            своему делу.</p>
-                        <p>P.S. Сделали скидку по программе партнерства, как участнику сообщества автомобилистов г.
-                            Александров. А так-же, порадовал презент от самой клиники.</p>
-                    </div>
-                    <div class="review__footer">
-                        <audio controls="controls" class="review__audio">
-                            <source src="track.ogg" type="audio/ogg"/>
-                            <source src="track.mp3" type="audio/mpeg"/>
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="review__author">Виталий</p>
-                    </div>
-                </li>
-            </ul>
-            <div class="review-page__pagination pagination">
-                <ul class="pagination__list">
-                    <li class="pagination__item"><a href="#" class="pagination__link pagination__link--prev"><i
-                                    class="fas fa-chevron-left"></i></a></li>
-                    <li class="pagination__item"><a href="#" class="pagination__link pagination__link--active">1</a>
-                    </li>
-                    <li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
-                    <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
-                    <li class="pagination__item"><a href="#" class="pagination__link pagination__link--next"><i
-                                    class="fas fa-chevron-right"></i></a></li>
+            @if (!empty($reviews))
+                <ul class="review-page__list">
+                    @foreach($reviews as $review)
+                        <li class="review-page__item review">
+                            <div class="review__header">
+                                <h3 class="review__title">{{$review->title}}</h3>
+                                <ul class="review__rating">
+                                    @for($i = 0; $i < $review->rating; $i++)
+                                        <li><i class="fas fa-star"></i></li>
+                                    @endfor
+                                    @if($review->rating < 5)
+                                        @for($i = $review->rating; $i < 5; $i++)
+                                            <li><i class="far fa-star"></i></li>
+                                        @endfor
+                                    @endif
+                                </ul>
+                            </div>
+                            <div class="review__text">
+                                <p>{{$review->text}}</p>
+                            </div>
+                            <div class="review__footer">
+                                @if($review->audio)
+                                    <audio controls="controls" class="review__audio">
+                                        <source src="{{Storage::url($review->audio)}}" type="audio/mpeg"/>
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                @endif
+                                <p class="review__author">{{$review->name}}</p>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
-            </div>
+            @endif
+            {{ $reviews->links('public.part._pagination') }}
         </div>
     </section>
     @include ('layouts.signup-page')

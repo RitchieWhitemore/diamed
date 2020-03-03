@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\Page;
 use App\Models\Price;
 use App\Models\Question;
+use App\Models\Review;
 use App\Models\Service;
 use App\models\Slider;
 use App\models\Specialist;
@@ -164,4 +165,25 @@ Breadcrumbs::for('admin.services.prices.edit', function (Crumbs $crumbs, Service
     $crumbs->push('Цены', route('admin.services.prices.index', [$service]));
     $crumbs->push('Редактирование: ' . $price->name,
         route('admin.services.edit', ['service' => $service, 'price' => $price]));
+});
+
+// Admin - Review
+Breadcrumbs::register('admin.reviews.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Отзывы', route('admin.reviews.index'));
+});
+
+Breadcrumbs::register('admin.reviews.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.reviews.index');
+    $crumbs->push('Добавить отзыв', route('admin.reviews.create'));
+});
+
+Breadcrumbs::for('admin.reviews.show', function (Crumbs $crumbs, Review $review) {
+    $crumbs->parent('admin.reviews.index');
+    $crumbs->push($review->title, route('admin.reviews.show', $review));
+});
+
+Breadcrumbs::for('admin.reviews.edit', function (Crumbs $crumbs, Review $review) {
+    $crumbs->parent('admin.reviews.index');
+    $crumbs->push('Редактирование: ' . $review->title, route('admin.reviews.edit', $review));
 });

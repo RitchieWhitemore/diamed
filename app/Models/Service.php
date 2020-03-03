@@ -40,6 +40,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
  * @property-read int|null $prices_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\models\Specialist[] $specialists
+ * @property-read int|null $specialists_count
  */
 class Service extends Model implements HiddenInterface
 {

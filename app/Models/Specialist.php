@@ -51,6 +51,8 @@ use Spatie\MediaLibrary\Models\Media;
  * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
  * @property-read int|null $media_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist notHidden()
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Service[] $services
+ * @property-read int|null $services_count
  */
 class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
 {

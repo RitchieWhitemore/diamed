@@ -219,6 +219,12 @@ return [
             'icon' => 'fas fa-fw fa-question',
             'active' => ['admin/questions', 'admin/questions/*']
         ],
+        [
+            'text' => 'Отзывы',
+            'url' => 'admin/reviews',
+            'icon' => 'fas fa-fw fa-star',
+            'active' => ['admin/reviews', 'admin/reviews/*']
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

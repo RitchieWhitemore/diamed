@@ -83,6 +83,8 @@ Route::group(
         Route::post('questions/{question}/up', 'QuestionController@up')->name('questions.up');
         Route::post('questions/{question}/down', 'QuestionController@down')->name('questions.down');
         Route::resource('questions', 'QuestionController');
+
+        Route::resource('reviews', 'ReviewController');
     }
 );
 
