@@ -14,7 +14,7 @@
                     Мы свяжемся с вами в ближайшее время в часы работы клинники с 8:00 до 19:00. Пожалуйста, заполните
                     обязательные поля.
                 </p>
-                {!! Form::open()->url(route('signup'))->attrs(['class' => 'modal__signup-form']) !!}
+                {!! Form::open()->url(route('signup'))->attrs(['class' => 'modal__signup-form'])->id('signup-form-modal') !!}
                 {!! Form::text('name')->placeholder('Ваше имя')->required() !!}
                 {{--<div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email">
@@ -61,18 +61,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Ваше имя">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" name="phone" placeholder="Телефон">
-                    </div>
+                {!! Form::open()->url(route('sendReview'))->attrs(['class' => 'modal__signup-form'])->id('review-form-modal') !!}
+                {!! Form::text('name')->placeholder('Ваше имя')->required() !!}
 
-                    <div class="form-group form__rating-wrapper">
+                {!! Form::text('email')->placeholder('Email')->type('email')->required() !!}
+
+
+                <div class="form-group ">
+                    <div class="form__rating-wrapper">
                         <input class="form__rating" type="radio" name="rating" value="5" id="form-rating-5">
                         <label class="form__rating-ico far fa-star" for="form-rating-5"></label>
                         <input class="form__rating" type="radio" name="rating" value="4" id="form-rating-4">
@@ -84,26 +80,31 @@
                         <input class="form__rating" type="radio" name="rating" value="1" id="form-rating-1">
                         <label class="form__rating-ico far fa-star" for="form-rating-1"></label>
                     </div>
+                    <div class="invalid-feedback"></div>
+                </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="title" placeholder="Заголовок отзыва">
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Текст" rows="10"></textarea>
-                    </div>
-                    <div class="form-group form__file-input-wrapper">
-                        <label>
-                            <input id="file-review" type="file" class="form-control" name="file">
-                            <span class="form__file-name">Прикрепить файл</span>
-                            <span class="form__file-button">Выбрать</span>
-                        </label>
 
-                    </div>
-                </form>
+                {!! Form::text('title')->placeholder('Заголовок отзыва')->required() !!}
+                {{--<div class="form-group">
+                    <input type="text" class="form-control" name="title" placeholder="Заголовок отзыва">
+                </div>--}}
+                {!! Form::textarea('text')->placeholder('Ваш отзыв')->required()->attrs(['rows' => 10]) !!}
+                {{--<div class="form-group">
+                    <textarea class="form-control" placeholder="Текст" rows="10" name="text"></textarea>
+                </div>--}}
+                {{--<div class="form-group form__file-input-wrapper">
+                    <label>
+                        <input id="file-review" type="file" class="form-control" name="file">
+                        <span class="form__file-name">Прикрепить файл</span>
+                        <span class="form__file-button">Выбрать</span>
+                    </label>
+                </div>--}}
+                <div class="modal-footer">
+                    {!!Form::submit("Отправить")->attrs(['class' => 'btn btn-secondary'])!!}
+                </div>
+                {!! Form::close() !!}
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary">Оставить отзыв</button>
-            </div>
+
         </div>
     </div>
 </div>

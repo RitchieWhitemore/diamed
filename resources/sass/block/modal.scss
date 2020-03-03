@@ -39,6 +39,10 @@
   display: none;
 }
 
+.form__rating-wrapper label {
+  display: block;
+}
+
 .modal .form-control,
 .faq .form-control {
   position: relative;
@@ -105,12 +109,9 @@
 }
 
 .form__rating-ico {
-  color: $font-color-aqua;
-}
-
-.form__rating-ico {
   margin-bottom: 0;
   margin-right: 10px;
+  color: $font-color-aqua;
 }
 
 .form__rating-ico:hover:before,
@@ -118,6 +119,10 @@
 .form__rating:checked ~ .form__rating-ico:before {
   content: "\f005";
   font-weight: bold;
+}
+
+.form__rating-wrapper + .invalid-feedback {
+  text-align: center;
 }
 
 .form__file-input-wrapper {

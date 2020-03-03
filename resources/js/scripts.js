@@ -49,7 +49,7 @@ $(function () {
 
         //modal
 
-        $('.modal__signup-form').submit(function (e) {
+        $('#signup-form-modal').submit(function (e) {
 
             var $form = $(this);
 
@@ -68,6 +68,43 @@ $(function () {
                 }
             });
             e.preventDefault();
+        });
+
+        // review form
+        $('#review-form-modal').submit(function (e) {
+            var $form = $(this);
+
+            var $rating = $form.find('input[name="rating"]:checked');
+
+            if ($rating.length === 0) {
+                var $message = $('.form__rating-wrapper').siblings('.invalid-feedback');
+                $message.text('Поставьте оценку!');
+                $message.show();
+                return false;
+            }
+
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#reviewModal').modal('hide');
+                        $('#success-modal').modal('show');
+                        $('#review-form').trigger('reset');
+                    }
+                },
+                error: function (data) {
+
+                }
+            });
+
+            e.preventDefault();
+            return false;
+        });
+
+        $('#review-form input[name="rating"]').on('click', function () {
+            $('.form__rating-wrapper').siblings('.invalid-feedback').hide();
         });
 
         //signup-form

@@ -48,4 +48,5 @@
         @endforeach
         </tbody>
     </table>
+    {{$reviews->links()}}
 @stop

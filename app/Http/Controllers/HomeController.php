@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\ReviewMail;
 use App\Mail\SignupMail;
 use App\Models\Review;
 use App\models\Slider;
@@ -63,6 +64,29 @@ class HomeController extends Controller
         return view('public.review', compact('reviews'));
     }
 
+    public function sendReview(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'title' => 'required|string|max:255',
+            'text' => 'required|string',
+            'rating' => 'required|integer|between:1,5',
+        ]);
+
+        $review = new Review($request->all());
+        $review->hidden = Review::HIDDEN_YES;
+        if ($review->save()) {
+
+            Mail::to(getenv('MAIL_DIRECTOR'))->send(new ReviewMail($review));
+
+            return ['success' => true];
+        }
+
+        return ['success' => false];
+
+    }
+
     public function article()
     {
         return view('public.article');
@@ -85,7 +109,7 @@ class HomeController extends Controller
             'phone' => 'required|string',
         ]);
 
-        Mail::to('richib@yandex.ru')->send(new SignupMail($request->get('name'), $request->get('phone')));
+        Mail::to(getenv('MAIL_MANAGER'))->send(new SignupMail($request->get('name'), $request->get('phone')));
 
         return ['success' => true];
     }

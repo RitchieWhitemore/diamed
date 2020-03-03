@@ -28,6 +28,8 @@ Route::get('/licenses', 'HomeController@license')->name('license');
 
 Route::get('/reviews', 'HomeController@review')->name('review');
 
+Route::post('/reviews', 'HomeController@sendReview')->name('sendReview');
+
 Route::get('/articles', 'HomeController@article')->name('article');
 
 Route::get('/sterilization', 'HomeController@sterilization')->name('sterilization');
