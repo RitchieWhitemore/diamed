@@ -114,7 +114,7 @@
             </div>
         </section>
     @endif
-    @if(!empty($specialists = $service->getSpecialists()))
+    @if(!empty($specialists = $service->specialists))
     <section class="team">
         <header class="team__header">
             <h2 class="title team__title">К кому записаться</h2>
@@ -135,48 +135,7 @@
     @endif
     <section class="reviews">
         <div class="reviews__wrapper">
-            <div class="reviews__list">
-                <blockquote class="reviews__item">
-                    <p class="reviews__text">«У меня проблемы с прикусом и мама отправила меня в эту клинику к своему
-                        врачу, которому она
-                        доверяет. Ольга Владимировна вылечила ей зубы и помогла мне. Большое спасибо!»</p>
-                    <ul class="reviews__rating">
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="far fa-star"></i></li>
-                        <li><i class="far fa-star"></i></li>
-                    </ul>
-                    <cite class="reviews__author">Валерия</cite>
-                </blockquote>
-                <blockquote class="reviews__item">
-                    <p class="reviews__text">«После лечения мне гораздо лучше, зубы как раньше, больше не шатаются. В
-                        клинике все
-                        доброжелательные, всё хорошо, мне очень понравилось»</p>
-                    <ul class="reviews__rating">
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="far fa-star"></i></li>
-                        <li><i class="far fa-star"></i></li>
-                    </ul>
-                    <cite class="reviews__author">Лидия Петровна</cite>
-                </blockquote>
-                <blockquote class="reviews__item">
-                    <p class="reviews__text">«Ни каких сомнений не было, клиника мне очень нравится. Всё первоклассные
-                        специалисты, я ими всеми
-                        очень доволен»</p>
-                    <ul class="reviews__rating">
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="far fa-star"></i></li>
-                        <li><i class="far fa-star"></i></li>
-                    </ul>
-                    <cite class="reviews__author">Антон Семенов</cite>
-                </blockquote>
-            </div>
-            <a href="{{route('review')}}" class="reviews__link">Смотреть все отзывы</a>
+            @include('public.part._review-list', [$reviews])
         </div>
         <div class="reviews__wrapper-bottom">
             <div class="reviews__video">

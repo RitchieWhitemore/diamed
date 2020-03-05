@@ -15,7 +15,7 @@ class ArticleController extends Controller
 
     public function view($slug)
     {
-        $article = Page::whereSlug($slug)->notHidden()->first();
+        $article = Page::whereSlug($slug)->notHidden()->firstOrFail();
         return view('public.article.view', compact('article'));
     }
 }

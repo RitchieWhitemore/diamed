@@ -31,7 +31,9 @@ class HomeController extends Controller
 
         $articles = Page::isArticles()->notHidden()->orderBy('created_at', 'desc')->limit(3)->get();
 
-        return view('public.index', compact('sliders', 'specialists', 'articles'));
+        $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
+
+        return view('public.index', compact('sliders', 'specialists', 'articles', 'reviews'));
     }
 
     public function stock()

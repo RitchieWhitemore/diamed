@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use App\Models\Service;
 
 class ServiceController extends Controller
@@ -17,7 +18,9 @@ class ServiceController extends Controller
 
         $prices = $service->prices()->showOnService()->notHidden()->get();
 
-        return view('public.service.view', compact('service', 'prices'));
+        $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
+
+        return view('public.service.view', compact('service', 'prices', 'reviews'));
     }
 
     public function prices($slug)
@@ -31,6 +34,6 @@ class ServiceController extends Controller
 
     private function getModel(string $slug)
     {
-        return Service::whereSlug($slug)->notHidden()->firstOrFail();
+        return Service::whereSlug($slug)->notHidden()->with(['specialists'])->firstOrFail();
     }
 }
