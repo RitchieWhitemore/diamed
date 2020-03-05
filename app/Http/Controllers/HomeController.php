@@ -14,11 +14,15 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use SEOMeta;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        SEOMeta::setTitle('Главная');
+        SEOMeta::setDescription('Стоматология для всей семьи. Все виды услуг от специалистов высшей квалфикации');
+
         $sliders = Slider::ordered()
             ->notHidden()
             ->where(function (Builder $query) {
@@ -38,17 +42,23 @@ class HomeController extends Controller
 
     public function promotion()
     {
+        SEOMeta::setTitle('Акции и Скидки');
+
         $promotions = Page::isPromotions()->orderByDesc('created_at')->notHidden()->paginate(15);
         return view('public.promotion', compact('promotions'));
     }
 
     public function info()
     {
+        SEOMeta::setTitle('Информация для клиентов');
+
         return view('public.info');
     }
 
     public function team()
     {
+        SEOMeta::setTitle('Специалисты');
+
         $specialists = Specialist::ordered()->notHidden()->get();
 
         return view('public.team', compact('specialists'));
@@ -56,16 +66,20 @@ class HomeController extends Controller
 
     public function contact()
     {
+        SEOMeta::setTitle('Контакты');
         return view('public.contact');
     }
 
     public function license()
     {
+        SEOMeta::setTitle('Лицензия');
         return view('public.license');
     }
 
     public function review()
     {
+        SEOMeta::setTitle('Отзывы');
+
         $reviews = Review::notHidden()->paginate(15);
         return view('public.review', compact('reviews'));
     }
@@ -93,18 +107,17 @@ class HomeController extends Controller
 
     }
 
-    public function article()
-    {
-        return view('public.article');
-    }
-
     public function sterilization()
     {
+        SEOMeta::setTitle('Стерилизация');
+
         return view('public.sterilization');
     }
 
     public function vacancy()
     {
+        SEOMeta::setTitle('Вакансии');
+
         return view('public.vacancy');
     }
 

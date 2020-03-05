@@ -91,4 +91,19 @@ class Service extends Model implements HiddenInterface
     {
         return $this->specialists()->notHidden()->get();
     }
+
+    public function getSEOTitle(): string
+    {
+        return $this->meta_title ?? $this->name;
+    }
+
+    public function getSEODescription(): string
+    {
+        return $this->meta_description ?? '';
+    }
+
+    public function getSEOKeywords(): string
+    {
+        return $this->meta_keywords ?? '';
+    }
 }

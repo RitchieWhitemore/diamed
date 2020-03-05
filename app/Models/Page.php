@@ -147,4 +147,19 @@ class Page extends Model implements HiddenInterface, HasMedia
                 ->toMediaCollection($collectionName);
         }
     }
+
+    public function getSEOTitle(): string
+    {
+        return $this->meta_title ?? $this->name;
+    }
+
+    public function getSEODescription(): string
+    {
+        return $this->meta_description ?? '';
+    }
+
+    public function getSEOKeywords(): string
+    {
+        return $this->meta_keywords ?? '';
+    }
 }

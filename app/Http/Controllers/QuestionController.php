@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use App\Traits\HiddenInterface;
 use Illuminate\Http\Request;
+use SEOMeta;
 
 class QuestionController extends Controller
 {
     public function index()
     {
+        SEOMeta::setTitle('Вопросы');
         $questions = Question::ordered()->notHidden()->get();
         return view('public.faq', compact('questions'));
     }

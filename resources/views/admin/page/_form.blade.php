@@ -30,7 +30,7 @@
                          aria-labelledby="custom-tabs-three-home-tab">
                         <div class="row">
                             <div class="col-sm-10 col-12">
-                                @if (isset($page) && $url = $page->getFirstMediaUrl('images', 'thumb-admin'))
+                                @if (isset($model) && $url = $model->getFirstMediaUrl('images', 'thumb-admin'))
                                     <img src="{{$url}}">
                                 @endif
                                 {!! Form::file('image', 'Изображение') !!}

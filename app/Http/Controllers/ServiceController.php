@@ -4,17 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use App\Models\Service;
+use SEOMeta;
 
 class ServiceController extends Controller
 {
     public function index()
     {
+        SEOMeta::setTitle('Услуги');
         return view('public.service.index');
     }
 
     public function view($slug)
     {
         $service = $this->getModel($slug);
+
+        SEOMeta::setTitle($service->getSEOTitle());
+        SEOMeta::setDescription($service->getSEODescription());
+        SEOMeta::setKeywords($service->getSEOKeywords());
 
         $prices = $service->prices()->showOnService()->notHidden()->get();
 
@@ -26,6 +32,8 @@ class ServiceController extends Controller
     public function prices($slug)
     {
         $service = $this->getModel($slug);
+
+        SEOMeta::setTitle('Цены на ' . $service->name);
 
         $prices = $service->prices()->notHidden()->get();
 

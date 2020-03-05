@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {!! SEOMeta::generate() !!}
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{asset('/css/fonts.css')}}">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
@@ -28,28 +29,28 @@
             </div>
             <ul class="main-nav__list">
                 <li class="main-nav__item"><a href="{{route('main')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'main' ? 'main-nav__link--active' : ''}}">Главная</a>
+                                              class="main-nav__link {{Request::routeIs('main') ? 'main-nav__link--active' : ''}}">Главная</a>
                 </li>
                 <li class="main-nav__item"><a href="{{route('services.index')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'services' ? 'main-nav__link--active' : ''}}">Услуги
+                                              class="main-nav__link {{Request::is(['services', 'services/*']) ? 'main-nav__link--active' : ''}}">Услуги
                         и цены</a></li>
                 <li class="main-nav__item"><a href="{{route('team')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'team' ? 'main-nav__link--active' : ''}}">Наша
+                                              class="main-nav__link {{Request::routeIs('team') ? 'main-nav__link--active' : ''}}">Наша
                         команда</a></li>
                 <li class="main-nav__item"><a href="{{route('review')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'review' ? 'main-nav__link--active' : ''}}">Отзывы</a>
+                                              class="main-nav__link {{Request::routeIs('review') ? 'main-nav__link--active' : ''}}">Отзывы</a>
                 </li>
                 <li class="main-nav__item"><a href="{{route('articles.index')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'articles.index' ? 'main-nav__link--active' : ''}}">Статьи
+                                              class="main-nav__link {{Request::is(['articles', 'articles/*']) ? 'main-nav__link--active' : ''}}">Статьи
                         и новости</a></li>
                 <li class="main-nav__item"><a href="{{route('promotion')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'promotion' ? 'main-nav__link--active' : ''}}">Акции</a>
+                                              class="main-nav__link {{Request::routeIs('promotion') ? 'main-nav__link--active' : ''}}">Акции</a>
                 </li>
                 <li class="main-nav__item"><a href="{{route('faq')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'faq' ? 'main-nav__link--active' : ''}}">Вопросы</a>
+                                              class="main-nav__link {{Request::routeIs('faq') ? 'main-nav__link--active' : ''}}">Вопросы</a>
                 </li>
                 <li class="main-nav__item"><a href="{{route('contact')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'contact' ? 'main-nav__link--active' : ''}}">Контакты</a>
+                                              class="main-nav__link {{Request::routeIs('contact') ? 'main-nav__link--active' : ''}}">Контакты</a>
                 </li>
             </ul>
             <div class="main-nav__info-wrapper">
