@@ -3,8 +3,8 @@
 
 namespace App\Models;
 
-use App\traits\HiddenInterface;
-use App\traits\HiddenTrait;
+use App\Traits\HiddenInterface;
+use App\Traits\HiddenTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -90,6 +90,9 @@ class Page extends Model implements HiddenInterface, HasMedia
 
     public function getCategoryName()
     {
+        if ($this->category) {
+            return $this->category->name;
+        }
         return '';
     }
 
@@ -97,6 +100,13 @@ class Page extends Model implements HiddenInterface, HasMedia
     {
         return $this->whereHas('category', function (Builder $query) {
             $query->where('slug', '=', 'articles');
+        })->with('category');
+    }
+
+    public function scopeIsPromotions()
+    {
+        return $this->whereHas('category', function (Builder $query) {
+            $query->where('slug', '=', 'promotions');
         })->with('category');
     }
 
@@ -110,6 +120,11 @@ class Page extends Model implements HiddenInterface, HasMedia
             ->width(350)
             ->height(370)
             ->crop(Manipulations::CROP_TOP, 350, 370);
+
+        $this->addMediaConversion('promo-small')
+            ->width(270)
+            ->height(385)
+            ->crop(Manipulations::CROP_TOP, 270, 385);
     }
 
     /**

@@ -36,9 +36,10 @@ class HomeController extends Controller
         return view('public.index', compact('sliders', 'specialists', 'articles', 'reviews'));
     }
 
-    public function stock()
+    public function promotion()
     {
-        return view('public.stock');
+        $promotions = Page::isPromotions()->orderByDesc('created_at')->notHidden()->paginate(15);
+        return view('public.promotion', compact('promotions'));
     }
 
     public function info()

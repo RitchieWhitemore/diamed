@@ -42,8 +42,8 @@
                 <li class="main-nav__item"><a href="{{route('articles.index')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'articles.index' ? 'main-nav__link--active' : ''}}">Статьи
                         и новости</a></li>
-                <li class="main-nav__item"><a href="{{route('stock')}}"
-                                              class="main-nav__link {{Route::currentRouteName() == 'stock' ? 'main-nav__link--active' : ''}}">Акции</a>
+                <li class="main-nav__item"><a href="{{route('promotion')}}"
+                                              class="main-nav__link {{Route::currentRouteName() == 'promotion' ? 'main-nav__link--active' : ''}}">Акции</a>
                 </li>
                 <li class="main-nav__item"><a href="{{route('faq')}}"
                                               class="main-nav__link {{Route::currentRouteName() == 'faq' ? 'main-nav__link--active' : ''}}">Вопросы</a>
@@ -66,9 +66,7 @@
                     без выходных
                 </p>
                 <ul class="main-nav__info-social social__list">
-                    <li class="social__item"><a href="#" class="social__link social__link--vk">Вконтакте</a></li>
-                    <li class="social__item"><a href="#" class="social__link social__link--fb">Facebook</a></li>
-                    <li class="social__item"><a href="#" class="social__link social__link--ok">Одноклассники</a></li>
+                    @include('public.part._social')
                 </ul>
             </div>
         </nav>
@@ -93,7 +91,8 @@
                             цены</a></li>
                     <li class="main-footer__item"><a href="{{route('team')}}" class="main-footer__link">Наша команда</a>
                     </li>
-                    <li class="main-footer__item"><a href="{{route('stock')}}" class="main-footer__link">Акции</a></li>
+                    <li class="main-footer__item"><a href="{{route('promotion')}}" class="main-footer__link">Акции</a>
+                    </li>
                     <li class="main-footer__item"><a href="{{route('contact')}}" class="main-footer__link">Контакты</a>
                     </li>
                 </ul>
@@ -101,17 +100,13 @@
         </div>
         <div class="main-footer__social-wrapper">
             <ul class="main-footer__social social__list social__list--grey">
-                <li class="social__item"><a href="#" class="social__link social__link--vk">Вконтакте</a></li>
-                <li class="social__item"><a href="#" class="social__link social__link--fb">Facebook</a></li>
-                <li class="social__item"><a href="#" class="social__link social__link--ok">Одноклассники</a></li>
+                @include('public.part._social')
             </ul>
         </div>
     </div>
     <div class="main-footer__social-wrapper--mobile">
         <ul class="main-footer__social social__list social__list--grey">
-            <li class="social__item"><a href="#" class="social__link social__link--vk">Вконтакте</a></li>
-            <li class="social__item"><a href="#" class="social__link social__link--fb">Facebook</a></li>
-            <li class="social__item"><a href="#" class="social__link social__link--ok">Одноклассники</a></li>
+            @include('public.part._social')
         </ul>
     </div>
 </footer>

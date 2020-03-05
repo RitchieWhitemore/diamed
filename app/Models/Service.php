@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\traits\HiddenInterface;
-use App\traits\HiddenTrait;
+use App\Traits\HiddenInterface;
+use App\Traits\HiddenTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 

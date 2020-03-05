@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var $promotions \App\Models\Page[]
+ */
+?>
+
 @extends('layouts.main')
 
 @section('content')
@@ -6,7 +12,7 @@
             <h1>Система скидок</h1>
         </header>
         <div class="stock__system container">
-            <a href="#" class="stock__link">Посмотреть сезонные акции</a>
+            <a href="{{route('promotion')}}" class="stock__link">Посмотреть сезонные акции</a>
             <ul class="stock__system-list">
                 <li class="stock__system-item stock__system-item--family">
                     <h3>Семейная скидка</h3>
@@ -75,31 +81,16 @@
                     <h2 class="stock__title title">Акции</h2>
                 </div>
                 <ul class="stock__list">
-                    <li class="stock__item">
-                        <div class="stock__image-wrapper">
-                            <img src="/img/stock/akzia32.jpg">
-                        </div>
-                        <h3>Время чудес</h3>
-                    </li>
-                    <li class="stock__item">
-                        <div class="stock__image-wrapper">
-                            <img src="/img/stock/akzia33.jpg">
-                        </div>
-                        <h3>Зимняя акция 2018</h3>
-                    </li>
-                    <li class="stock__item">
-                        <div class="stock__image-wrapper">
-                            <img src="/img/stock/akzia34.jpg">
-                        </div>
-                        <h3>Акция "Осенние скидки"</h3>
-                    </li>
-                    <li class="stock__item">
-                        <div class="stock__image-wrapper">
-                            <img src="/img/stock/akzia35.jpg">
-                        </div>
-                        <h3>Импланты Straumann</h3>
-                    </li>
+                    @foreach($promotions as $promotion)
+                        <li class="stock__item">
+                            <div class="stock__image-wrapper">
+                                <img src="{{$promotion->getFirstMediaUrl('images', 'promo-small')}}">
+                            </div>
+                            <h3>{{$promotion->name}}</h3>
+                        </li>
+                    @endforeach
                 </ul>
+                {{$promotions->links('public.part._pagination')}}
                 <p class="stock__note">Акции проводятся на усмотрение администрации<br>
                     ООО «Диамед» оставляет за собой право отменять, изменять условия и сроки действия Акций</p>
             </div>

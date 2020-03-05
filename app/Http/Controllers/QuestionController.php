@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
-use App\traits\HiddenInterface;
+use App\Traits\HiddenInterface;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller

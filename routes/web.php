@@ -16,7 +16,7 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
 
 Route::get('/', 'HomeController@index')->name('main');
 
-Route::get('/stock', 'HomeController@stock')->name('stock');
+Route::get('/promotions', 'HomeController@promotion')->name('promotion');
 
 Route::get('/info', 'HomeController@info')->name('info');
 

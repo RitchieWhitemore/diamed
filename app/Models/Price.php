@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\traits\HiddenInterface;
-use App\traits\HiddenTrait;
+use App\Traits\HiddenInterface;
+use App\Traits\HiddenTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;

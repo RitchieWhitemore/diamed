@@ -19,6 +19,7 @@
         <thead>
         <tr>
             <th>ID</th>
+            <th>Категория</th>
             <th>Наименование</th>
             <th>Псевдоним</th>
             <th></th>
@@ -29,6 +30,7 @@
         @foreach ($pages as $page)
             <tr>
                 <td>{{ $page->id }}</td>
+                <td>{{ $page->getCategoryName() }}</td>
                 <td><a href="{{ route('admin.pages.show', $page) }}">{{ $page->name }}</a></td>
                 <td>{{ $page->slug }}</td>
                 <td class="action-column">

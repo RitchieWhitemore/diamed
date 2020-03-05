@@ -2,8 +2,8 @@
 
 namespace App\models;
 
-use App\traits\HiddenInterface;
-use App\traits\HiddenTrait;
+use App\Traits\HiddenInterface;
+use App\Traits\HiddenTrait;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
