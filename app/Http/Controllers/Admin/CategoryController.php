@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Str;
 
 class CategoryController extends Controller
 {
@@ -19,7 +18,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.categories.index', ['categories' => $categories]);
+        return view('admin.category.index', ['categories' => $categories]);
     }
 
     /**
@@ -29,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.category.create');
     }
 
     /**
@@ -54,18 +53,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::create($request->all());
 
-        if (isset($request['image'])) {
-            $fileName = Str::before($request->file('image')->getClientOriginalName(),
-                '.' . $request->file('image')->getClientOriginalExtension());
-            $fileName = Str::slug($fileName);
-
-            $category->clearMediaCollectionExcept('images', $category->getFirstMedia());
-            $category->addMediaFromRequest('image')
-                ->preservingOriginal()
-                ->usingName($fileName)
-                ->usingFileName($fileName . '.' . $request->file('image')->getClientOriginalExtension())
-                ->toMediaCollection('images');
-        }
+        $category->uploadImage('image', $request, 'images');
 
         return redirect()->route('admin.categories.show', $category);
     }
@@ -76,7 +64,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('admin.categories.show', compact('category'));
+        return view('admin.category.show', compact('category'));
     }
 
     /**
@@ -86,7 +74,8 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         $parents = Category::defaultOrder()->withDepth()->get();
-        return view('admin.categories.edit', compact('category', 'parents'));
+
+        return view('admin.category.edit', compact('category', 'parents'));
     }
 
     /**
@@ -115,19 +104,7 @@ class CategoryController extends Controller
 
 
         $category->update($request->all());
-
-        if (isset($request['image'])) {
-            $fileName = Str::before($request->file('image')->getClientOriginalName(),
-                '.' . $request->file('image')->getClientOriginalExtension());
-            $fileName = Str::slug($fileName);
-
-            $category->clearMediaCollectionExcept('images', $category->getFirstMedia());
-            $category->addMediaFromRequest('image')
-                ->preservingOriginal()
-                ->usingName($fileName)
-                ->usingFileName($fileName . '.' . $request->file('image')->getClientOriginalExtension())
-                ->toMediaCollection('images');
-        }
+        $category->uploadImage('image', $request, 'images');
 
         return redirect()->route('admin.categories.show', $category);
     }

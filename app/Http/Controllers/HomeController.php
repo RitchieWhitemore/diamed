@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ReviewMail;
 use App\Mail\SignupMail;
+use App\Models\Page;
 use App\Models\Review;
 use App\models\Slider;
 use App\models\Specialist;
@@ -28,7 +29,9 @@ class HomeController extends Controller
 
         $specialists = Specialist::ordered()->notHidden()->limit(4)->get();
 
-        return view('public.index', compact('sliders', 'specialists'));
+        $articles = Page::isArticles()->notHidden()->orderBy('created_at', 'desc')->limit(3)->get();
+
+        return view('public.index', compact('sliders', 'specialists', 'articles'));
     }
 
     public function stock()

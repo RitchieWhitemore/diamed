@@ -6,7 +6,14 @@ namespace App\Models;
 use App\traits\HiddenInterface;
 use App\traits\HiddenTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Spatie\Image\Manipulations;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
+use Str;
 
 /**
  * Class Page
@@ -45,9 +52,9 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page notHidden()
  */
-class Page extends Model implements HiddenInterface
+class Page extends Model implements HiddenInterface, HasMedia
 {
-    use Sluggable, HiddenTrait;
+    use Sluggable, HiddenTrait, HasMediaTrait;
 
     protected $fillable = [
         'category_id',
@@ -84,5 +91,45 @@ class Page extends Model implements HiddenInterface
     public function getCategoryName()
     {
         return '';
+    }
+
+    public function scopeIsArticles()
+    {
+        return $this->whereHas('category', function (Builder $query) {
+            $query->where('slug', '=', 'articles');
+        })->with('category');
+    }
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb-admin')
+            ->width(100)
+            ->height(100);
+
+        $this->addMediaConversion('public')
+            ->width(350)
+            ->height(370)
+            ->crop(Manipulations::CROP_TOP, 350, 370);
+    }
+
+    /**
+     * @param $attribute
+     * @param Request $request
+     * @param $collectionName
+     */
+    public function uploadImage($attribute, Request $request, $collectionName)
+    {
+        if (isset($request[$attribute])) {
+            $fileName = Str::before($request->file($attribute)->getClientOriginalName(),
+                '.' . $request->file($attribute)->getClientOriginalExtension());
+            $fileName = Str::slug($fileName);
+
+            $this->clearMediaCollectionExcept($collectionName, $this->getFirstMedia());
+            $this->addMediaFromRequest($attribute)
+                ->preservingOriginal()
+                ->usingName($fileName)
+                ->usingFileName($fileName . '.' . $request->file($attribute)->getClientOriginalExtension())
+                ->toMediaCollection($collectionName);
+        }
     }
 }

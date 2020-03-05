@@ -1,21 +1,21 @@
 <?php
 /**
- * @var $model \App\Models\Page
+ * @var $category \App\Models\Category
  */
 ?>
 
 @extends('adminlte::page')
 
-@section('title', 'Просмотр страницы')
+@section('title', 'Просмотр категории')
 
 @section('content_header')
-    <h1>Просмотр страницы</h1>
+    <h1>Просмотр категории</h1>
 @stop
 
 @section('content')
     <div class="d-flex flex-row mb-3">
-        <a href="{{ route('admin.pages.edit', $model) }}" class="btn btn-primary mr-1">Редактировать</a>
-        <form method="POST" action="{{ route('admin.pages.destroy', $model) }}" class="mr-1">
+        <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-primary mr-1">Редактировать</a>
+        <form method="POST" action="{{ route('admin.categories.destroy', $category) }}" class="mr-1">
             @csrf
             @method('DELETE')
             <button class="btn btn-danger">Удалить</button>
@@ -30,31 +30,39 @@
                 <tbody>
                 <tr>
                     <th>ID</th>
-                    <td>{{ $model->id }}</td>
+                    <td>{{ $category->id }}</td>
                 </tr>
                 <tr>
-                    <th>Категория</th>
-                    <td>{{ $model->category->name }}</td>
+                    <th>Родитель</th>
+                    <td>{{ $category->getParentName() }}</td>
                 </tr>
                 <tr>
                     <th>Название</th>
-                    <td>{{ $model->name }}</td>
+                    <td>{{ $category->name }}</td>
                 </tr>
                 <tr>
                     <th>Название меню</th>
-                    <td>{{ $model->menu_name }}</td>
+                    <td>{{ $category->menu_name }}</td>
                 </tr>
                 <tr>
                     <th>Псевдоним</th>
-                    <td>{{ $model->slug }}</td>
+                    <td>{{ $category->slug }}</td>
+                </tr>
+                <tr>
+                    <th>Изображение</th>
+                    <td>
+                        @if ($src = $category->getFirstMediaUrl('images', 'thumb-admin'))
+                            <img src="{{$src}}">
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>Текст</th>
-                    <td class="html-viewer">{!! Purifier::clean($model->text); !!}</td>
+                    <td class="html-viewer">{!! Purifier::clean($category->text); !!}</td>
                 </tr>
                 <tr>
                     <th>Скрыто</th>
-                    <td>{{ $model->getHiddenValue() }}</td>
+                    <td>{{ $category->hidden }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -70,15 +78,15 @@
                 <tbody>
                 <tr>
                     <th>Meta title</th>
-                    <td>{{ $model->meta_title }}</td>
+                    <td>{{ $category->meta_title }}</td>
                 </tr>
                 <tr>
                     <th>Meta description</th>
-                    <td>{{ $model->meta_description }}</td>
+                    <td>{{ $category->meat_description }}</td>
                 </tr>
                 <tr>
                     <th>Meta keywords</th>
-                    <td>{{ $model->meta_keywords }}</td>
+                    <td>{{ $category->meta_keywords }}</td>
                 </tr>
                 </tbody>
             </table>

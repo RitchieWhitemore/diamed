@@ -10,9 +10,9 @@
 @section('content')
     <section class="service-page page">
         <header class="service-page__header page__header">
-            <h1>Лечение зубов</h1>
+            <h1>{{$service->name}}</h1>
         </header>
-        <div class="page__content">
+        <div class="page__content container">
             {!! $service->text !!}
             {{--<div class="service-page__content-header container">
                 <div class="page__col-left service-page__col-left">

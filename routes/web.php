@@ -30,14 +30,17 @@ Route::get('/reviews', 'HomeController@review')->name('review');
 
 Route::post('/reviews', 'HomeController@sendReview')->name('sendReview');
 
-Route::get('/articles', 'HomeController@article')->name('article');
-
 Route::get('/sterilization', 'HomeController@sterilization')->name('sterilization');
 
 Route::group(['prefix' => 'services', 'as' => 'services.'], function () {
     Route::get('/', 'ServiceController@index')->name('index');
     Route::get('/{slug}', 'ServiceController@view')->name('view');
     Route::get('/{slug}/prices', 'ServiceController@prices')->name('price');
+});
+
+Route::group(['prefix' => 'articles', 'as' => 'articles.'], function () {
+    Route::get('/', 'ArticleController@index')->name('index');
+    Route::get('/{slug}', 'ArticleController@view')->name('view');
 });
 
 Route::get('/vacancies', 'HomeController@vacancy')->name('vacancy');

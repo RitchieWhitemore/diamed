@@ -5,10 +5,12 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
+use Str;
 
 /**
  * Class Category
@@ -139,6 +141,27 @@ class Category extends Model implements HasMedia
         $this->addMediaConversion('thumb-admin')
             ->width(100)
             ->height(100);
+    }
+
+    /**
+     * @param $attribute
+     * @param Request $request
+     * @param $collectionName
+     */
+    public function uploadImage($attribute, Request $request, $collectionName)
+    {
+        if (isset($request[$attribute])) {
+            $fileName = Str::before($request->file($attribute)->getClientOriginalName(),
+                '.' . $request->file($attribute)->getClientOriginalExtension());
+            $fileName = Str::slug($fileName);
+
+            $this->clearMediaCollectionExcept($collectionName, $this->getFirstMedia());
+            $this->addMediaFromRequest($attribute)
+                ->preservingOriginal()
+                ->usingName($fileName)
+                ->usingFileName($fileName . '.' . $request->file($attribute)->getClientOriginalExtension())
+                ->toMediaCollection($collectionName);
+        }
     }
 
     /**

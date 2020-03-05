@@ -18,7 +18,7 @@ class PageController extends Controller
     {
         $pages = Page::all();
 
-        return view('admin.pages.index', ['pages' => $pages]);
+        return view('admin.page.index', ['pages' => $pages]);
     }
 
     /**
@@ -28,7 +28,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.create');
+        return view('admin.page.create');
     }
 
     /**
@@ -46,11 +46,13 @@ class PageController extends Controller
             'category_id' => 'integer',
             'hidden' => 'integer',
             'slug' => 'nullable|string|exists:pages,slug|unique:pages,slug',
+            'image' => 'nullable|image',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
         ]);
         $page = Page::create($request->all());
+        $page->uploadImage('image', $request, 'images');
 
         return redirect()->route('admin.pages.show', $page);
     }
@@ -61,7 +63,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        return view('admin.pages.show', ['model' => $page]);
+        return view('admin.page.show', ['model' => $page]);
     }
 
     /**
@@ -70,7 +72,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        return view('admin.pages.edit', ['model' => $page]);
+        return view('admin.page.edit', ['model' => $page]);
     }
 
     /**
@@ -91,11 +93,13 @@ class PageController extends Controller
                 'string',
                 Rule::unique('pages', 'slug')->ignore($page->id),
             ],
+            'image' => 'nullable|image',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
         ]);
         $page->update($request->all());
+        $page->uploadImage('image', $request, 'images');
 
         return redirect()->route('admin.pages.show', $page);
     }

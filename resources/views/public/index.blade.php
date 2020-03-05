@@ -134,34 +134,11 @@
             <h2 class="articles__title title">Полезные статьи и новости</h2>
         </header>
         <div class="articles__list">
-            <div class="articles__item">
-                <a href="#">
-                    <div class="articles__image-wrapper">
-                        <img src="/img/article1.jpg">
-                    </div>
-                    <h3>Секреты идеальной улыбки</h3>
-                </a>
-            </div>
-            <div class="articles__item">
-                <a href="#">
-                    <div class="articles__image-wrapper">
-                        <img src="/img/article2.jpg">
-                    </div>
-                    <h3>Рекомендации для пациента
-                        после имплантации</h3>
-                </a>
-            </div>
-            <div class="articles__item">
-                <a href="#">
-                    <div class="articles__image-wrapper">
-                        <img src="/img/article3.jpg">
-                    </div>
-                    <h3>Адаптация ребенка к стоматологи-
-                        ческому лечению</h3>
-                </a>
-            </div>
+            @foreach($articles as $article)
+                @include('public.part._article-item', [$article])
+            @endforeach
         </div>
-        <a href="{{route('article')}}" class="btn article__btn">Больше информации</a>
+        <a href="{{route('articles.index')}}" class="btn article__btn">Больше информации</a>
     </section>
     <section class="reviews">
         <div class="reviews__wrapper">
