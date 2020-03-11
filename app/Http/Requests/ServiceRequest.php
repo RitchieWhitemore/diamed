@@ -30,10 +30,11 @@ class ServiceRequest extends FormRequest
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
             'hidden' => 'integer',
-            'slug' => 'nullable|string|exists:pages,slug|unique:pages,slug',
+            'slug' => 'nullable|string|unique:services,slug',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
+            'specialists' => 'array'
         ];
 
         if ($this->isMethod('PUT')) {

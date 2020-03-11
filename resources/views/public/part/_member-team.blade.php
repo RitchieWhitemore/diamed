@@ -1,9 +1,9 @@
 <div class="member">
     <picture>
         <source media="(min-width:540px)"
-                srcset="{{$specialist->getFirstMedia('specialist_photo')->getUrl('public')}}">
+                srcset="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}">
 
-        <img src="{{$specialist->getFirstMedia('specialist_photo')->getUrl('public-mobile')}}" alt="">
+        <img src="{{$specialist->getFirstMediaUrl('specialist_photo', 'public-mobile')}}" alt="">
     </picture>
     <h3 class="member__title">
         <span>{{$specialist->last_name}}</span><br>{{$specialist->first_name}} {{$specialist->middle_name}}</h3>

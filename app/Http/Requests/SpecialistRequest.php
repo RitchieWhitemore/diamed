@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class SpecialistRequest extends FormRequest
 {
@@ -31,19 +30,19 @@ class SpecialistRequest extends FormRequest
             'middle_name' => 'string',
             'description' => 'required|string',
             'begin_work' => 'date',
-            'specialist_photo' => 'required|image',
+            'specialist_photo' => 'image',
             //'certificate' => 'image',
             'hidden' => 'integer'
         ];
 
-        if ($this->isMethod('PUT')) {
-            $rules['specialist_photo'] = [
-                Rule::requiredIf(function () {
-                    return $this->has(['specialist_photo']);
-                }),
-                'image'
-            ];
-        }
+        /* if ($this->isMethod('PUT')) {
+             $rules['specialist_photo'] = [
+                 Rule::requiredIf(function () {
+                     return $this->has(['specialist_photo']);
+                 }),
+                 'image'
+             ];
+         }*/
 
         return $rules;
     }

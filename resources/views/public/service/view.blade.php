@@ -114,7 +114,7 @@
             </div>
         </section>
     @endif
-    @if(!empty($specialists = $service->specialists))
+    @if($specialists->isNotEmpty())
     <section class="team">
         <header class="team__header">
             <h2 class="title team__title">К кому записаться</h2>

@@ -26,7 +26,9 @@ class ServiceController extends Controller
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 
-        return view('public.service.view', compact('service', 'prices', 'reviews'));
+        $specialists = $service->specialists()->get();
+
+        return view('public.service.view', compact('service', 'prices', 'reviews', 'specialists'));
     }
 
     public function prices($slug)
@@ -37,11 +39,15 @@ class ServiceController extends Controller
 
         $prices = $service->prices()->notHidden()->get();
 
-        return view('public.service.price', compact('prices'));
+        $specialists = $service->specialists()->get();
+
+        $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
+
+        return view('public.service.price', compact('prices', 'specialists', 'reviews'));
     }
 
     private function getModel(string $slug)
     {
-        return Service::whereSlug($slug)->notHidden()->with(['specialists'])->firstOrFail();
+        return Service::whereSlug($slug)->notHidden()->firstOrFail();
     }
 }

@@ -27,7 +27,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.service.create');
+        $specialists = [];
+        return view('admin.service.create', compact('specialists'));
     }
 
     /**
@@ -48,7 +49,7 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
     public function show(Service $service)
@@ -59,19 +60,20 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
     public function edit(Service $service)
     {
-        return view('admin.service.edit', ['model' => $service]);
+        $specialists = $service->specialistListIds();
+        return view('admin.service.edit', ['model' => $service, 'specialists' => $specialists]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param ServiceRequest $request
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
     public function update(ServiceRequest $request, Service $service)

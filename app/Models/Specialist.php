@@ -108,6 +108,13 @@ class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
             ->width(896);
     }
 
+    public function registerMediaCollections()
+    {
+        $this
+            ->addMediaCollection('specialist_photo')
+            ->useFallbackUrl('/img/no-photo.jpg');
+    }
+
     /**
      * @return string
      */
