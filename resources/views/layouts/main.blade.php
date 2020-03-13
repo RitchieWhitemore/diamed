@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{asset('/css/fonts.css')}}">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
 

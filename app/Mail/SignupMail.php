@@ -32,6 +32,7 @@ class SignupMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.signup', ['name' => $this->name, 'phone' => $this->phone]);
+        return $this->view('emails.signup',
+            ['name' => $this->name, 'phone' => $this->phone])->subject('Сообщение с сайта');
     }
 }

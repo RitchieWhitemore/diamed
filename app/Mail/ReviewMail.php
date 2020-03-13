@@ -32,6 +32,6 @@ class ReviewMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.review', ['review' => $this->review]);
+        return $this->view('emails.review', ['review' => $this->review])->subject('Новый отзыв на сайте');
     }
 }
