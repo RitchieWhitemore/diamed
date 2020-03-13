@@ -13,14 +13,14 @@
             @foreach ($sliders as $slider)
                 <li class="slider__item">
                     <picture>
-                        @if ($slider->getFirstMedia('desktop_slide'))
+                        @if ($slider->getFirstMediaUrl('desktop_slide'))
                             <source media="(min-width:540px)"
-                                    srcset="{{$slider->getFirstMedia('desktop_slide')->getUrl()}}">
+                                    srcset="{{$slider->getFirstMediaUrl('desktop_slide')}}">
                         @endif
-                        @if ($slider->getFirstMedia('mobile_slide'))
-                            <img src="{{$slider->getFirstMedia('mobile_slide')->getUrl()}}" alt="">
-                        @elseif ($slider->getFirstMedia('desktop_slide'))
-                            <img src="{{$slider->getFirstMedia('desktop_slide')->getUrl()}}" alt="">
+                        @if ($slider->getFirstMediaUrl('mobile_slide'))
+                            <img src="{{$slider->getFirstMediaUrl('mobile_slide')}}" alt="">
+                        @elseif ($slider->getFirstMediaUrl('desktop_slide'))
+                            <img src="{{$slider->getFirstMediaUrl('desktop_slide')}}" alt="">
                         @endif
                     </picture>
                 </li>
@@ -120,7 +120,7 @@
             <ul id="team-slider" class="team__list">
                 @foreach ($specialists as $key => $specialist)
                 <li class="team__item">
-                    @include('public.part._member-team', ['specialist' => $specialist])
+                    @include('public.part._member-team', compact('specialist', 'key'))
                 </li>
                 @endforeach
             </ul>
@@ -141,21 +141,23 @@
         <a href="{{route('articles.index')}}" class="btn article__btn">Больше информации</a>
     </section>
     <section class="reviews">
-        <div class="reviews__wrapper">
-            <header class="reviews__header">
-                <h2 class="reviews__title title">Наша репутация</h2>
-            </header>
-            @include('public.part._review-list', [$reviews])
-        </div>
-        <div class="reviews__wrapper-bottom">
-            <div class="reviews__video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/QCfSMlXLWU8" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+        <div class="reviews__bg">
+            <div class="reviews__wrapper">
+                <header class="reviews__header">
+                    <h2 class="reviews__title title">Наша репутация</h2>
+                </header>
+                @include('public.part._review-list', [$reviews])
             </div>
-            <button class="btn reviews__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+            <div class="reviews__wrapper-bottom">
+                <div class="reviews__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QCfSMlXLWU8" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <button class="btn reviews__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+            </div>
+            <div class="reviews__illustration"></div>
         </div>
-        <div class="reviews__illustration"></div>
     </section>
     <section class="signup">
         <header class="signup__header">

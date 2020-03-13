@@ -9,7 +9,7 @@
             <ul class="team-page__list">
                 @foreach ($specialists as $key => $specialist)
                     <li class="team-page__item">
-                        @include('public.part._member-team', ['specialist' => $specialist])
+                        @include('public.part._member-team', compact('specialist', 'key'))
                     </li>
                 @endforeach
             </ul>

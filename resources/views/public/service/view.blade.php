@@ -115,23 +115,23 @@
         </section>
     @endif
     @if($specialists->isNotEmpty())
-    <section class="team">
-        <header class="team__header">
-            <h2 class="title team__title">К кому записаться</h2>
-        </header>
-        <div class="team__list-wrapper">
-            <ul id="team-slider" class="team__list">
-                @foreach($specialists as $specialist)
-                <li class="team__item">
-                    @include('public.part._member-team', ['specialist' => $specialist])
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="team__illustration">
-        </div>
-        <a href="{{route('team')}}" class="btn team__btn">Больше специалистов</a>
-    </section>
+        <section class="team">
+            <header class="team__header">
+                <h2 class="title team__title">К кому записаться</h2>
+            </header>
+            <div class="team__list-wrapper">
+                <ul id="team-slider" class="team__list team-page__list">
+                    @foreach($specialists as $key => $specialist)
+                        <li class="team__item">
+                            @include('public.part._member-team', compact('specialist', 'key'))
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="team__illustration">
+            </div>
+            <a href="{{route('team')}}" class="btn team__btn">Больше специалистов</a>
+        </section>
     @endif
     <section class="reviews">
         <div class="reviews__wrapper">

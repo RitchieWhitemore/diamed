@@ -15,7 +15,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::paginate(15);
+        $reviews = Review::orderByDesc('created_at')->paginate(15);
 
         return view('admin.review.index', compact('reviews'));
     }

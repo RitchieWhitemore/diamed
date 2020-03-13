@@ -206,7 +206,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>--}}
 <script src="{{ asset('js/admin/admin.js') }}"></script>
 <script src="{{ asset('vendor/laravel-filemanager/js/cropper.min.js') }}"></script>
-<script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>
+{{--<script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>--}}
 <script>
     var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
     var actions = [

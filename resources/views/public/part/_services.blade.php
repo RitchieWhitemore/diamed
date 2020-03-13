@@ -3,7 +3,8 @@
     <ul class="services__list">
         <li class="services__item"><a href="{{route('services.view', 'diagnostics')}}" class="services__link">Диагностика</a>
         </li>
-        <li class="services__item"><a href="#" class="services__link">Лечение зубов</a>
+        <li class="services__item"><a href="{{route('services.view', 'dental-treatment')}}" class="services__link">Лечение
+                зубов</a>
         </li>
         <li class="services__item"><a href="#" class="services__link">Лечение десен</a>
         </li>

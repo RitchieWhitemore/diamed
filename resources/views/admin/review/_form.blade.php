@@ -22,7 +22,7 @@
 </div>
 <div class="row">
     <div class="col-sm-12 col-12">
-        {!!Form::textarea('text', 'Отзыв')!!}
+        {!!Form::textarea('text', 'Отзыв')->attrs(['rows' => 10])!!}
     </div>
 </div>
 <div class="row">

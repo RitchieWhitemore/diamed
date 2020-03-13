@@ -80,7 +80,7 @@ class HomeController extends Controller
     {
         SEOMeta::setTitle('Отзывы');
 
-        $reviews = Review::notHidden()->paginate(15);
+        $reviews = Review::notHidden()->orderByDesc('created_at')->paginate(15);
         return view('public.review', compact('reviews'));
     }
 

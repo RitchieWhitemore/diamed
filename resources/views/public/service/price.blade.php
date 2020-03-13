@@ -34,9 +34,9 @@
             </header>
             <div class="team__list-wrapper">
                 <ul id="team-slider" class="team__list">
-                    @foreach($specialists as $specialist)
+                    @foreach($specialists as $key => $specialist)
                         <li class="team__item">
-                            @include('public.part._member-team', ['specialist' => $specialist])
+                            @include('public.part._member-team', compact('specialist', 'key'))
                         </li>
                     @endforeach
                 </ul>

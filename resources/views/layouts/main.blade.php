@@ -19,7 +19,9 @@
             <div class="main-header__btn-menu-bar3"></div>
         </button>
         <div class="main-header__logo-wrapper ">
-            <img class="main-header__logo" src="/img/logo.png">
+            <a href="/">
+                <img class="main-header__logo" src="/img/logo.png">
+            </a>
         </div>
         <a href="tel:88888888" class="main-header__phone"></a>
         <nav class="main-nav main-nav--close">
