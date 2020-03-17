@@ -12,19 +12,6 @@
   }
 }
 
-.page__image-wrapper {
-  margin: 0 auto;
-  margin-bottom: 15px;
-  width: 290px;
-  height: 190px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
 .sterilization__wrapper {
   padding-top: 80px;
   background-image: url("/img/bg-sterilization-mobile.jpg");
@@ -100,12 +87,6 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: row-reverse;
-  }
-
-  .page__image-wrapper {
-    width: 571px;
-    height: 377px;
-    border-radius: 20px;
   }
 
   .sterilization__col-left {

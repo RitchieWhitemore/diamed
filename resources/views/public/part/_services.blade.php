@@ -6,7 +6,8 @@
         <li class="services__item"><a href="{{route('services.view', 'dental-treatment')}}" class="services__link">Лечение
                 зубов</a>
         </li>
-        <li class="services__item"><a href="#" class="services__link">Лечение десен</a>
+        <li class="services__item"><a href="{{route('services.view', 'gum-treatment')}}" class="services__link">Лечение
+                десен</a>
         </li>
     </ul>
 </div>

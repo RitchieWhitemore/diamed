@@ -26,7 +26,7 @@ class ServiceController extends Controller
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 
-        $specialists = $service->specialists()->get();
+        $specialists = $service->specialists()->orderBy('order_column')->get();
 
         return view('public.service.view', compact('service', 'prices', 'reviews', 'specialists'));
     }
@@ -39,7 +39,7 @@ class ServiceController extends Controller
 
         $prices = $service->prices()->notHidden()->get();
 
-        $specialists = $service->specialists()->get();
+        $specialists = $service->specialists()->orderBy('order_column')->get();
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 

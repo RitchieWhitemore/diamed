@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {!! SEOMeta::generate() !!}
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{asset('/css/fonts.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('/css/fonts.css')}}">
+    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
@@ -114,7 +114,7 @@
     </div>
 </footer>
 @include ('layouts.modals')
-<script src="{{ asset('/js/app.js') }}"></script>
-<script src="{{ asset('/js/scripts.js') }}"></script>
+<script src="{{ mix('/js/app.js') }}"></script>
+<script src="{{ mix('/js/scripts.js') }}"></script>
 </body>
 </html>

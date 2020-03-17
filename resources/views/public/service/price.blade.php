@@ -47,18 +47,20 @@
         </section>
     @endif
     <section class="reviews">
-        <div class="reviews__wrapper">
-            @include('public.part._review-list', [$reviews])
-        </div>
-        <div class="reviews__wrapper-bottom">
-            <div class="reviews__video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/QCfSMlXLWU8" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+        <div class="reviews__bg">
+            <div class="reviews__wrapper">
+                @include('public.part._review-list', [$reviews])
             </div>
-            <button class="btn reviews__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+            <div class="reviews__wrapper-bottom">
+                <div class="reviews__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QCfSMlXLWU8" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <button class="btn reviews__btn" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+            </div>
+            <div class="reviews__illustration"></div>
         </div>
-        <div class="reviews__illustration"></div>
     </section>
     <p class="page__slogan">Ваши улыбки - наша работа!</p>
     @include ('layouts.signup-page')

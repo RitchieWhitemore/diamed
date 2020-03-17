@@ -42,7 +42,7 @@
 
                                 {!! Form::text('menu_name', 'Наименование для меню') !!}
 
-                                {!! Form::select('specialists[]', 'Специалисты', \App\models\Specialist::pluck('name', 'id'), empty(old('specialists')) ? $specialists : old('specialists'))->multiple()->attrs(['class' => 'selectpicker']) !!}
+                                {!! Form::select('specialists[]', 'Специалисты', \App\models\Specialist::orderBy('order_column')->pluck('name', 'id'), empty(old('specialists')) ? $specialists : old('specialists'))->multiple()->attrs(['class' => 'selectpicker']) !!}
 
                                 {!! Form::select('hidden', 'Скрыто', \App\Models\Page::getHiddenArray()) !!}
                             </div>
