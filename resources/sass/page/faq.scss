@@ -1,135 +1,135 @@
 .faq {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 
-  background-image: url("/img/bg-faq-mobile.png");
-  background-repeat: no-repeat;
-  background-position: bottom center;
+    background-image: url("/img/bg-faq-mobile.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
 }
 
 .faq__list {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 15px;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    list-style: none;
 }
 
 .faq__item {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 17px 0;
-  color: $font-color-red;
-  font-size: 14px;
-  font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 17px 0;
+    color: $font-color-red;
+    font-size: 14px;
+    font-weight: normal;
 
-  &.collapsed {
-    color: $font-color-grey;
-    font-weight: 300;
+    &.collapsed {
+        color: $font-color-grey;
+        font-weight: 300;
+
+        &::before {
+            content: "\f13a";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+    }
 
     &::before {
-      content: "\f13a";
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
+        margin-right: 10px;
+        content: "\f139";
+        display: block;
+
+        font-size: 14px;
+        line-height: 20px;
+        color: $font-color-red;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
     }
-  }
-
-  &::before {
-    margin-right: 10px;
-    content: "\f139";
-    display: block;
-
-    font-size: 14px;
-    line-height: 20px;
-    color: $font-color-red;
-    font-family: 'Font Awesome 5 Pro';
-    font-weight: 300;
-  }
 
 }
 
 .faq__item-title {
-  width: 91%;
-  margin-right: auto;
+    width: 91%;
+    margin-right: auto;
 }
 
 .faq__description {
-  width: 100%;
-  padding: 0 24px;
+    width: 100%;
+    padding: 0 24px;
 
-  p {
-    margin: 0;
-    padding-top: 12px;
-    font-size: 12px;
-    font-weight: 300;
-    color: $font-color-grey;
-  }
+    p {
+        margin: 0;
+        padding-top: 12px;
+        font-size: 12px;
+        font-weight: 300;
+        color: $font-color-grey;
+    }
 }
 
 .faq__form-wrapper {
-  padding: 30px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  & label {
-    display: none;
-    margin: 0;
-  }
+    & label {
+        display: none;
+        margin: 0;
+    }
 
-  .form-check-label {
-    display: block;
-  }
+    .form-check-label {
+        display: block;
+    }
 }
 
 .faq__form-title {
-  margin-bottom: 25px;
-  text-align: center;
-  font-size: 1.0rem;
-  color: $font-color-aqua;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.0rem;
+    color: $font-color-aqua;
 }
 
 @media (min-width: 992px) {
-  .faq {
-    margin-bottom: 160px;
-    background: url("/img/bg-faq.png") no-repeat right bottom,
-    url("/img/bg-faq-left.png") no-repeat left bottom;
-  }
-
-  .faq__item {
-    font-size: 18px;
-  }
-
-  .faq__description {
-    width: 900px;
-  }
-
-  .faq__form-wrapper {
-    padding: 30px 80px;
-    border-radius: 40px;
-    height: 467px;
-  }
-
-  .faq__form-wrapper2 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 320px;
-    width: 100%;
-  }
-
-  .faq__form {
-    .form-group {
-      width: 370px;
+    .faq {
+        margin-bottom: 160px;
+        background: url("/img/bg-faq.png") no-repeat right bottom,
+        url("/img/bg-faq-left.png") no-repeat left bottom;
     }
 
-    .btn {
-      order: 4;
+    .faq__item {
+        font-size: 18px;
     }
 
-    .faq__textarea {
-      order: 3;
+    .faq__description {
+        width: 900px;
     }
-  }
+
+    .faq__form-wrapper {
+        padding: 30px 80px;
+        border-radius: 40px;
+        height: 467px;
+    }
+
+    .faq__form-wrapper2 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 320px;
+        width: 100%;
+    }
+
+    .faq__form {
+        .form-group {
+            width: 370px;
+        }
+
+        .btn {
+            order: 4;
+        }
+
+        .faq__textarea {
+            order: 3;
+        }
+    }
 
 
 }
