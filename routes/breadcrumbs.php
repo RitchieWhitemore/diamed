@@ -6,6 +6,7 @@ use App\Models\Price;
 use App\Models\Question;
 use App\Models\Review;
 use App\Models\Service;
+use App\Models\ServicePrice;
 use App\models\Slider;
 use App\models\Specialist;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
@@ -166,6 +167,34 @@ Breadcrumbs::for('admin.services.prices.edit', function (Crumbs $crumbs, Service
     $crumbs->push('Редактирование: ' . $price->name,
         route('admin.services.edit', ['service' => $service, 'price' => $price]));
 });
+
+// Admin - Price on Service
+Breadcrumbs::register('admin.services.service_prices.index', function (Crumbs $crumbs, Service $service) {
+    $crumbs->parent('admin.services.show', $service);
+    $crumbs->push('Цены', route('admin.services.index', $service));
+});
+
+Breadcrumbs::register('admin.services.service_prices.create', function (Crumbs $crumbs, Service $service) {
+    $crumbs->parent('admin.services.show', $service);
+    $crumbs->push('Цены на странице услуг', route('admin.services.service_prices.index', [$service]));
+    $crumbs->push('Добавить цену', route('admin.services.service_prices.create', $service));
+});
+
+Breadcrumbs::for('admin.services.service_prices.show',
+    function (Crumbs $crumbs, Service $service, ServicePrice $service_price) {
+        $crumbs->parent('admin.services.show', $service);
+        $crumbs->push('Цены на странице услуг', route('admin.services.service_prices.index', [$service]));
+        $crumbs->push($service_price->name,
+            route('admin.services.service_prices.show', ['service' => $service, 'service_price' => $service_price]));
+    });
+
+Breadcrumbs::for('admin.services.service_prices.edit',
+    function (Crumbs $crumbs, Service $service, ServicePrice $service_price) {
+        $crumbs->parent('admin.services.show', $service);
+        $crumbs->push('Цены на странице услуг', route('admin.services.service_prices.index', [$service]));
+        $crumbs->push('Редактирование: ' . $service_price->name,
+            route('admin.services.edit', ['service' => $service, 'service_price' => $service_price]));
+    });
 
 // Admin - Review
 Breadcrumbs::register('admin.reviews.index', function (Crumbs $crumbs) {

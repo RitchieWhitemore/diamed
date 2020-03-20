@@ -10423,9 +10423,6 @@ h3 {
   position: relative;
   height: 85px;
   width: 100%;
-  background-image: url("/img/background-header.png");
-  background-repeat: no-repeat;
-  background-position: bottom center;
   z-index: 10;
 }
 
@@ -10480,12 +10477,11 @@ h3 {
 }
 
 .main-header__logo-wrapper {
-  padding-left: 2px;
   padding-top: 7px;
 }
 
 .main-header__logo {
-  width: 83px;
+  width: 100px;
 }
 
 .main-header__phone {
@@ -10510,6 +10506,10 @@ h3 {
     box-shadow: 0 -14px 28px rgba(0, 0, 0, 0.7);
   }
 
+  .main-header__wrapper {
+    max-width: 1235px;
+  }
+
   .main-header__btn-menu {
     display: none;
   }
@@ -10518,9 +10518,16 @@ h3 {
     display: none;
   }
 
+  .main-header__logo-wrapper {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    padding: 0;
+  }
+
   .main-header__logo {
-    width: 103px;
-    margin-right: 55px;
+    width: 218px;
   }
 }
 .main-nav {
@@ -10606,6 +10613,7 @@ h3 {
             flex-direction: column-reverse;
     position: static;
     background-color: transparent;
+    width: 885px;
     height: auto;
     overflow: hidden;
   }
@@ -10801,7 +10809,7 @@ h3 {
     margin-bottom: 130px;
   }
 
-  .page__text {
+  .page__content p, .page__text {
     font-size: 16px;
   }
 
@@ -10813,7 +10821,6 @@ h3 {
 
   .page__image-wrapper {
     margin: 0;
-    margin-right: 125px;
     width: 571px;
     height: 377px;
   }
@@ -11590,7 +11597,7 @@ h3 {
   width: 71px;
   height: 71px;
   border-radius: 50%;
-  background-image: url("/img/director.jpg");
+  background-image: url("/img/director.jpg?ver=2");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -11722,8 +11729,8 @@ h3 {
   .team__list {
     display: -webkit-box;
     display: flex;
-    -webkit-box-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+            justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -12626,6 +12633,9 @@ h3 {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+.price__list-wrapper .price__item.collapsed.not::before {
+  color: #64686e;
+}
 .price__list-wrapper .price__item:last-child {
   border-bottom: none;
 }
@@ -13007,8 +13017,8 @@ h3 {
     margin-bottom: 80px;
     display: -webkit-box;
     display: flex;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+            justify-content: center;
     flex-wrap: wrap;
   }
 

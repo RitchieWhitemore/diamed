@@ -22,7 +22,7 @@ class ServiceController extends Controller
         SEOMeta::setDescription($service->getSEODescription());
         SEOMeta::setKeywords($service->getSEOKeywords());
 
-        $prices = $service->prices()->showOnService()->notHidden()->get();
+        $prices = $service->servicePrices()->orderBy('order_column')->notHidden()->get();
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 
@@ -37,7 +37,7 @@ class ServiceController extends Controller
 
         SEOMeta::setTitle('Цены на ' . $service->name);
 
-        $prices = $service->prices()->notHidden()->get();
+        $prices = $service->prices()->orderBy('order_column')->notHidden()->get();
 
         $specialists = $service->specialists()->orderBy('order_column')->get();
 

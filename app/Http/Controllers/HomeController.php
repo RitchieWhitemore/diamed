@@ -50,7 +50,7 @@ class HomeController extends Controller
 
     public function info()
     {
-        SEOMeta::setTitle('Информация для клиентов');
+        SEOMeta::setTitle('Информация для пациентов');
 
         return view('public.info');
     }

@@ -20,7 +20,7 @@
         </button>
         <div class="main-header__logo-wrapper ">
             <a href="/">
-                <img class="main-header__logo" src="/img/logo.png">
+                <img class="main-header__logo" src="/img/logo.svg">
             </a>
         </div>
         <a href="tel:88888888" class="main-header__phone"></a>

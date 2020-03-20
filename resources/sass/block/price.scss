@@ -55,6 +55,10 @@
             }
         }
 
+        &.collapsed.not::before {
+            color: $font-color-grey;
+        }
+
         &:last-child {
             border-bottom: none;
         }

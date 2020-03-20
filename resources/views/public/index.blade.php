@@ -62,9 +62,9 @@
         <div class="about-company__gallery-wrapper">
             <div class="about-company__gallery gallery">
                 <ul id="main-gallery" class="gallery__list">
-                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
-                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
-                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
+                    <li class="gallery__item"><img src="/img/diamed-2.jpg"></li>
+                    {{--<li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
+                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>--}}
                 </ul>
             </div>
             <div class="about-company__info">
@@ -108,7 +108,8 @@
                 <p class="director__sign">С уважением, генеральный директор
                     Корнилова Инна Гаральдовна
                 </p>
-                <a href="#" class="director__mail"><i class="fas fa-envelope"></i>Письмо директору клиники</a>
+                <a href="mailto:inkornilova@mail.ru" class="director__mail"><i class="fas fa-envelope"></i>Письмо
+                    директору клиники</a>
             </div>
         </div>
     </section>

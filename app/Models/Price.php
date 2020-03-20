@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Traits\HiddenInterface;
 use App\Traits\HiddenTrait;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
@@ -45,38 +44,16 @@ class Price extends Model implements HiddenInterface, Sortable
 {
     use HiddenTrait, SortableTrait;
 
-    const SHOW_ON_SERVICE_NO = 0;
-    const SHOW_ON_SERVICE_YES = 1;
-
     protected $fillable = [
         'name',
         'description',
         'value',
         'hidden',
         'service_id',
-        'show_on_service'
     ];
 
     public function service()
     {
         return $this->belongsTo(Service::class);
-    }
-
-    public static function getShowOnServiceArray()
-    {
-        return [
-            self::SHOW_ON_SERVICE_NO => 'Нет',
-            self::SHOW_ON_SERVICE_YES => 'Да'
-        ];
-    }
-
-    public function getShowOnServiceValue()
-    {
-        return \Arr::get(self::getShowOnServiceArray(), $this->getAttribute('show_on_service'));
-    }
-
-    public function scopeShowOnService(Builder $query)
-    {
-        return $query->where('show_on_service', self::SHOW_ON_SERVICE_YES);
     }
 }

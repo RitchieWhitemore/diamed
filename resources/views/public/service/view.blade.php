@@ -89,7 +89,8 @@
             <div class="price__list-wrapper price__list-wrapper--service shadow-sm">
                 <ul class="price__list">
                     @foreach($prices as $key => $price)
-                        <li class="price__item collapsed" data-toggle="collapse"
+                        <li class="price__item collapsed {{empty($price->description) ? 'not' : ''}}"
+                            data-toggle="collapse"
                             data-target="#collapseExample{{$key}}" aria-expanded="false"
                             aria-controls="collapseExample">
                             <span class="price__item-title">{{$price->name}}</span>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $model \App\Models\Price
+ * @var $model \App\Models\ServicePrice
  */
 ?>
 
@@ -14,10 +14,10 @@
 
 @section('content')
     <div class="d-flex flex-row mb-3">
-        <a href="{{ route('admin.services.prices.edit', ['service' => $service, 'price' => $model]) }}"
+        <a href="{{route('admin.services.service_prices.edit', ['service' => $service, 'service_price' => $model])}}"
            class="btn btn-primary mr-1">Редактировать</a>
         <form method="POST"
-              action="{{ route('admin.services.prices.destroy', ['service' => $service, 'price' => $model]) }}"
+              action="{{ route('admin.services.service_prices.destroy', ['service' => $service, 'service_price' => $model]) }}"
               class="mr-1">
             @csrf
             @method('DELETE')

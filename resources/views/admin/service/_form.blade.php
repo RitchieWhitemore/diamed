@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $model \App\models\Service
+ * @var $model \App\models\Price
  */
 ?>
 

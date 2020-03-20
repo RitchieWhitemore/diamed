@@ -32,9 +32,9 @@
                 <td><a href="{{ route('admin.services.show', $model) }}">{{ $model->name }}</a></td>
                 <td>{{ $model->slug }}</td>
                 <td class="action-column">
-                    <a href="{{route('admin.services.prices.index', $model)}}" title="Цены на странице услуг"
+                    <a href="{{route('admin.services.service_prices.index', $model)}}" title="Цены на странице услуг"
                        aria-label="Цены">
-                        <i class="fas fa-dollar-sign"></i></a>
+                        <i class="fas fa-comment-dollar"></i></a>
                     <a href="{{route('admin.services.prices.index', $model)}}" title="Полный прайс" aria-label="Цены">
                         <i class="fas fa-dollar-sign"></i></a>
                     <a href="{{route('admin.services.show', $model)}}" title="Просмотр" aria-label="Просмотр">

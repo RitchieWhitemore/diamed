@@ -12,6 +12,7 @@ class PriceController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
     public function index(Service $service)
@@ -24,6 +25,7 @@ class PriceController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
     public function create(Service $service)
@@ -59,7 +61,8 @@ class PriceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param Service $service
+     * @param Price $price
      * @return \Illuminate\Http\Response
      */
     public function edit(Service $service, Price $price)
@@ -70,8 +73,9 @@ class PriceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param PriceRequest $request
+     * @param Service $service
+     * @param Price $price
      * @return \Illuminate\Http\Response
      */
     public function update(PriceRequest $request, Service $service, Price $price)

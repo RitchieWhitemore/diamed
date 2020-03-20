@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $model \App\models\Service
+ * @var $model \App\models\ServicePrice
  */
 ?>
 
@@ -20,6 +20,6 @@
 </div>
 <div class="row">
     <div class="col-sm-6 col-12">
-        {!! Form::select('hidden', 'Скрыто', \App\Models\Price::getHiddenArray()) !!}
+        {!! Form::select('hidden', 'Скрыто', \App\Models\ServicePrice::getHiddenArray()) !!}
     </div>
 </div>

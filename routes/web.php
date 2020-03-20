@@ -74,6 +74,10 @@ Route::group(
             Route::post('prices/{price}/up', 'PriceController@up')->name('prices.up');
             Route::post('prices/{price}/down', 'PriceController@down')->name('prices.down');
             Route::resource('prices', 'PriceController');
+
+            Route::post('service_prices/{price}/up', 'ServicePriceController@up')->name('service_prices.up');
+            Route::post('service_prices/{price}/down', 'ServicePriceController@down')->name('service_prices.down');
+            Route::resource('service_prices', 'ServicePriceController');
         });
 
         Route::post('sliders/{slider}/up', 'SliderController@up')->name('sliders.up');

@@ -3,7 +3,7 @@
 @section('content')
     <section class="info page">
         <header class="info__header page__header">
-            <h1>Информация для клиентов</h1>
+            <h1>Информация для пациентов</h1>
         </header>
         <div class="container">
             <ul class="info__list">

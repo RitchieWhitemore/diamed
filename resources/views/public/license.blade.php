@@ -18,6 +18,13 @@
                 <li class="license__item"><img src="/img/license/siz-1.jpg"></li>
                 <li class="license__item"><img src="/img/license/siz-2.jpg"></li>
                 <li class="license__item"><img src="/img/license/siz-3.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-4.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-5.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-6.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-7.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-8.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-9.jpg"></li>
+                <li class="license__item"><img src="/img/license/siz-10.jpg"></li>
             </ul>
         </div>
         <p class="page__slogan">Ваши улыбки - наша работа!</p>

@@ -77,6 +77,11 @@ class Service extends Model implements HiddenInterface
         return $this->hasMany(Price::class);
     }
 
+    public function servicePrices()
+    {
+        return $this->hasMany(ServicePrice::class);
+    }
+
     public function specialists()
     {
         return $this->belongsToMany(Specialist::class);
