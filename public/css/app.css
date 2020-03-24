@@ -10755,13 +10755,21 @@ h3 {
   color: #1bbfba;
 }
 
+.page__content {
+  color: #64686e;
+}
+
 .page__content p, .page__text {
   font-size: 12px;
-  color: #64686e;
 }
 .page__content p a, .page__text a {
   color: #1bbfba;
   text-decoration: underline;
+}
+
+.page__content img {
+  margin-right: 15px;
+  margin-bottom: 30px;
 }
 
 .page__video-wrapper {
@@ -11850,7 +11858,7 @@ h3 {
 @media (min-width: 992px) {
   .member {
     width: 270px;
-    min-height: 618px;
+    min-height: 660px;
     padding: 20px;
     padding-top: 170px;
   }
@@ -13023,6 +13031,7 @@ h3 {
   }
 
   .team-page__item {
+    margin-right: 23px;
     margin-bottom: 30px;
     position: relative;
     z-index: 99;

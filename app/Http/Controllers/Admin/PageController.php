@@ -45,7 +45,7 @@ class PageController extends Controller
             'text' => 'nullable|string',
             'category_id' => 'integer',
             'hidden' => 'integer',
-            'slug' => 'nullable|string|exists:pages,slug|unique:pages,slug',
+            'slug' => 'nullable|string|unique:pages,slug',
             'image' => 'nullable|image',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',

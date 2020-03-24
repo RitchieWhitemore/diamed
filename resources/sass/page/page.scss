@@ -33,14 +33,22 @@
     color: $font-color-aqua;
 }
 
+.page__content {
+    color: $font-color-grey;
+}
+
 .page__content p, .page__text {
     font-size: 12px;
-    color: $font-color-grey;
 
     a {
         color: $font-color-aqua;
         text-decoration: underline;
     }
+}
+
+.page__content img {
+    margin-right: 15px;
+    margin-bottom: 30px;
 }
 
 .page__video-wrapper {

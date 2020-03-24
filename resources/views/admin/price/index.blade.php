@@ -18,7 +18,7 @@
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>ID</th>
+            <th>Номер</th>
             <th>Сортировка</th>
             <th>Наименование</th>
             <th>Стоимость</th>
@@ -28,9 +28,9 @@
         </thead>
         <tbody>
 
-        @foreach ($prices as $model)
+        @foreach ($prices as $index => $model)
             <tr>
-                <td>{{ $model->id }}</td>
+                <td>{{ $index + 1 }}</td>
                 <td class="d-flex">
                     {!! Form::open()->route('admin.services.prices.up', [$service, $model])->attrs(['style' => 'margin-right: 10px']) !!}
                     {!! Form::submit('<span class="fa fa-angle-double-up"></span>') !!}

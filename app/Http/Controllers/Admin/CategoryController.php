@@ -46,7 +46,7 @@ class CategoryController extends Controller
             'image' => 'nullable|image',
             'parent' => 'nullable|integer|exists:page_categories,id',
             'hidden' => 'integer',
-            'slug' => 'nullable|string|exists:page_categories,slug|unique:page_categories,slug',
+            'slug' => 'nullable|string|unique:page_categories,slug',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',

@@ -1,8 +1,8 @@
 {
-    "/js/admin/admin.js": "/js/admin/admin.js",
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/fonts.css": "/css/fonts.css",
-    "/css/admin/admin.css": "/css/admin/admin.css",
-    "/js/scripts.js": "/js/scripts.js"
+    "/js/admin/admin.js": "/js/admin/admin.js?id=9b3cc1c12c7546467d40",
+    "/js/app.js": "/js/app.js?id=0dac759c1fc6286d8cbf",
+    "/css/app.css": "/css/app.css?id=d70ac1bc04b5fd124240",
+    "/css/fonts.css": "/css/fonts.css?id=16d1d7257545d284a9b9",
+    "/css/admin/admin.css": "/css/admin/admin.css?id=c12d6091c3777681ca8e",
+    "/js/scripts.js": "/js/scripts.js?id=e3fff6d320b9ce662433"
 }
