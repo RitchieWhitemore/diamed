@@ -9,8 +9,9 @@
         <span>{{$specialist->last_name}}</span><br>{{$specialist->first_name}} {{$specialist->middle_name}}</h3>
     <div class="member__text">{!! Purifier::clean($specialist->description) !!}</div>
     <button class="member__btn" data-toggle="modal" data-target="#signup-modal">Записаться на прием</button>
-    @if ($specialist->getExperience() > 0)
-        <p class="member__text member__text--experience">Опыт работы: {{$specialist->getExperience()}} лет</p>
+    @if (($years = $specialist->getExperience()) > 0)
+        <p class="member__text member__text--experience">Опыт
+            работы: {{$years}} {{trans_choice('messages.years', $years)}}</p>
     @endif
     @if(count($specialist->getMedia('certificate')) > 0)
         <div class="member__cert">

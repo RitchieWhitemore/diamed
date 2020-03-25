@@ -19,7 +19,7 @@
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>ID</th>
+            <th>Номер</th>
             <th>Сортировка</th>
             <th>Фото</th>
             <th>ФИО</th>
@@ -29,9 +29,9 @@
         </thead>
         <tbody>
 
-        @foreach ($specialists as $model)
+        @foreach ($specialists as $index => $model)
             <tr>
-                <td>{{ $model->id }}</td>
+                <td>{{ $index + 1 }}</td>
                 <td class="d-flex">
                     {!! Form::open()->route('admin.specialists.up', [$model])->attrs(['style' => 'margin-right: 10px']) !!}
                     {!! Form::submit('<span class="fa fa-angle-double-up"></span>') !!}

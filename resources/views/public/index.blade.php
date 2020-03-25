@@ -82,7 +82,7 @@
                 </div>
                 <div class="row links">
                     <div class="col"><a href="{{route('vacancy')}}">Вакансии</a></div>
-                    <div class="col"><a href="{{route('info')}}">Информация для клиентов</a></div>
+                    <div class="col"><a href="{{route('info')}}">Информация для пациентов</a></div>
                 </div>
             </div>
         </div>
