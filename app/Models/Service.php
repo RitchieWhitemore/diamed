@@ -42,10 +42,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $prices_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\models\Specialist[] $specialists
  * @property-read int|null $specialists_count
+ * @property string|null $note
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ServicePrice[] $servicePrices
+ * @property-read int|null $service_prices_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Service specialistsPublic()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Service whereNote($value)
  */
 class Service extends Model implements HiddenInterface
 {
-    use Sluggable, HiddenTrait;
+    use Sluggable, HiddenTrait, \App\Traits\Specialist;
 
     protected $fillable = [
         'name',
@@ -81,21 +86,6 @@ class Service extends Model implements HiddenInterface
     public function servicePrices()
     {
         return $this->hasMany(ServicePrice::class);
-    }
-
-    public function specialists()
-    {
-        return $this->belongsToMany(Specialist::class);
-    }
-
-    public function specialistListIds()
-    {
-        return $this->specialists()->pluck('id')->toArray();
-    }
-
-    public function getSpecialists()
-    {
-        return $this->specialists()->notHidden()->get();
     }
 
     public function getSEOTitle(): string

@@ -80,7 +80,7 @@
 
         </div>
     </section>
-    @if (!empty($prices))
+    @if ($prices->isNotEmpty())
         <section class="price price--service">
             <h2 class="price__title">Стоимость услуг от 1500 руб</h2>
             <header class="price__header price__header--service">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use App\Traits\HiddenInterface;
 use App\Traits\HiddenTrait;

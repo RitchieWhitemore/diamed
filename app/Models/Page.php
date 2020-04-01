@@ -51,10 +51,17 @@ use Str;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page whereUpdatedAt($value)
  * @mixin \Eloquent
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page notHidden()
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
+ * @property-read int|null $media_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Specialist[] $specialists
+ * @property-read int|null $specialists_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page isArticles()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page isPromotions()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page specialistsPublic()
  */
 class Page extends Model implements HiddenInterface, HasMedia
 {
-    use Sluggable, HiddenTrait, HasMediaTrait;
+    use Sluggable, HiddenTrait, HasMediaTrait, \App\Traits\Specialist;
 
     protected $fillable = [
         'category_id',

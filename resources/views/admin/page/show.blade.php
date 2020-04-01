@@ -59,6 +59,10 @@
                     </td>
                 </tr>
                 <tr>
+                    <th>Специалисты</th>
+                    <td>{{implode(", ", $model->specialists()->pluck('name')->toArray())}}</td>
+                </tr>
+                <tr>
                     <th>Скрыто</th>
                     <td>{{ $model->getHiddenValue() }}</td>
                 </tr>

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PageRequest;
 use App\Models\Page;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class PageController extends Controller
 {
@@ -28,33 +27,23 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.page.create');
+        $specialists = [];
+        return view('admin.page.create', compact('specialists'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param PageRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(PageRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'menu_name' => 'nullable|string|max:255',
-            'text' => 'nullable|string',
-            'category_id' => 'integer',
-            'hidden' => 'integer',
-            'slug' => 'nullable|string|unique:pages,slug',
-            'image' => 'nullable|image',
-            'meta_title' => 'nullable|string|max:255',
-            'meta_description' => 'nullable|string|max:255',
-            'meta_keywords' => 'nullable|string|max:255',
-        ]);
         $page = Page::create($request->all());
         $page->uploadImage('image', $request, 'images');
 
-        return redirect()->route('admin.pages.show', $page);
+        $page->specialists()->attach($request->get('specialists'));
+
+        return redirect()->route('admin.pages.show', compact('page'));
     }
 
     /**
@@ -72,34 +61,21 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        return view('admin.page.edit', ['model' => $page]);
+        $specialists = $page->specialistListIds();
+        return view('admin.page.edit', ['model' => $page, 'specialists' => $specialists]);
     }
 
     /**
-     * @param Request $request
+     * @param PageRequest $request
      * @param Page $page
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Page $page)
+    public function update(PageRequest $request, Page $page)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'menu_name' => 'nullable|string|max:255',
-            'text' => 'nullable|string',
-            'category_id' => 'integer',
-            'hidden' => 'integer',
-            'slug' => [
-                'nullable',
-                'string',
-                Rule::unique('pages', 'slug')->ignore($page->id),
-            ],
-            'image' => 'nullable|image',
-            'meta_title' => 'nullable|string|max:255',
-            'meta_description' => 'nullable|string|max:255',
-            'meta_keywords' => 'nullable|string|max:255',
-        ]);
         $page->update($request->all());
         $page->uploadImage('image', $request, 'images');
+
+        $page->specialists()->sync($request->get('specialists'));
 
         return redirect()->route('admin.pages.show', $page);
     }

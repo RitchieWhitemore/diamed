@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Review;
 use SEOMeta;
 
 
@@ -21,6 +22,11 @@ class ArticleController extends Controller
         SEOMeta::setTitle($article->getSEOTitle());
         SEOMeta::setDescription($article->getSEODescription());
         SEOMeta::setKeywords($article->getSEOKeywords());
-        return view('public.article.view', compact('article'));
+
+        $specialists = $article->specialistsPublic()->get();
+
+        $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
+
+        return view('public.article.view', compact('article', 'specialists', 'reviews'));
     }
 }

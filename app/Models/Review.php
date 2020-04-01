@@ -33,6 +33,8 @@ use Illuminate\Http\UploadedFile;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Review whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Review whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $audio
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Review whereAudio($value)
  */
 class Review extends Model implements HiddenInterface
 {
