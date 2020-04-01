@@ -29,7 +29,7 @@
             </div>
             <div class="sterilization__col-left">
                 <div class="page__image-wrapper">
-                    <img src="/img/sterilization.jpg">
+                    <img src="/img/sterilization.jpg?ver=1">
                 </div>
             </div>
         </div>

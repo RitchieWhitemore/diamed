@@ -43,7 +43,7 @@ class ServiceController extends Controller
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 
-        return view('public.service.price', compact('prices', 'specialists', 'reviews'));
+        return view('public.service.price', compact('service', 'prices', 'specialists', 'reviews'));
     }
 
     private function getModel(string $slug)

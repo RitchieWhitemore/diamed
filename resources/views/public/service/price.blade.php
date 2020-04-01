@@ -1,3 +1,11 @@
+<?php
+/**
+ * @var $service \App\Models\Service
+ * @var $prices \App\Models\Price[]
+ * @var $reviews \App\Models\Review[]
+ */
+?>
+
 @extends('layouts.main')
 
 @section('content')
@@ -18,12 +26,16 @@
                                 <span class="price__value">{{$price->value}} руб.</span>
                                 @if (!empty($price->description))
                                     <div class="price__description collapse" id="collapseExample{{$key}}">
-                                        <p>{{$price->description}}</p>
+                                        <p>{!! $price->description !!}</p>
                                     </div>
                                 @endif
                             </li>
                         @endforeach
                     </ul>
+                    <div class="price__note">
+                        {!! $service->note !!}
+                    </div>
+
                 @endif
             </div>
         </div>

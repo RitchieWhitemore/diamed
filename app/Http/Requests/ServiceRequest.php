@@ -29,6 +29,7 @@ class ServiceRequest extends FormRequest
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
+            'note' => 'nullable|string',
             'hidden' => 'integer',
             'slug' => 'nullable|string|unique:services,slug',
             'meta_title' => 'nullable|string|max:255',

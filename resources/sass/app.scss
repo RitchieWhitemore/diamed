@@ -55,9 +55,13 @@ main {
 }
 
 button:focus {
-  outline: none;
+    outline: none;
 }
 
 .body__menu-open {
-  overflow: hidden;
+    overflow: hidden;
+}
+
+b {
+    font-weight: bold;
 }

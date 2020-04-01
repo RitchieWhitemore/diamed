@@ -51,6 +51,7 @@ class Service extends Model implements HiddenInterface
         'name',
         'menu_name',
         'text',
+        'note',
         'hidden',
         'slug',
         'meta_title',

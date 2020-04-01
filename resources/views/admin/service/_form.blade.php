@@ -37,6 +37,7 @@
                         <div class="row">
                             <div class="col-sm-10 col-12">
                                 {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
+                                {!!Form::textarea('note', 'Примечание')->attrs(['rows' => 5])->attrs(['class' => 'summernote'])!!}
                             </div>
                             <div class="col-sm-2 col-12">
 

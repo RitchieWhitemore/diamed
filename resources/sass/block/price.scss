@@ -101,6 +101,11 @@
     }
 }
 
+.price__note {
+    font-size: 11px;
+    color: $font-color-grey;
+}
+
 @media (min-width: 992px) {
     .price {
         padding-bottom: 85px;
@@ -162,5 +167,9 @@
 
     .price__btn-mobile {
         display: none;
+    }
+
+    .price__note {
+        font-size: 14px;
     }
 }
