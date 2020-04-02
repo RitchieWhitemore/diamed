@@ -90,6 +90,19 @@ class Page extends Model implements HiddenInterface, HasMedia
         ];
     }
 
+    public function shortPrices()
+    {
+        return $this->morphMany(ShortPrice::class, 'short_prices');
+    }
+
+    /**
+     * @return ShortPrice[]
+     */
+    public function getPublicShortPrices()
+    {
+        return $this->shortPrices()->notHidden()->ordered()->get();
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

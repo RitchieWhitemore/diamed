@@ -81,38 +81,40 @@
         </div>
     </section>
     @if ($prices->isNotEmpty())
-        <section class="price price--service">
-            <h2 class="price__title">Стоимость услуг от 1500 руб</h2>
-            <header class="price__header price__header--service">
+        <section class="price">
+            {{--<h2 class="price__title">Стоимость услуг от 1500 руб</h2>--}}
+            <header class="price__header">
                 <h2 class="title">Стоимость услуг</h2>
             </header>
-            <div class="price__list-wrapper price__list-wrapper--service shadow-sm">
-                <ul class="price__list">
-                    @foreach($prices as $key => $price)
-                        <li class="price__item collapsed {{empty($price->description) ? 'not' : ''}}"
-                            data-toggle="collapse"
-                            data-target="#collapseExample{{$key}}" aria-expanded="false"
-                            aria-controls="collapseExample">
-                            <span class="price__item-title">{{$price->name}}</span>
-                            <span class="price__value">{{$price->value}} руб.</span>
-                            @if (!empty($price->description))
-                                <div class="price__description collapse" id="collapseExample{{$key}}">
-                                    <p>{{$price->description}}</p>
-                                </div>
-                            @endif
-                        </li>
-                    @endforeach
-                </ul>
+            <div class="price__list-wrapper">
+                <div class="container">
+                    <ul class="price__list">
+                        @foreach($prices as $key => $price)
+                            <li class="price__item collapsed {{empty($price->description) ? 'not' : ''}}"
+                                data-toggle="collapse"
+                                data-target="#collapseExample{{$key}}" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <span class="price__item-title">{{$price->name}}</span>
+                                <span class="price__value">{{$price->value}} руб.</span>
+                                @if (!empty($price->description))
+                                    <div class="price__description collapse" id="collapseExample{{$key}}">
+                                        <p>{{$price->description}}</p>
+                                    </div>
+                                @endif
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
                 <div class="btn__wrapper">
                     <a href="{{route('services.price', [$service->slug])}}" class="btn btn__price price__btn">Смотреть
                         все услуги и цены</a>
                 </div>
 
             </div>
-            <div class="container btn__wrapper">
+            {{--<div class="container btn__wrapper">
                 <a href="{{route('services.price', [$service->slug])}}" class="btn btn__price price__btn-mobile">Смотреть
                     все услуги и цены</a>
-            </div>
+            </div>--}}
         </section>
     @endif
     @if($specialists->isNotEmpty())

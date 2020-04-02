@@ -22,7 +22,7 @@ class ServiceController extends Controller
         SEOMeta::setDescription($service->getSEODescription());
         SEOMeta::setKeywords($service->getSEOKeywords());
 
-        $prices = $service->servicePrices()->orderBy('order_column')->notHidden()->get();
+        $prices = $service->getPublicShortPrices();
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 

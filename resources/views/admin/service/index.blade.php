@@ -32,8 +32,9 @@
                 <td><a href="{{ route('admin.services.show', $model) }}">{{ $model->name }}</a></td>
                 <td>{{ $model->slug }}</td>
                 <td class="action-column">
-                    <a href="{{route('admin.services.service_prices.index', $model)}}" title="Цены на странице услуг"
-                       aria-label="Цены">
+                    <a href="{{route('admin.short_prices.short_prices.index', ['shortPriceType' => 'services', 'owner' => $model])}}"
+                       title="Краткий прайс"
+                       aria-label="Краткий прайс">
                         <i class="fas fa-comment-dollar"></i></a>
                     <a href="{{route('admin.services.prices.index', $model)}}" title="Полный прайс" aria-label="Цены">
                         <i class="fas fa-dollar-sign"></i></a>

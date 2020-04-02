@@ -7,6 +7,7 @@ use App\Models\Question;
 use App\Models\Review;
 use App\Models\Service;
 use App\Models\ServicePrice;
+use App\Models\ShortPrice;
 use App\models\Slider;
 use App\models\Specialist;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
@@ -194,6 +195,34 @@ Breadcrumbs::for('admin.services.service_prices.edit',
         $crumbs->push('Цены на странице услуг', route('admin.services.service_prices.index', [$service]));
         $crumbs->push('Редактирование: ' . $service_price->name,
             route('admin.services.edit', ['service' => $service, 'service_price' => $service_price]));
+    });
+
+// Admin - Short Price
+Breadcrumbs::register('admin.short_prices.short_prices.index', function (Crumbs $crumbs, $type, $owner) {
+    $crumbs->parent('admin.' . $type . '.show', $owner);
+    $crumbs->push('Цены', route('admin.short_prices.short_prices.index', [$type, $owner]));
+});
+
+Breadcrumbs::register('admin.short_prices.short_prices.create', function (Crumbs $crumbs, $type, $owner) {
+    $crumbs->parent('admin.' . $type . '.show', $owner);
+    $crumbs->push('Краткий прайс', route('admin.short_prices.short_prices.index', [$type, $owner]));
+    $crumbs->push('Добавить цену', route('admin.short_prices.short_prices.create', [$type, $owner]));
+});
+
+Breadcrumbs::for('admin.short_prices.short_prices.show',
+    function (Crumbs $crumbs, $type, $owner, ShortPrice $short_price) {
+        $crumbs->parent('admin.' . $type . '.show', $owner);
+        $crumbs->push('Краткий прайс', route('admin.short_prices.short_prices.index', [$type, $owner]));
+        $crumbs->push($short_price->name,
+            route('admin.short_prices.short_prices.show', [$type, $owner, $short_price]));
+    });
+
+Breadcrumbs::for('admin.short_prices.short_prices.edit',
+    function (Crumbs $crumbs, $type, $owner, ShortPrice $short_price) {
+        $crumbs->parent('admin.' . $type . '.show', $owner);
+        $crumbs->push('Краткий прайс', route('admin.short_prices.short_prices.index', [$type, $owner]));
+        $crumbs->push('Редактирование: ' . $short_price->name,
+            route('admin.short_prices.short_prices.edit', [$type, $owner, $short_price]));
     });
 
 // Admin - Review

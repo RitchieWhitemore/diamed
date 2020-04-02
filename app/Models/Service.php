@@ -83,9 +83,17 @@ class Service extends Model implements HiddenInterface
         return $this->hasMany(Price::class);
     }
 
-    public function servicePrices()
+    public function shortPrices()
     {
-        return $this->hasMany(ServicePrice::class);
+        return $this->morphMany(ShortPrice::class, 'short_prices');
+    }
+
+    /**
+     * @return ShortPrice[]
+     */
+    public function getPublicShortPrices()
+    {
+        return $this->shortPrices()->notHidden()->ordered()->get();
     }
 
     public function getSEOTitle(): string

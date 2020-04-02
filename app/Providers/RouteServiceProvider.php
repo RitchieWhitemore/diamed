@@ -23,7 +23,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::bind('owner', function ($id) {
+            $type = app()->request->route('shortPriceType');
+            $models = ['pages' => \App\Models\Page::class, 'services' => \App\Models\Service::class];
+            $model = $models[$type];
+            return (new $model)->where('id', $id)->firstOrFail();
+        });
 
         parent::boot();
     }

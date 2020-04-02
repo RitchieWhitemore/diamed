@@ -25,8 +25,10 @@ class ArticleController extends Controller
 
         $specialists = $article->specialistsPublic()->get();
 
+        $prices = $article->getPublicShortPrices();
+
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 
-        return view('public.article.view', compact('article', 'specialists', 'reviews'));
+        return view('public.article.view', compact('article', 'specialists', 'reviews', 'prices'));
     }
 }
