@@ -72,3 +72,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Дополнительные действия
+
+Скопировать ресурсы  для filemanager
+php artisan vendor:publish --tag=lfm_public
+
+Делаем символическую ссылку, если на windows. пример
+
+ln -sf /e/laravel/admin-laravel/storage/app/public  /e/laravel/admin-laravel/public/storage
+
+если на хостинге. пример
+
+ln -sf /var/www/vhosts/orig1-8465.pleskbox.com/test.diamed33.ru/storage/app/public storage
+
+Создать админа по ssh
+
+/opt/plesk/php/7.2/bin/php create:admin {name} {email} {pass}

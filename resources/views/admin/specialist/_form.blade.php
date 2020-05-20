@@ -28,8 +28,15 @@
                     <li class="nav-item">
                         <a class="nav-link" id="custom-tabs-three-image-tab" data-toggle="pill"
                            href="#custom-tabs-three-image" role="tab" aria-controls="custom-tabs-three-image"
-                           aria-selected="true">Фото и Сертификаты</a>
+                           aria-selected="true">Фото</a>
                     </li>
+                    @if (Route::getCurrentRoute()->getActionMethod() == 'edit')
+                        <li class="nav-item">
+                            <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill"
+                               href="#custom-tabs-three-cert" role="tab" aria-controls="custom-tabs-three-cert"
+                               aria-selected="false">Сертификаты</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
             <div class="card-body">
@@ -59,17 +66,18 @@
                                 {!! Form::file('specialist_photo', 'Фото специалиста') !!}
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="document">Сертификаты</label>
-                                    <div class="needsclick dropzone" id="document-dropzone">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                    @if (Route::getCurrentRoute()->getActionMethod() == 'edit')
+
+                        <div class="tab-pane fade" id="custom-tabs-three-cert" role="tabpanel"
+                             aria-labelledby="custom-tabs-three-cert-tab">
+                            @include('components.upload-form', [
+                            'uploadUrl' => route('admin.specialist.upload', ['specialist' => $model]),
+                            'getFileUrl' => route('admin.specialist.files', ['specialist' => $model]),
+                            ])
+                        </div>
+
+                    @endif
                 </div>
 
             </div>
@@ -78,55 +86,3 @@
     </div>
     <!-- /.col -->
 </div>
-
-@section('js')
-    <script>
-        var uploadedDocumentMap = {};
-
-        Dropzone.options.documentDropzone = {
-            url: '{{ route('admin.specialists.storeMedia') }}',
-            //method: 'put',
-            //paramName: 'media',
-            maxFilesize: 2, // MB
-            addRemoveLinks: true,
-            //autoProcessQueue: false,
-            headers: {
-                'X-CSRF-TOKEN': "{{ csrf_token() }}"
-            },
-            success: function (file, response) {
-                $('form').append('<input type="hidden" name="certificate[]" value="' + response.name + '">')
-                uploadedDocumentMap[file.name] = response.name
-            },
-            removedfile: function (file) {
-                file.previewElement.remove();
-                var name = '';
-                if (typeof file.file_name !== 'undefined') {
-                    name = file.file_name
-                } else {
-                    name = uploadedDocumentMap[file.name]
-                }
-                $('form').find('input[name="certificate[]"][value="' + name + '"]').remove()
-            },
-            init: function () {
-                        @if(isset($model) && $model->certificate)
-                var files = {!! json_encode($model->certificate) !!};
-                var filePath = [
-                    @foreach($model->certificate as $media)
-                        "{!! $media->getUrl('thumb-admin') !!}",
-                    @endforeach
-                ];
-                for (var i in files) {
-                    var file = files[i];
-                    this.options.addedfile.call(this, file);
-                    this.options.thumbnail.call(this, file, filePath[i]);
-                    file.previewElement.classList.add('dz-complete');
-                    $('form').append('<input type="hidden" name="certificate[]" value="' + file.file_name + '">')
-                }
-                @endif
-                    this.on("processing", function (file) {
-                    this.options.url = "{{ route('admin.specialists.storeMedia') }}";
-                });
-            }
-        }
-    </script>
-@stop

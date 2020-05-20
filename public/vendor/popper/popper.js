@@ -1665,8 +1665,8 @@ function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
         const measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
         let mergeWithPrevious = false;
         return op
-        // This aggregates any `+` or `-` sign that aren't considered operators
-        // e.g.: 10 + +5 => [10, +, +5]
+            // This aggregates any `+` or `-` sign that aren't considered operators
+            // e.g.: 10 + +5 => [10, +, +5]
             .reduce((a, b) => {
                 if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
                     a[a.length - 1] = b;
@@ -2372,7 +2372,7 @@ class Popper {
         this.modifiers = Object.keys(this.options.modifiers).map(name => _extends({
             name
         }, this.options.modifiers[name]))
-        // sort the modifiers by order
+            // sort the modifiers by order
             .sort((a, b) => a.order - b.order);
 
         // modifiers have the ability to execute arbitrary code when Popper.js get inited

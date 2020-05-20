@@ -90,6 +90,10 @@ Route::group(
         Route::post('specialist/media', 'SpecialistController@storeMedia')->name('specialists.storeMedia');
         Route::resource('specialists', 'SpecialistController');
 
+        Route::get('specialists/{specialist}/upload', 'SpecialistController@getFiles')->name('specialist.files');
+        Route::put('specialists/{specialist}/upload', 'SpecialistController@upload')->name('specialist.upload');
+        Route::delete('specialists/upload/{file}', 'SpecialistController@deleteFile')->name('specialist.deleteFile');
+
         Route::post('questions/{question}/up', 'QuestionController@up')->name('questions.up');
         Route::post('questions/{question}/down', 'QuestionController@down')->name('questions.down');
         Route::resource('questions', 'QuestionController');

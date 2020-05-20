@@ -29,12 +29,16 @@
 }
 
 .html-viewer {
-  width: 640px;
-  display: block;
-  height: 400px;
-  overflow: auto;
+    width: 640px;
+    display: block;
+    height: 400px;
+    overflow: auto;
 }
 
 .pagination {
-  justify-content: center;
+    justify-content: center;
+}
+
+.fade.in {
+    opacity: 1 !important
 }

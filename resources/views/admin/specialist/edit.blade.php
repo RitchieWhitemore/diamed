@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-    {!! Form::open()->multipart()->url(route('admin.specialists.update', [$model]))->put()->fill($model) !!}
+    {!! Form::open()->multipart()->url(route('admin.specialists.update', [$model]))->put()->fill($model)->id('fileupload') !!}
     @include('admin.specialist._form')
     {!!Form::submit("Сохранить")!!}
     {!! Form::close() !!}

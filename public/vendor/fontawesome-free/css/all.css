@@ -5828,7 +5828,6 @@ readers do not read off random characters that represent icons */
     position: static;
     width: auto;
 }
-
 @font-face {
     font-family: 'Font Awesome 5 Brands';
     font-style: normal;
@@ -5841,7 +5840,6 @@ readers do not read off random characters that represent icons */
 .fab {
     font-family: 'Font Awesome 5 Brands';
 }
-
 @font-face {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;
@@ -5855,7 +5853,6 @@ readers do not read off random characters that represent icons */
     font-family: 'Font Awesome 5 Free';
     font-weight: 400;
 }
-
 @font-face {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;

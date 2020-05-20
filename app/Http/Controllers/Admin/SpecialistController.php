@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SpecialistRequest;
 use App\models\Specialist;
 use Illuminate\Http\Request;
+use Spatie\MediaLibrary\Models\Media;
 
 class SpecialistController extends Controller
 {
@@ -39,10 +40,6 @@ class SpecialistController extends Controller
 
         $specialist->uploadImage('specialist_photo', $request, 'specialist_photo');
 
-        foreach ($request->input('certificate', []) as $file) {
-            $specialist->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('certificate');
-        }
-
         return redirect()->route('admin.specialists.show', compact('specialist'));
     }
 
@@ -73,25 +70,6 @@ class SpecialistController extends Controller
         $specialist->update($request->all());
 
         $specialist->uploadImage('specialist_photo', $request, 'specialist_photo');
-
-        if (count($specialist->certificate) > 0) {
-            foreach ($specialist->certificate as $media) {
-                if ($media->collection_name != 'certificate') {
-                    continue;
-                }
-                if (!in_array($media->file_name, $request->input('certificate', []))) {
-                    $media->delete();
-                }
-            }
-        }
-
-        $media = $specialist->certificate->pluck('file_name')->toArray();
-
-        foreach ($request->input('certificate', []) as $file) {
-            if (count($media) === 0 || !in_array($file, $media)) {
-                $specialist->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('certificate');
-            }
-        }
 
         return redirect()->route('admin.specialists.show', $specialist);
     }
@@ -128,27 +106,57 @@ class SpecialistController extends Controller
         return redirect()->route('admin.specialists.index');
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function storeMedia(Request $request)
+    public function upload(Request $request, Specialist $specialist)
     {
-        $path = storage_path('tmp/uploads');
+        $mimeTypes = ['image/jpeg', 'image/png'];
 
-        if (!file_exists($path)) {
-            mkdir($path, 0777, true);
-        }
-
-        $file = $request->file('file');
-
-        $name = uniqid() . '_' . trim($file->getClientOriginalName());
-
-        $file->move($path, $name);
+        $file = $specialist->addMediaFromRequest('files')->toMediaCollection('certificate');
 
         return response()->json([
-            'name' => $name,
-            'original_name' => $file->getClientOriginalName(),
-        ]);
+            'files' => [
+                [
+                    "name" => $file->name,
+                    "size" => $file->size,
+                    "url" => $file->getUrl(),
+                    "thumbnailUrl" => in_array($file->mime_type, $mimeTypes) ? $file->getUrl('thumb-admin') : '',
+                    "deleteUrl" => route('admin.specialist.deleteFile', ['file' => $file->id]),
+                    "deleteType" => "DELETE"
+                ],
+            ]
+        ], 200);
+    }
+
+    public function getFiles(Specialist $specialist)
+    {
+        $files = [];
+
+        $mimeTypes = ['image/jpeg', 'image/png'];
+
+        foreach ($specialist->getMedia('certificate') as $media) {
+            /**
+             * @var $media Media
+             */
+
+            $files[] = [
+                "name" => $media->name,
+                "size" => $media->size,
+                "url" => $media->getUrl(),
+                "thumbnailUrl" => in_array($media->mime_type, $mimeTypes) ? $media->getUrl('thumb-admin') : '',
+                "deleteUrl" => route('admin.specialist.deleteFile', ['file' => $media->id]),
+                "deleteType" => "DELETE"
+            ];
+        }
+
+        return response()->json([
+            'files' => $files,
+        ], 200);
+    }
+
+    public function deleteFile(Specialist $specialist, Media $file)
+    {
+        $file->delete();
+        return response()->json([
+            'result' => true,
+        ], 200);
     }
 }

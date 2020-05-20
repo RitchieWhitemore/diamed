@@ -10,12 +10,7 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap');
-    require('webpack-jquery-ui');
     require('select2/dist/js/select2.full');
-
-    require('admin-lte/dist/js/adminlte');
-    window.Dropzone = require('dropzone/dist/dropzone');
 
     require('tinymce');
     require('tinymce/themes/silver');

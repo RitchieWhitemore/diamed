@@ -406,5 +406,21 @@ return [
                 ],
             ],
         ],
+        [
+            'name' => 'myAssets',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/admin/css/admin.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/admin/js/admin.js',
+                ],
+            ],
+        ],
     ],
 ];

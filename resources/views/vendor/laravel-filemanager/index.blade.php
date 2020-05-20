@@ -14,10 +14,9 @@
 
     <title>{{ trans('laravel-filemanager::lfm.title-page') }}</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('vendor/laravel-filemanager/img/72px color.png') }}">
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">--}}
-    {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">--}}
-    {{--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">--}}
-    <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/jquery-ui/css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/cropper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/dropzone.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/mime-icons.min.css') }}">
@@ -72,11 +71,11 @@
 
 <nav class="bg-light fixed-bottom border-top d-none" id="actions">
     <a data-action="open" data-multiple="false"><i
-                class="fas fa-folder-open"></i>{{ trans('laravel-filemanager::lfm.btn-open') }}</a>
+            class="fas fa-folder-open"></i>{{ trans('laravel-filemanager::lfm.btn-open') }}</a>
     <a data-action="preview" data-multiple="true"><i
-                class="fas fa-images"></i>{{ trans('laravel-filemanager::lfm.menu-view') }}</a>
+            class="fas fa-images"></i>{{ trans('laravel-filemanager::lfm.menu-view') }}</a>
     <a data-action="use" data-multiple="true"><i
-                class="fas fa-check"></i>{{ trans('laravel-filemanager::lfm.btn-confirm') }}</a>
+            class="fas fa-check"></i>{{ trans('laravel-filemanager::lfm.btn-confirm') }}</a>
 </nav>
 
 <div class="d-flex flex-row">
@@ -97,6 +96,7 @@
         </div>
 
         <div id="content"></div>
+        <div id="pagination"></div>
 
         <a id="item-template" class="d-none">
             <div class="square"></div>
@@ -200,13 +200,13 @@
     </a>
 </div>
 
-{{--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>--}}
-<script src="{{ asset('js/admin/admin.js') }}"></script>
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>--}}
+<script src="{{ asset('vendor/popper/umd/popper.min.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery-ui/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('vendor/laravel-filemanager/js/cropper.min.js') }}"></script>
-{{--<script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>--}}
+<script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>
 <script>
     var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
     var actions = [

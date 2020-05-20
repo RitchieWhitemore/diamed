@@ -498,33 +498,33 @@
             /*
              *
              * TERMS OF USE - EASING EQUATIONS
-             * 
-             * Open source under the BSD License. 
-             * 
+             *
+             * Open source under the BSD License.
+             *
              * Copyright Â© 2001 Robert Penner
              * All rights reserved.
-             * 
-             * Redistribution and use in source and binary forms, with or without modification, 
+             *
+             * Redistribution and use in source and binary forms, with or without modification,
              * are permitted provided that the following conditions are met:
-             * 
-             * Redistributions of source code must retain the above copyright notice, this list of 
+             *
+             * Redistributions of source code must retain the above copyright notice, this list of
              * conditions and the following disclaimer.
-             * Redistributions in binary form must reproduce the above copyright notice, this list 
-             * of conditions and the following disclaimer in the documentation and/or other materials 
+             * Redistributions in binary form must reproduce the above copyright notice, this list
+             * of conditions and the following disclaimer in the documentation and/or other materials
              * provided with the distribution.
-             * 
-             * Neither the name of the author nor the names of contributors may be used to endorse 
+             *
+             * Neither the name of the author nor the names of contributors may be used to endorse
              * or promote products derived from this software without specific prior written permission.
-             * 
-             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+             *
+             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
              * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
              * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
              *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
              *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
              * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-             * OF THE POSSIBILITY OF SUCH DAMAGE. 
+             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+             * OF THE POSSIBILITY OF SUCH DAMAGE.
              *
              */
         })();
@@ -3909,7 +3909,7 @@
                             setViewportCSS(true);
                             setViewportCSS(false);
 
-                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible), 
+                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible),
                             // make viewport element greater in size (Firefox hide Scrollbars fix)
                             // because firefox starts hiding scrollbars on too small elements
                             // with this behavior the overflow calculation may be incorrect or the scrollbars would appear suddenly
@@ -4257,7 +4257,7 @@
                     _sizeObserverElement = _sizeObserverElement || selectOrGenerateDivByClass(classNameResizeObserverHost);
                     _textareaCoverElement = _textareaCoverElement || (_isTextarea ? selectOrGenerateDivByClass(_classNameTextareaCoverElement) : undefined);
 
-                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes 
+                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes
                     //to prevent adopting generated class names
                     if (destroy)
                         removeClass(_hostElement, hostElementClassNames);
@@ -4382,7 +4382,6 @@
                         if (doClearInterval && _autoUpdateRecommended)
                             clearInterval(textareaUpdateIntervalID);
                     }
-
                     function textareaOnScroll(event) {
                         _targetElement[_strScrollLeft](_rtlScrollBehavior.i && _normalizeRTLCache ? 9999999 : 0);
                         _targetElement[_strScrollTop](0);
@@ -4390,7 +4389,6 @@
                         COMPATIBILITY.stpP(event);
                         return false;
                     }
-
                     function textareaOnDrop(event) {
                         setTimeout(function () {
                             if (!_destroyed)
@@ -4528,7 +4526,6 @@
                             _handle: handle
                         };
                     };
-
                     function resetScrollbarDOM(isHorizontal) {
                         var scrollbarVars = getScrollbarVars(isHorizontal);
                         var scrollbar = scrollbarVars._scrollbar;
@@ -4595,31 +4592,25 @@
                     function getPreparedScrollbarsOption(name) {
                         return _currentPreparedOptions.scrollbars[name];
                     }
-
                     function increaseTrackScrollAmount() {
                         scrollDurationFactor = 0.5;
                     }
-
                     function decreaseTrackScrollAmount() {
                         scrollDurationFactor = 1;
                     }
-
                     function documentKeyDown(event) {
                         if (inArray(event.keyCode, increaseDecreaseScrollAmountKeyCodes) > -1)
                             increaseTrackScrollAmount();
                     }
-
                     function documentKeyUp(event) {
                         if (inArray(event.keyCode, increaseDecreaseScrollAmountKeyCodes) > -1)
                             decreaseTrackScrollAmount();
                     }
-
                     function onMouseTouchDownContinue(event) {
                         var originalEvent = event.originalEvent || event;
                         var isTouchEvent = originalEvent.touches !== undefined;
                         return _sleeping || _destroyed || nativeOverlayScrollbarsAreActive() || !_scrollbarsDragScrollingCache || (isTouchEvent && !getPreparedScrollbarsOption('touchSupport')) ? false : COMPATIBILITY.mBtn(event) === 1 || isTouchEvent;
                     }
-
                     function documentDragMove(event) {
                         if (onMouseTouchDownContinue(event)) {
                             var trackLength = scrollbarVarsInfo._trackLength;
@@ -4642,7 +4633,6 @@
                         } else
                             documentMouseTouchUp(event);
                     }
-
                     function documentMouseTouchUp(event) {
                         event = event || event.originalEvent;
 
@@ -4684,12 +4674,10 @@
                                 refreshScrollbarsAutoHide(false);
                         }
                     }
-
                     function onHandleMouseTouchDown(event) {
                         if (onMouseTouchDownContinue(event))
                             onHandleMouseTouchDownAction(event);
                     }
-
                     function onHandleMouseTouchDownAction(event) {
                         mouseDownScroll = _viewportElement[scroll]();
                         mouseDownScroll = isNaN(mouseDownScroll) ? 0 : mouseDownScroll;
@@ -4712,7 +4700,6 @@
                             COMPATIBILITY.prvD(event);
                         COMPATIBILITY.stpP(event);
                     }
-
                     function onTrackMouseTouchDown(event) {
                         if (onMouseTouchDownContinue(event)) {
                             var scrollDistance = MATH.round(_viewportSize[scrollbarVars._w_h]);
@@ -4822,7 +4809,6 @@
                             COMPATIBILITY.stpP(event);
                         }
                     }
-
                     function onTrackMouseTouchEnter(event) {
                         //make sure both scrollbars will stay visible if one scrollbar is hovered if autoHide is "scroll" or "move".
                         _scrollbarsHandleHovered = true;
@@ -5097,7 +5083,6 @@
                             documentMouseTouchUp(event);
                         }
                     }
-
                     function documentMouseTouchUp(event) {
                         var eventIsTrusted = event !== undefined;
 
@@ -5846,7 +5831,6 @@
                         }
                         return false;
                     }
-
                     function getRawScroll(isX, coordinates) {
                         var coordinateProps = isX ? coordinatesXAxisProps : coordinatesYAxisProps;
                         coordinates = type(coordinates) == TYPES.s || type(coordinates) == TYPES.n ? [coordinates, coordinates] : coordinates;
@@ -5855,13 +5839,12 @@
                             return isX ? coordinates[0] : coordinates[1];
                         else if (type(coordinates) == TYPES.o) {
                             //decides RTL normalization "hack" with .n
-                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL; 
+                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL;
                             for (i = 0; i < coordinateProps[strLength]; i++)
                                 if (coordinateProps[i] in coordinates)
                                     return coordinates[coordinateProps[i]];
                         }
                     }
-
                     function getFinalScroll(isX, rawScroll) {
                         var isString = type(rawScroll) == TYPES.s;
                         var operator;
@@ -5929,7 +5912,6 @@
                         }
                         return finalValue === currScroll ? undefined : finalValue;
                     }
-
                     function getPerAxisValue(value, valueInternalType, defaultValue, allowedValues) {
                         var resultDefault = [defaultValue, defaultValue];
                         var valueType = type(value);
@@ -5960,7 +5942,6 @@
                             value = resultDefault;
                         return {x: value[0], y: value[1]};
                     }
-
                     function generateMargin(marginTopRightBottomLeftArray) {
                         var result = [];
                         var currValue;
@@ -6329,7 +6310,7 @@
                     /* On a div Element The if checks only whether:
                      * - the targetElement has the class "os-host"
                      * - the targetElement has a a child with the class "os-padding"
-                     * 
+                     *
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-host" element is the targetElement)
                      *
@@ -6354,11 +6335,11 @@
                      *  </div>
                      *
                      * =====================================================================================
-                     * 
+                     *
                      * On a Textarea Element The if checks only whether:
-                     * - the targetElement has the class "os-textarea" 
-                     * - the targetElement is inside a element with the class "os-content" 
-                     * 
+                     * - the targetElement has the class "os-textarea"
+                     * - the targetElement is inside a element with the class "os-content"
+                     *
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-textarea" (textarea) element is the targetElement)
                      *
