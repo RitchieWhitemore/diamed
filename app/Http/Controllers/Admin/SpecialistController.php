@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SpecialistRequest;
-use App\models\Specialist;
+use App\Models\Specialist;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\Models\Media;
 

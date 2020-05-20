@@ -8,13 +8,13 @@ use App\Mail\ReviewMail;
 use App\Mail\SignupMail;
 use App\Models\Page;
 use App\Models\Review;
-use App\models\Slider;
-use App\models\Specialist;
+use App\Models\Slider;
+use App\Models\Specialist;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use SEOMeta;
 
 class HomeController extends Controller
 {
