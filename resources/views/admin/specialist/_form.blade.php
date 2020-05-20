@@ -38,7 +38,7 @@
                          aria-labelledby="custom-tabs-three-home-tab">
                         <div class="row">
                             <div class="col-sm-10 col-12">
-                                {!!Form::textarea('description', 'Описание')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
+                                {!!Form::textarea('description', 'Описание')->attrs(['rows' => 10, 'class' => 'tinymce'])!!}
                             </div>
                             <div class="col-sm-2 col-12">
 

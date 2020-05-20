@@ -179,6 +179,13 @@ return [
             'topnav' => true,
         ],
         [
+            'text' => 'Перейти на сайт',
+            'url' => '/',
+            'target' => '_blank',
+            'icon' => 'fas fa-external-link-alt',
+            'topnav' => true,
+        ],
+        [
             'text' => 'blog',
             'url' => 'admin/blog',
             'can' => 'manage-blog',

@@ -39,7 +39,7 @@
                                     <img src="{{$url}}">
                                 @endif
                                 {!! Form::file('image', 'Изображение') !!}
-                                {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->attrs(['class' => 'summernote'])!!}
+                                {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10, 'class' => 'tinymce'])!!}
                             </div>
                             <div class="col-sm-2 col-12">
 

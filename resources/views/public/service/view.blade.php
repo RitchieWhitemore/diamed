@@ -14,69 +14,132 @@
         </header>
         <div class="page__content container">
             {!! $service->text !!}
-            {{--<div class="service-page__content-header container">
-                <div class="page__col-left service-page__col-left">
+
+            {{--<div class="row mb-4 no-gutters">
+                <div class="col-12 col-md-8">
                     <div class="page__image-wrapper">
-                        <img src="/img/sterilization.jpg">
+                        <img src="http://test.diamed33.ru/storage/photos/1/dental-implantation.jpg">
                     </div>
                 </div>
-                <div class="page__col-right">
-                    <p class="page__text service-page__text">
-                        В клинике «Диамед» в городе Александрове проводится эффективное лечение кариеса, в том числе без
-                        сверления по методу ICON на любых стадиях его развития. Эндодонтическое лечение (лечение и
-                        перелечивание каналов), эстетическая реставрация зубов.
-                    </p>
 
-                    <button class="btn" data-toggle="modal" data-target="#exampleModal">Записаться</button>
+                <div class="col-12 col-md-4 d-flex p-0">
+                    <div class="m-auto">
+                        <p class="page__text service-page__text">
+                            Имплантация является наиболее передовым способом восстановления утраченных зубов.<br>
+                            Её суть заключается во вживлении на место корня утраченного зуба титанового имплантата, на
+                            который устанавливается коронка.
+                        </p>
+
+                        <button class="btn" data-toggle="modal" data-target="#signup-modal">Записаться</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="service-page__features container">
+            <div class="service-page__features pb-8">
 
-                <h2>Особенности лечения в стоматологии «Диамед»</h2>
-                <ul class="service-page__features-list shadow-sm">
-                    <li class="service-page__features-item"><i class="far fa-check-circle"></i>Предоставляем
-                        обширный перечень услуг
-                        для всех возрастов
-                    </li>
-                    <li class="service-page__features-item"><i class="far fa-check-circle"></i>Лечим только на
-                        основе
-                        современных методов
-                        и технологий
-                    </li>
-                    <li class="service-page__features-item"><i class="far fa-check-circle"></i>Работаем на новейшем
-                        оборудовании
-                    </li>
-                </ul>
+                <h2>Как все происходит</h2>
+                <div class="service-page__features-block shadow-sm d-flex flex-column">
+                    <iframe class="mb-4" src="https://www.youtube.com/embed/MtnRMWcm6T8" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen=""></iframe>
 
-            </div>
+                    <p>Имплантация зубов выгодно отличается от любого другого способа восстановления зубов благодаря
+                        полной имитации живого зуба.</p>
 
-            <div class="service-page__content-footer container">
-                <div class="page__col-left service-page__col-left">
-                    <h3>Лечим зубы под микроскопом
-                        что позволяет</h3>
+                    <p>Имплантация, как правило, происходит в несколько этапов.</p>
                     <ul class="service-page__features-list">
-                        <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Перелечивать
-                            сложные каналы, имеющие изгибы и
-                            ответвления
+                        <li class="service-page__features-item">Первый - это
+                            вживление имплантата (титановый штифт) в костную ткань отсутствующего зуба.
                         </li>
-                        <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Извлекать обломки
-                            инструмента из каналов
+
+                        <li class="service-page__features-item">Второй - приживление,
+                            в течение этого периода (2-6 месяцев) происходит привыкание организма к инородному телу и
+                            заживление мягких тканей.
                         </li>
-                        <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Спасать даже
-                            самые безнадежные зубы
+
+                        <li class="service-page__features-item">На третьем этапе в
+                            имплантат устанавливается абатмент, он служит опорой для коронки, а так же делается слепок,
+                            для изготовления самой коронки.
+                        </li>
+
+                        <li class="service-page__features-item">Четвёртый,
+                            завершающий этап, это установка коронки из подобранного стоматологом материала.
                         </li>
                     </ul>
-                </div>
-                <div class="page__col-right">
-                    <div class="page__video-wrapper service-page__video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mBQj5r7Vc7M"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
+                    <p>Во время проведения процедуры используется современная местная анестезия, позволяющая сделать
+                        процесс безболезненным.</p>
+
+                    <p>Мы предлагаем установку имплантатов Straumann (Швейцария) и Osstem (Южная Корея).</p>
+
+
                 </div>
             </div>--}}
+        </div>
+
+
+        {{--<div class="service-page__content-header container">
+            <div class="page__col-left service-page__col-left">
+                <div class="page__image-wrapper">
+                    <img src="/img/sterilization.jpg">
+                </div>
+            </div>
+            <div class="page__col-right">
+                <p class="page__text service-page__text">
+                    В клинике «Диамед» в городе Александрове проводится эффективное лечение кариеса, в том числе без
+                    сверления по методу ICON на любых стадиях его развития. Эндодонтическое лечение (лечение и
+                    перелечивание каналов), эстетическая реставрация зубов.
+                </p>
+
+                <button class="btn" data-toggle="modal" data-target="#exampleModal">Записаться</button>
+            </div>
+        </div>
+
+        <div class="service-page__features container">
+
+            <h2>Особенности лечения в стоматологии «Диамед»</h2>
+            <ul class="service-page__features-list shadow-sm">
+                <li class="service-page__features-item"><i class="far fa-check-circle"></i>Предоставляем
+                    обширный перечень услуг
+                    для всех возрастов
+                </li>
+                <li class="service-page__features-item"><i class="far fa-check-circle"></i>Лечим только на
+                    основе
+                    современных методов
+                    и технологий
+                </li>
+                <li class="service-page__features-item"><i class="far fa-check-circle"></i>Работаем на новейшем
+                    оборудовании
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="service-page__content-footer container">
+            <div class="page__col-left service-page__col-left">
+                <h3>Лечим зубы под микроскопом
+                    что позволяет</h3>
+                <ul class="service-page__features-list">
+                    <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Перелечивать
+                        сложные каналы, имеющие изгибы и
+                        ответвления
+                    </li>
+                    <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Извлекать обломки
+                        инструмента из каналов
+                    </li>
+                    <li class="service-page__features-item"><i class="fas fa-check-circle"></i>Спасать даже
+                        самые безнадежные зубы
+                    </li>
+                </ul>
+            </div>
+            <div class="page__col-right">
+                <div class="page__video-wrapper service-page__video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mBQj5r7Vc7M"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>--}}
 
         </div>
     </section>
@@ -105,10 +168,12 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="btn__wrapper">
-                    <a href="{{route('services.price', [$service->slug])}}" class="btn btn__price price__btn">Смотреть
-                        все услуги и цены</a>
-                </div>
+                @if ($service->prices->isNotEmpty())
+                    <div class="btn__wrapper">
+                        <a href="{{route('services.price', [$service->slug])}}" class="btn btn__price price__btn">Смотреть
+                            все услуги и цены</a>
+                    </div>
+                @endif
 
             </div>
             {{--<div class="container btn__wrapper">

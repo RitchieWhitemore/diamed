@@ -1,14 +1,24 @@
+.reviews {
+    padding-bottom: 123px;
+    position: relative;
+    margin-bottom: 100px;
+    background-image: url("/img/bg-reviews.png");
+    background-repeat: no-repeat;
+    background-position: 30% bottom;
+}
+
 .reviews__wrapper {
     padding: 30px 15px;
-    padding-bottom: 0;
     background-color: #1bbfba;
 
     &-bottom {
-        padding: 30px 15px;
-        padding-bottom: 80px;
-        background-image: url("/img/bg-reviews.png");
+        padding: 0 15px;
+        padding-bottom: 25px;
+        //background-image: url("/img/bg-reviews-mobile.png");
         background-repeat: no-repeat;
         background-position: bottom;
+        background-color: #1bbfba;
+        text-align: center;
     }
 }
 
@@ -54,14 +64,21 @@
 }
 
 .reviews__video {
-    text-align: center;
-    margin-bottom: 45px;
+    /* text-align: center;
+     margin-bottom: 45px;*/
 }
 
 .reviews__video iframe {
     border-radius: 10px;
     width: 290px;
     height: 191px;
+}
+
+.reviews__btn {
+    position: absolute;
+    bottom: 76px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (min-width: 992px) {

@@ -65,3 +65,13 @@ button:focus {
 b {
     font-weight: bold;
 }
+
+@media (min-width: 992px) {
+    .pb-100 {
+        padding-bottom: 100px;;
+    }
+
+    .mb-100 {
+        margin-bottom: 100px;;
+    }
+}

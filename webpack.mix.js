@@ -25,4 +25,6 @@ mix.options({processCssUrls: false})
     .sass('resources/admin/sass/admin.scss', 'public/css/admin')
     .version();
 
+mix.copy('node_modules/tinymce/skins', 'public/css/skins');
+
 mix.browserSync('diamed.loc');

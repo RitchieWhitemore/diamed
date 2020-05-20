@@ -120,9 +120,9 @@
         <div class="team__list-wrapper">
             <ul id="team-slider" class="team__list">
                 @foreach ($specialists as $key => $specialist)
-                <li class="team__item">
-                    @include('public.part._member-team', compact('specialist', 'key'))
-                </li>
+                    <li class="team__item">
+                        @include('public.part._member-team', compact('specialist', 'key'))
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -151,7 +151,8 @@
             </div>
             <div class="reviews__wrapper-bottom">
                 <div class="reviews__video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QCfSMlXLWU8" frameborder="0"
+                    <iframe src="https://www.youtube.com/embed/QCfSMlXLWU8"
+                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>

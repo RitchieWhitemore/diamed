@@ -17,7 +17,7 @@
 </div>
 <div class="row">
     <div class="col-12">
-        {!!Form::textarea('description', 'Описание')->attrs(['rows' => 8, 'class' => 'summernote'])!!}
+        {!!Form::textarea('description', 'Описание')->attrs(['rows' => 8, 'class' => 'tinymce'])!!}
     </div>
 </div>
 <div class="row">

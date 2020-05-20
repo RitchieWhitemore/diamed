@@ -63,37 +63,45 @@
 }
 
 .member__cert-link {
-  font-size: 11px;
-  color: $font-color-grey;
-  font-weight: 300;
-  text-decoration: underline;
-  display: block;
-  text-align: center;
+    font-size: 11px;
+    color: $font-color-grey;
+    font-weight: 300;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
 
-  &:hover {
-    color: $color-hover-aqua;
-  }
+    &:hover {
+        color: $color-hover-aqua;
+    }
+}
+
+.member__cert-no-link {
+    text-decoration: none;
+
+    &:hover {
+        color: $font-color-grey;
+    }
 }
 
 .member__cert-gallery {
-  display: none;
+    display: none;
 }
 
 @media (min-width: 992px) {
-  .member {
-      width: 270px;
-      min-height: 660px;
-      padding: 20px;
-      padding-top: 170px;
-  }
+    .member {
+        width: 270px;
+        min-height: 660px;
+        padding: 20px;
+        padding-top: 170px;
+    }
 
-  .member img {
-    width: 185px;
-  }
+    .member img {
+        width: 185px;
+    }
 
-  .member__title {
-    font-size: 16px;
-  }
+    .member__title {
+        font-size: 16px;
+    }
 
   .member__text {
     font-size: 14px;

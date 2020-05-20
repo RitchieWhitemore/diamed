@@ -22,30 +22,69 @@
     }
 }
 
-.service-page__features-list {
+/*.service-page__features-list {
     margin: 0;
-    padding: 30px 25px;
-    list-style: none;
-    background-color: white;
-    border-radius: 15px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
 }
 
 .service-page__features-item {
-    position: relative;
     padding: 0;
-    margin: 0;
-    margin-bottom: 25px;
-    padding-left: 35px;
+    margin-bottom: 20px;
     font-size: 14px;
-    color: $font-color-aqua;
+    color: $font-color-grey;
 
-    i {
-        display: block;
-        font-size: 24px;
-        font-weight: 300;
-        position: absolute;
-        top: 2px;
-        left: 0;
+    &::before {
+        content: '\f058';
+        position: static;
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 16px;
+        color: $font-color-aqua;
+        font-family: "Font Awesome 5 Free";
+    }
+}*/
+
+.service-page__features-block {
+    padding: 30px 25px;
+    background-color: white;
+    border-radius: 15px;
+
+    /*iframe {
+        width: 100%;
+        height: 200px;
+    }*/
+}
+
+.service-page__content-center {
+    .service-page__features-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .service-page__features-item {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 25px;
+        padding-left: 35px;
+        font-size: 14px;
+        color: #1bbfba;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            display: block;
+            font-size: 24px;
+            font-weight: 300;
+            position: absolute;
+            top: -6px;
+            left: 0;
+        }
     }
 }
 
@@ -59,25 +98,12 @@
         color: $font-color-aqua;
     }
 
-    .service-page__features-list {
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
-        background-color: transparent;
-    }
-
     .service-page__features-item {
-        padding: 0;
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: $font-color-grey;
 
-        i {
-            position: static;
-            display: inline-block;
-            padding-right: 15px;
-            font-size: 16px;
-            color: $font-color-aqua;
+        &::before {
+            content: '\f058';
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
         }
     }
 }
@@ -100,9 +126,12 @@
     .service-page__features {
         padding: 0 88px;
         padding-top: 130px;
-        padding-bottom: 175px;
         background-image: url("/img/bg-service-features.png");
         background-position: top left;
+
+        &--bottom {
+            padding-bottom: 175px;
+        }
 
         h2 {
             font-size: 24px;
@@ -111,19 +140,26 @@
         }
     }
 
-    .service-page__features-list {
+    .service-page__features-block {
         padding: 35px 70px;
-        display: flex;
-        justify-content: space-between;
     }
 
-    .service-page__features-item {
-        padding: 0;
-        padding-top: 40px;
-        font-size: 16px;
+    .service-page__content-center {
+        .service-page__features-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .service-page__features-item {
+            padding: 0;
+            padding-right: 20px;
+            padding-top: 40px;
+            font-size: 16px;
+        }
     }
 
     .service-page__content-footer {
+        margin-bottom: 100px;
         display: flex;
         flex-wrap: wrap;
         position: relative;
@@ -140,18 +176,10 @@
             font-size: 24px;
         }
 
-        .service-page__features-list {
-            flex-direction: column;
-        }
-
-        .service-page__features-item {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
         .service-page__video-wrapper {
             position: absolute;
             top: -100px;
+            right: 0;
         }
     }
 }

@@ -23,5 +23,9 @@
                 @endforeach
             </div>
         </div>
+    @else
+        <div class="member__cert">
+            <span class="member__cert-link member__cert-no-link">Сертификаты</span>
+        </div>
     @endif
 </div>
