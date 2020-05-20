@@ -10,30 +10,27 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.19",
         "browser-sync": "^2.26.7",
-        "browser-sync-webpack-plugin": "^2.2.2",
+        "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.1",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
-        "popper.js": "^1.16.1",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.26.5",
+        "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.13.0",
-        "admin-lte": "^3.0.5",
         "blueimp-file-upload": "^10.13.1",
         "bootstrap": "^4.5.0",
         "bxslider": "^4.2.14",
-        "dropzone": "^5.7.0",
-        "jquery": "^3.5.1",
+        "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
+        "popper.js": "^1.16.0",
         "select2": "^4.0.13",
-        "simplelightbox": "^1.17.3",
-        "tinymce": "^5.2.1",
-        "webpack-jquery-ui": "^2.0.1"
+        "simplelightbox": "^2.2.1",
+        "style-loader": "^1.1.4",
+        "tinymce": "^5.2.1"
     }
 }

@@ -55,6 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'certificates' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/certificates'),
+            'url' => env('APP_URL') . '/storage/certificates',
+            'visibility' => 'public',
+        ],
+
         'media' => [
             'driver' => 'local',
             'root' => public_path('media'),

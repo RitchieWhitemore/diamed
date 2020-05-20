@@ -110,7 +110,7 @@ class SpecialistController extends Controller
     {
         $mimeTypes = ['image/jpeg', 'image/png'];
 
-        $file = $specialist->addMediaFromRequest('files')->toMediaCollection('certificate');
+        $file = $specialist->addMediaFromRequest('files')->toMediaCollection('certificate', 'certificates');
 
         return response()->json([
             'files' => [
