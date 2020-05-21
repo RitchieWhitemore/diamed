@@ -13,12 +13,15 @@ const mix = require('laravel-mix');
 
 mix.options({processCssUrls: false})
     .js('resources/js/app.js', 'public/js')
-    .js('resources/js/scripts.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/fonts.scss', 'public/css')
     //.sass('resources/sass/bootstrap.scss', 'public/css')
     .version()
     .sourceMaps();
+
+mix.copy('resources/js/scripts.js', 'public/js')
+    .copy('node_modules/simplelightbox/dist/simple-lightbox.jquery.min.js', 'public/js')
+    .copy('node_modules/bxslider/dist/jquery.bxslider.min.js', 'public/js');
 
 mix.options({processCssUrls: false})
     .js('resources/admin/js/admin.js', 'public/assets/admin/js')

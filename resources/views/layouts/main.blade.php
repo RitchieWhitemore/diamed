@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{mix('/css/fonts.css')}}">
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+    @stack('css')
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
@@ -115,6 +116,9 @@
 </footer>
 @include ('layouts.modals')
 <script src="{{ mix('/js/app.js') }}"></script>
+<script src="{{ mix('/js/simple-lightbox.jquery.min.js') }}"></script>
+<script src="{{ mix('/js/jquery.bxslider.min.js') }}"></script>
+@stack('js');
 <script src="{{ mix('/js/scripts.js') }}"></script>
 </body>
 </html>
