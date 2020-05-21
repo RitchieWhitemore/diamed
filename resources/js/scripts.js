@@ -18,7 +18,8 @@ $(document).ready(function () {
 
 
     $('#main-slider').bxSlider({
-        controls: false
+        mode: 'fade',
+        controls: false,
     });
 
     $('#main-gallery').bxSlider({});

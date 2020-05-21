@@ -80,7 +80,7 @@ php artisan vendor:publish --tag=lfm_public
 
 Делаем символическую ссылку, если на windows. пример
 
-ln -sf /e/laravel/admin-laravel/storage/app/public  /e/laravel/admin-laravel/public/storage
+ln -sf /e/laravel/diamed/storage/app/public  /e/laravel/diamed/public/storage
 
 если на хостинге. пример
 

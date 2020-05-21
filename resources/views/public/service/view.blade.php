@@ -144,7 +144,7 @@
         </div>
     </section>
     @if ($prices->isNotEmpty())
-        <section class="price">
+        <section class="price price--service">
             {{--<h2 class="price__title">Стоимость услуг от 1500 руб</h2>--}}
             <header class="price__header">
                 <h2 class="title">Стоимость услуг</h2>

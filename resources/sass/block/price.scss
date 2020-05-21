@@ -3,7 +3,7 @@
 
     &--service {
         padding-top: 30px;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
         background-color: $bg-color-aqua;
     }
 }
@@ -33,7 +33,7 @@
     .price__list {
         padding: 0;
         margin: 0;
-        margin-bottom: 15px;
+        //margin-bottom: 15px;
         list-style: none;
     }
 
@@ -42,7 +42,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 17px 0;
-        border-bottom: 1px solid #f8f8f8;
+        //border-bottom: 1px solid #f8f8f8;
         color: $font-color-red;
         font-size: 14px;
         font-weight: normal;
@@ -65,6 +65,7 @@
 
         &:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
         &::before {
@@ -91,6 +92,7 @@
 
 .price__value {
     width: 30%;
+    word-break: break-word;
 }
 
 .price__description {
@@ -110,9 +112,17 @@
     color: $font-color-grey;
 }
 
+.price__btn {
+    margin-top: 25px;
+}
+
 @media (min-width: 992px) {
     .price {
         padding-bottom: 85px;
+
+        &--service {
+            padding-top: 40px;
+        }
     }
 
     .price__title {
@@ -150,6 +160,7 @@
         .price__item {
             font-size: 18px;
             justify-content: flex-start;
+            border-bottom: 1px solid #f8f8f8;
 
 
             &::before {

@@ -29,17 +29,17 @@
 
 @media (min-width: 992px) {
   .slogan {
-    margin: 0;
-    padding-bottom: 300px;
+      margin: 0;
+      padding-bottom: 255px;
 
-    background-image: url("/img/bg-illustration-slogan.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
+      background-image: url("/img/bg-illustration-slogan.png");
+      background-repeat: no-repeat;
+      background-position: center bottom;
 
-    h2 {
-      margin-bottom: 40px;
-      font-size: 24px;
-    }
+      h2 {
+          margin-bottom: 40px;
+          font-size: 24px;
+      }
   }
 
   .slogan__whatsapp {
