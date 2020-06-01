@@ -48,13 +48,6 @@ class HomeController extends Controller
         return view('public.promotion', compact('promotions'));
     }
 
-    public function info()
-    {
-        SEOMeta::setTitle('Информация для пациентов');
-
-        return view('public.info');
-    }
-
     public function team()
     {
         SEOMeta::setTitle('Специалисты');

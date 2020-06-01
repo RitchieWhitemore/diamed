@@ -15,7 +15,7 @@
             {!! $article->text !!}
         </div>
     </section>
-    @if ($prices->isNotEmpty())
+    @if (isset($prices) && $prices->isNotEmpty())
         <section class="price">
             {{--<h2 class="price__title">Стоимость услуг от 1500 руб</h2>--}}
             <header class="price__header">
@@ -53,7 +53,7 @@
             </div>--}}
         </section>
     @endif
-    @if($specialists->isNotEmpty())
+    @if(isset($specialists) && $specialists->isNotEmpty())
         <section class="team">
             <header class="team__header">
                 <h2 class="title team__title">К кому записаться</h2>
@@ -72,6 +72,7 @@
             <a href="{{route('team')}}" class="btn team__btn">Больше специалистов</a>
         </section>
     @endif
+    @if(isset($reviews))
     <section class="reviews">
         <div class="reviews__bg">
             <div class="reviews__wrapper">
@@ -88,6 +89,7 @@
             <div class="reviews__illustration"></div>
         </div>
     </section>
+    @endif
     <p class="page__slogan">Ваши улыбки - наша работа!</p>
     @include ('layouts.signup-page')
 @endsection

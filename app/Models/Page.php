@@ -130,6 +130,13 @@ class Page extends Model implements HiddenInterface, HasMedia
         })->with('category');
     }
 
+    public function scopeIsInfo()
+    {
+        return $this->whereHas('category', function (Builder $query) {
+            $query->where('slug', '=', 'info');
+        })->with('category');
+    }
+
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('thumb-admin')

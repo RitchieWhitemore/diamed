@@ -13,7 +13,8 @@
                 <p class="vacancy__text">Если Вы профессионал в области стоматологии и хотели бы развиваться в нашей
                     команде - присылайте свои резюме на <a
                         href="mailto:inkornilova@mail.ru">inkornilova@mail.ru</a>
-                    или звоните по телефону <a href="tel:+74924425333">25-333</a></p>
+                    или звоните по телефону <a href="tel:+74924425333">+7 (49244) 25-333</a> или <a
+                        href="tel:+79209294452">+7 (920) 929-44-52</a></p>
                 <div class="contact__info-wrapper">
                     <p class="contact__info contact__info--address">
                         г. Александров<br>

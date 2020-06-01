@@ -15,7 +15,10 @@ Route::get('/', 'HomeController@index')->name('main');
 
 Route::get('/promotions', 'HomeController@promotion')->name('promotion');
 
-Route::get('/info', 'HomeController@info')->name('info');
+Route::group(['prefix' => 'info', 'as' => 'info.'], function () {
+    Route::get('/', 'InfoController@index')->name('index');
+    Route::get('/{slug}', 'InfoController@view')->name('view');
+});
 
 Route::get('/team', 'HomeController@team')->name('team');
 

@@ -6,7 +6,7 @@
             <h1>Стерилизация</h1>
         </header>
         <div class="container sterilization__container sterilization__flex">
-            <div class="sterilization__col-right">
+            <div class="sterilization__col-right col-12 col-lg-7">
                 <p class="sterilization__text">
                     Стерилизация — это процесс уничтожения всех видов бактерий и вирусов с помощью физических или
                     химических
@@ -27,7 +27,7 @@
                     лечения
                     и предупреждения развития инфекционных осложнений.</p>
             </div>
-            <div class="sterilization__col-left">
+            <div class="sterilization__col-left col-12 col-lg-5">
                 <div class="page__image-wrapper">
                     <img src="/img/sterilization.jpg?ver=1">
                 </div>
