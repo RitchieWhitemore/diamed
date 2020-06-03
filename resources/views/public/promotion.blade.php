@@ -9,7 +9,7 @@
 @section('content')
     <section class="stock page">
         <header class="stock__header page__header">
-            <h1>Система скидок</h1>
+            <h1>Акции и скидки</h1>
         </header>
         <div class="stock__system container">
             <a href="{{route('promotion')}}" class="stock__link">Посмотреть сезонные акции</a>

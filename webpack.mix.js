@@ -21,7 +21,9 @@ mix.options({processCssUrls: false})
 
 mix.copy('resources/js/scripts.js', 'public/js')
     .copy('node_modules/simplelightbox/dist/simple-lightbox.jquery.min.js', 'public/js')
-    .copy('node_modules/bxslider/dist/jquery.bxslider.min.js', 'public/js');
+    .copy('node_modules/lightslider/dist/js/lightslider.min.js', 'public/js')
+    .copy('node_modules/lightslider/dist/css/lightslider.min.css', 'public/css')
+    .copyDirectory('node_modules/lightslider/dist/img', 'public/img');
 
 mix.options({processCssUrls: false})
     .js('resources/admin/js/admin.js', 'public/assets/admin/js')

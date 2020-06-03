@@ -43,7 +43,7 @@
     }
 }
 
-.bx-pager-item a {
+.lSSlideOuter .lSPager.lSpg > li a {
     display: block;
     width: 8px;
     height: 8px;
@@ -54,7 +54,7 @@
     cursor: pointer;
 }
 
-.bx-pager-link.active {
+.lSSlideOuter .lSPager.lSpg > li.active a, .lSSlideOuter .lSPager.lSpg > li:hover a {
     background-color: #1bbfba;
 }
 
@@ -65,20 +65,18 @@
         margin-bottom: 45px;
     }
 
-    .slider .bx-viewport {
-        border-radius: 15px;
-    }
-
     .slider__item {
         height: 500px;
+        border-radius: 15px;
+        overflow: hidden;
     }
 
-    .bx-pager-item a {
+    .lSSlideOuter .lSPager.lSpg > li a {
         width: 10px;
         height: 10px;
     }
 
-    .bx-pager-item {
-        margin-right: 30px;
+    .lSSlideOuter .lSPager.lSpg > li {
+        margin-right: 15px;
     }
 }

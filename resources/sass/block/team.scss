@@ -3,11 +3,13 @@
     margin-bottom: 65px;
     //padding-top: 30px;
     padding-bottom: 42px;
+    display: flex;
+    flex-direction: column;
 }
 
 .team__illustration {
     position: absolute;
-    bottom: -43px;
+    bottom: 150px;
     width: 100%;
     height: 355px;
     background-image: url("/img/bg-team-mobile.png");
@@ -26,6 +28,7 @@
     padding: 0;
     list-style: none;
     width: 100%;
+    position: relative;
     z-index: 9;
 }
 
@@ -34,16 +37,17 @@
 
 }
 
-.team .bx-viewport {
+/*.team .lSSlideOuter .lSPager.lSpg>li {
+    height: 530px !important;
     position: relative;
-}
+}*/
 
-.team .bx-pager {
+.team .lSPager.lSpg {
     display: none;
 }
 
-.team .bx-prev,
-.team .bx-next {
+.team .lSAction > .lSPrev,
+.team .lSAction > .lSNext {
     position: absolute;
     top: 135px;
     left: 22px;
@@ -58,14 +62,15 @@
     background-size: contain;
 }
 
-.team .bx-next {
+.team .lSAction > .lSNext {
     right: 22px;
     left: auto;
     background-image: url("/img/btn-next.png");
+    background-position: top left;
 }
 
 .team__btn {
-    display: none;
+    display: inline-block;
 }
 
 @media (min-width: 992px) {

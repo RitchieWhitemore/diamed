@@ -6,6 +6,7 @@
     {!! SEOMeta::generate() !!}
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{mix('/css/fonts.css')}}">
+    <link rel="stylesheet" href="{{mix('/css/lightslider.min.css')}}">
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
     @stack('css')
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
@@ -47,7 +48,8 @@
                                               class="main-nav__link {{Request::is(['articles', 'articles/*']) ? 'main-nav__link--active' : ''}}">Статьи
                         и новости</a></li>
                 <li class="main-nav__item"><a href="{{route('promotion')}}"
-                                              class="main-nav__link {{Request::routeIs('promotion') ? 'main-nav__link--active' : ''}}">Акции</a>
+                                              class="main-nav__link {{Request::routeIs('promotion') ? 'main-nav__link--active' : ''}}">Акции
+                        и скидки</a>
                 </li>
                 <li class="main-nav__item"><a href="{{route('faq')}}"
                                               class="main-nav__link {{Request::routeIs('faq') ? 'main-nav__link--active' : ''}}">Вопросы</a>
@@ -95,7 +97,8 @@
                             цены</a></li>
                     <li class="main-footer__item"><a href="{{route('team')}}" class="main-footer__link">Наша команда</a>
                     </li>
-                    <li class="main-footer__item"><a href="{{route('promotion')}}" class="main-footer__link">Акции</a>
+                    <li class="main-footer__item"><a href="{{route('promotion')}}" class="main-footer__link">Акции и
+                            скидки</a>
                     </li>
                     <li class="main-footer__item"><a href="{{route('contact')}}" class="main-footer__link">Контакты</a>
                     </li>
@@ -117,7 +120,7 @@
 @include ('layouts.modals')
 <script src="{{ mix('/js/app.js') }}"></script>
 <script src="{{ mix('/js/simple-lightbox.jquery.min.js') }}"></script>
-<script src="{{ mix('/js/jquery.bxslider.min.js') }}"></script>
+<script src="{{ mix('/js/lightslider.min.js') }}"></script>
 @stack('js');
 <script src="{{ mix('/js/scripts.js') }}"></script>
 </body>

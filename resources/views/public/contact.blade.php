@@ -7,7 +7,7 @@
         </header>
         <div class="container contact__flex">
             <div class="contact__image-wrapper">
-                <img src="/img/diamed_n.jpg" class="contact__image">
+                <img src="/img/diamed-2.jpg" class="contact__image">
             </div>
             <div class="contact__right-column">
                 <div class="contact__info-wrapper">

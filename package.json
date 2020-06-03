@@ -24,9 +24,9 @@
     "dependencies": {
         "blueimp-file-upload": "^10.13.1",
         "bootstrap": "^4.5.0",
-        "bxslider": "^4.2.14",
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
+        "lightslider": "^1.1.6",
         "popper.js": "^1.16.0",
         "select2": "^4.0.13",
         "simplelightbox": "^2.2.1",
