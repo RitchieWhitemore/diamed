@@ -56,6 +56,8 @@ return [
                 'image/png',
                 'image/gif',
                 'image/svg+xml',
+                'application/pdf',
+                'application/msword',
             ],
         ],
         'image' => [

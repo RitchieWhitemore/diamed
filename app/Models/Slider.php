@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use App\Traits\HiddenInterface;
 use App\Traits\HiddenTrait;
@@ -14,7 +14,7 @@ use Spatie\MediaLibrary\Models\Media;
 /**
  * Class Slider
  *
- * @package App\models
+ * @package App\Models
  * @property int $id
  * @property string $name
  * @property string $end_show
@@ -24,18 +24,18 @@ use Spatie\MediaLibrary\Models\Media;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
  * @property-read int|null $media_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider notHidden()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider ordered($direction = 'asc')
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereEndShow($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereHidden($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereOrderColumn($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Slider whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider notHidden()
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider ordered($direction = 'asc')
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereEndShow($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereHidden($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereOrderColumn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Slider extends Model implements HiddenInterface, HasMedia, Sortable

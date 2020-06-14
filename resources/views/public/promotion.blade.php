@@ -54,7 +54,7 @@
                 </li>
                 <li class="stock__system-item stock__system-item--happy">
                     <h3>Скидка в День рождения</h3>
-                    <p>скидка 15% в честь дня рождения предоставляется на терапевтическое лечение в течении 14 дней до и
+                    <p>скидка 15% в честь дня рождения предоставляется на терапевтическое лечение в течении 7 дней до и
                         после даты дня рождения
                         (временно приостановлена с 1.02.17 г.)</p>
                 </li>
@@ -87,6 +87,9 @@
                                 <img src="{{$promotion->getFirstMediaUrl('images', 'promo-small')}}">
                             </div>
                             <h3>{{$promotion->name}}</h3>
+                            <a class="stock__gallery" href="{{$promotion->getFirstMediaUrl('images')}}"
+                               style="display: none;">
+                                <img src="{{$promotion->getFirstMediaUrl('images')}}" alt=""></a>
                         </li>
                     @endforeach
                 </ul>

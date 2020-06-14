@@ -1,10 +1,12 @@
 <div class="member">
-    <picture>
-        <source media="(min-width:540px)"
-                srcset="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}">
+    <div class="member__image-wrapper">
+        <picture>
+            <source media="(min-width:540px)"
+                    srcset="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}">
 
-        <img src="{{$specialist->getFirstMediaUrl('specialist_photo', 'public-mobile')}}" alt="">
-    </picture>
+            <img src="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}" alt="">
+        </picture>
+    </div>
     <h3 class="member__title">
         <span>{{$specialist->last_name}}</span><br>{{$specialist->first_name}} {{$specialist->middle_name}}</h3>
     <div class="member__text">{!! Purifier::clean($specialist->description) !!}</div>
@@ -18,8 +20,8 @@
             <a id="gallery-{{$key}}" href="#" class="member__cert-link">Сертификаты</a>
             <div class="member__cert-gallery">
                 @foreach ($specialist->getMedia('certificate') as $media)
-                    <a href="{!! $media->getUrl('certificate') !!}"
-                       title="The Cleaner"><img src="{!! $media->getUrl('certificate') !!}" alt=""></a>
+                    <a href="{!! $media->getUrl('certificate') !!}">
+                        <img src="{!! $media->getUrl('certificate') !!}" alt=""></a>
                 @endforeach
             </div>
         </div>

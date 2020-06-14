@@ -149,9 +149,8 @@ class Page extends Model implements HiddenInterface, HasMedia
             ->crop(Manipulations::CROP_TOP, 350, 370);
 
         $this->addMediaConversion('promo-small')
-            ->width(270)
-            ->height(385)
-            ->crop(Manipulations::CROP_TOP, 270, 385);
+            ->width(640)
+            ->height(640);
     }
 
     /**

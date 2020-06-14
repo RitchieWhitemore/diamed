@@ -60,6 +60,12 @@ $(document).ready(function () {
         gallery.open();
     });
 
+    $('.stock__image-wrapper, .stock__item h3').on('click', function (evt) {
+        evt.preventDefault();
+        var gallery = $(this).siblings('.stock__gallery').simpleLightbox();
+        gallery.open();
+    });
+
 
     //modal
 

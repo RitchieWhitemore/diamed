@@ -12,7 +12,7 @@ class InfoController extends Controller
     {
         \Artesaos\SEOTools\Facades\SEOMeta::setTitle('Информация для пациентов');
 
-        $pages = Page::isInfo()->orderByDesc('created_at')->notHidden()->get();
+        $pages = Page::isInfo()->orderBy('created_at', 'asc')->notHidden()->get();
 
         return view('public.info', compact('pages'));
     }

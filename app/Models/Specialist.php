@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
@@ -19,7 +18,7 @@ use Spatie\MediaLibrary\Models\Media;
 /**
  * Class Specialist
  *
- * @package App\models
+ * @package App\Models
  * @property int $id
  * @property string $last_name
  * @property string $first_name
@@ -31,10 +30,10 @@ use Spatie\MediaLibrary\Models\Media;
  * @property int $hidden
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist ordered($direction = 'asc')
- * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Specialist newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Specialist newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Specialist ordered($direction = 'asc')
+ * @method static \Illuminate\Database\Eloquent\Builder|Specialist query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist whereBeginWork($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\models\Specialist whereDescription($value)
@@ -95,14 +94,18 @@ class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
             ->height(100);
 
         $this->addMediaConversion('public')
-            ->width(200)
-            ->height(259)
-            ->crop(Manipulations::CROP_TOP, 200, 259);
+            ->width(185)
+            // ->height(259)
+            //->crop(Manipulations::CROP_TOP, 185, 240)
+            ->nonOptimized()
+            ->nonQueued();
 
-        $this->addMediaConversion('public-mobile')
-            ->width(154)
-            ->height(199)
-            ->crop(Manipulations::CROP_TOP, 154, 199);
+        /*$this->addMediaConversion('public-mobile')
+            ->width(185)
+            //->height(240)
+            ->crop(Manipulations::CROP_TOP, 185, 240)
+            ->nonOptimized()
+            ->nonQueued();*/
 
         $this->addMediaConversion('certificate')
             ->width(896);

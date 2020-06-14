@@ -30,11 +30,11 @@
     width: 100%;
     position: relative;
     z-index: 9;
+    height: 630px !important;
 }
 
 .team__item {
     position: relative;
-
 }
 
 /*.team .lSSlideOuter .lSPager.lSpg>li {
@@ -77,11 +77,13 @@
     .team {
         position: relative;
         padding-top: 50px;
-        padding-bottom: 83px;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .team__list-wrapper {
         margin: 0 auto;
+        margin-bottom: 80px;
         max-width: 1174px;
     }
 
@@ -89,6 +91,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        height: auto !important;
     }
 
     .team__item {
@@ -110,13 +113,13 @@
         background-image: url("/img/bg-team.png");
     }
 
-    .team__btn {
+    /*.team__btn {
         display: inline-block;
         position: absolute;
         left: 50%;
         bottom: -27px;
         transform: translateX(-50%);
-    }
+    }*/
 }
 
 @media (min-width: 1140px) {
