@@ -18,6 +18,8 @@ use Spatie\MediaLibrary\Models\Media;
  * @property int $id
  * @property string $name
  * @property string $end_show
+ * @property string $button_name
+ * @property string $link
  * @property integer $hidden
  * @property int $order_column
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -42,7 +44,7 @@ class Slider extends Model implements HiddenInterface, HasMedia, Sortable
 {
     use HiddenTrait, HasMediaTrait, SortableTrait;
 
-    protected $fillable = ['name', 'end_show', 'hidden'];
+    protected $fillable = ['name', 'end_show', 'link', 'button_name', 'hidden'];
 
     protected $dates = ['end_show'];
 

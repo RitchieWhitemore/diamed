@@ -12,17 +12,14 @@
         <ul id="main-slider" class="slider__list">
             @foreach ($sliders as $slider)
                 <li class="slider__item">
-                    <picture>
-                        @if ($slider->getFirstMediaUrl('desktop_slide'))
-                            <source media="(min-width:540px)"
-                                    srcset="{{$slider->getFirstMediaUrl('desktop_slide')}}">
-                        @endif
-                        @if ($slider->getFirstMediaUrl('mobile_slide'))
-                            <img src="{{$slider->getFirstMediaUrl('mobile_slide')}}" alt="">
-                        @elseif ($slider->getFirstMediaUrl('desktop_slide'))
-                            <img src="{{$slider->getFirstMediaUrl('desktop_slide')}}" alt="">
-                        @endif
-                    </picture>
+
+                    @if (!empty($slider->link))
+                        <a href="{{$slider->link}}">
+                            @include('public.part._slider-item')
+                        </a>
+                    @else
+                        @include('public.part._slider-item')
+                    @endif
                 </li>
             @endforeach
         </ul>

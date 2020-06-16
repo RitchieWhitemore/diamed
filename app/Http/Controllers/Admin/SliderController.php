@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SliderRequest;
 use App\Models\Slider;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Str;
 
 class SliderController extends Controller
@@ -19,7 +19,7 @@ class SliderController extends Controller
     {
         $sliders = Slider::ordered()->get();
 
-        return view('admin.sliders.index', compact('sliders'));
+        return view('admin.slider.index', compact('sliders'));
     }
 
     /**
@@ -29,7 +29,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('admin.sliders.create');
+        return view('admin.slider.create');
     }
 
     /**
@@ -38,16 +38,8 @@ class SliderController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SliderRequest $request)
     {
-        $this->validate($request, [
-            'name' => ['required'],
-            'end_show' => ['nullable', 'date'],
-            'mobile_slide' => ['nullable', 'image'],
-            'desktop_slide' => ['required', 'image'],
-            'hidden' => 'integer'
-        ]);
-
         $slider = Slider::create($request->all());
 
         $this->uploadImage('mobile_slide', $request, $slider, 'mobile_slide');
@@ -62,7 +54,7 @@ class SliderController extends Controller
      */
     public function show(Slider $slider)
     {
-        return view('admin.sliders.show', ['model' => $slider]);
+        return view('admin.slider.show', ['model' => $slider]);
     }
 
     /**
@@ -73,7 +65,7 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        return view('admin.sliders.edit', ['model' => $slider]);
+        return view('admin.slider.edit', ['model' => $slider]);
     }
 
     /**
@@ -82,21 +74,8 @@ class SliderController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, Slider $slider)
+    public function update(SliderRequest $request, Slider $slider)
     {
-        $this->validate($request, [
-            'name' => ['required'],
-            'end_show' => ['nullable', 'date'],
-            'mobile_slide' => ['nullable', 'image'],
-            'desktop_slide' => [
-                Rule::requiredIf(function () use ($slider) {
-                    return !$slider->getFirstMedia('desktop_slide');
-                }),
-                'image'
-            ],
-            'hidden' => 'integer'
-        ]);
-
         $slider->update($request->all());
 
         $this->uploadImage('mobile_slide', $request, $slider, 'mobile_slide');

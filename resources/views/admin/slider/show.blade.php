@@ -55,6 +55,14 @@
                     </td>
                 </tr>
                 <tr>
+                    <th>Название кнопки</th>
+                    <td>{{ $model->button_name }}</td>
+                </tr>
+                <tr>
+                    <th>Ссылка</th>
+                    <td>{{ $model->link }}</td>
+                </tr>
+                <tr>
                     <th>Скрыто</th>
                     <td>{{ $model->getHiddenValue() }}</td>
                 </tr>
