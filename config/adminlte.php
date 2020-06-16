@@ -209,6 +209,12 @@ return [
             'active' => ['admin/pages', 'admin/pages/*']
         ],
         [
+            'text' => 'Акции и Скидки',
+            'url' => 'admin/promotions',
+            'icon' => 'far fa-fw fa-image',
+            'active' => ['admin/promotions', 'admin/promotions/*']
+        ],
+        [
             'text' => 'Слайдер',
             'url' => 'admin/sliders',
             'icon' => 'far fa-fw fa-image',

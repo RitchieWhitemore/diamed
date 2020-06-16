@@ -60,6 +60,27 @@ Breadcrumbs::for('admin.pages.edit', function (Crumbs $crumbs, Page $page) {
     $crumbs->push('Редактирование: ' . $page->name, route('admin.pages.edit', $page));
 });
 
+// Admin - Promotion
+Breadcrumbs::register('admin.promotions.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Акции', route('admin.promotions.index'));
+});
+
+Breadcrumbs::register('admin.promotions.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.promotions.index');
+    $crumbs->push('Добавить акцию', route('admin.promotions.create'));
+});
+
+Breadcrumbs::for('admin.promotions.show', function (Crumbs $crumbs, \App\Models\Promotion $promotion) {
+    $crumbs->parent('admin.promotions.index');
+    $crumbs->push($promotion->name, route('admin.promotions.show', $promotion));
+});
+
+Breadcrumbs::for('admin.promotions.edit', function (Crumbs $crumbs, \App\Models\Promotion $promotion) {
+    $crumbs->parent('admin.promotions.index');
+    $crumbs->push('Редактирование: ' . $promotion->name, route('admin.promotions.edit', $promotion));
+});
+
 // Admin - Slider
 Breadcrumbs::register('admin.sliders.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.home');

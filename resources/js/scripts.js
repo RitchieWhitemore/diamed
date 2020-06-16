@@ -50,6 +50,12 @@ $(document).ready(function () {
         gallery.open();
     });
 
+    $('.stock__link').on('click', function (evt) {
+        evt.preventDefault();
+        var gallery = $(this).siblings('.stock__actual').find('a').simpleLightbox();
+        gallery.open();
+    });
+
     /*$('#license, #san').on({
         controls: false
     });*/

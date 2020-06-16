@@ -12,7 +12,17 @@
             <h1>Акции и скидки</h1>
         </header>
         <div class="stock__system container">
-            <a href="{{route('promotion')}}" class="stock__link">Посмотреть сезонные акции</a>
+
+            @if(count($actualPromotions) > 0)
+
+                <a href="#" class="stock__link">Посмотреть сезонные акции</a>
+                <div class="stock__actual">
+                    @foreach ($actualPromotions as $promotion)
+                        <a href="{!! $promotion->getFirstMediaUrl('promotion') !!}">
+                            <img src="{!! $promotion->getFirstMediaUrl('promotion') !!}" alt=""></a>
+                    @endforeach
+                </div>
+            @endif
             <ul class="stock__system-list">
                 <li class="stock__system-item stock__system-item--family">
                     <h3>Семейная скидка</h3>
@@ -84,12 +94,12 @@
                     @foreach($promotions as $promotion)
                         <li class="stock__item">
                             <div class="stock__image-wrapper">
-                                <img src="{{$promotion->getFirstMediaUrl('images', 'promo-small')}}">
+                                <img src="{{$promotion->getFirstMediaUrl('promotion', 'promo-small')}}">
                             </div>
-                            <h3>{{$promotion->name}}</h3>
-                            <a class="stock__gallery" href="{{$promotion->getFirstMediaUrl('images')}}"
+                            <h3>{{$promotion->getFullName()}}</h3>
+                            <a class="stock__gallery" href="{{$promotion->getFirstMediaUrl('promotion')}}"
                                style="display: none;">
-                                <img src="{{$promotion->getFirstMediaUrl('images')}}" alt=""></a>
+                                <img src="{{$promotion->getFirstMediaUrl('promotion')}}" alt=""></a>
                         </li>
                     @endforeach
                 </ul>

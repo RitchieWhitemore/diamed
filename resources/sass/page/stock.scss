@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.stock__actual {
+    display: none;
+}
+
 .stock__system-list {
     margin: 0;
     padding: 0;
@@ -152,8 +156,9 @@
 
 @media (min-width: 992px) {
 
-    .stock__system .stock__link {
-        display: none;
+    .stock__link {
+        margin-bottom: 30px;
+        font-size: 16px;
     }
 
     .stock__system-list {

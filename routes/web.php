@@ -68,6 +68,8 @@ Route::group(
         Route::resource('categories', 'CategoryController');
         Route::resource('pages', 'PageController');
 
+        Route::resource('promotions', 'PromotionController');
+
         Route::pattern('shortPriceType', 'pages|services');
 
         Route::group(['prefix' => '{shortPriceType}/{owner}', 'as' => 'short_prices.'], function () {

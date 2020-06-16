@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Mail\ReviewMail;
 use App\Mail\SignupMail;
 use App\Models\Page;
+use App\Models\Promotion;
 use App\Models\Review;
 use App\Models\Slider;
 use App\Models\Specialist;
@@ -44,8 +45,12 @@ class HomeController extends Controller
     {
         SEOMeta::setTitle('Акции и Скидки');
 
-        $promotions = Page::isPromotions()->orderByDesc('created_at')->notHidden()->paginate(15);
-        return view('public.promotion', compact('promotions'));
+        $promotions = Promotion::orderByDesc('created_at')->notHidden()->paginate(15);
+        $actualPromotions = Promotion::where([
+            ['begin_show', '<=', Carbon::now()],
+            ['end_show', '>=', Carbon::now()]
+        ])->get();
+        return view('public.promotion', compact('promotions', 'actualPromotions'));
     }
 
     public function team()
