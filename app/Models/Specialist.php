@@ -63,6 +63,7 @@ class Specialist extends Model implements Sortable, HiddenInterface, HasMedia
         'middle_name',
         'description',
         'begin_work',
+        'order_column',
         'hidden'
     ];
 

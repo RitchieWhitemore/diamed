@@ -49,5 +49,45 @@ $(document).ready(function () {
         }
     });
 
+    $('#tablecontents').sortable({
+        items: "tr",
+        cursor: 'move',
+        opacity: 0.6,
+        update: function () {
+            sendOrderToServer();
+        }
+    });
+
+    function sendOrderToServer() {
+
+        var order = [];
+        $('tr.row1').each(function (index, element) {
+            order.push({
+                id: $(this).attr('data-id'),
+                position: index + 1
+            });
+        });
+
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/admin/specialists/order",
+            data: {
+                order: order,
+                _token: $("#tablecontents").data('csrf-token')
+            },
+            success: function (response) {
+                if (response.status == "success") {
+                    console.log(response);
+                } else {
+                    console.log(response);
+                }
+            }
+        });
+    }
+
+
     $('.selectpicker').select2();
+
+
 });

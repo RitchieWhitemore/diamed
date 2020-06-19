@@ -16,7 +16,7 @@
 @section('content')
     <p><a href="{{ route('admin.specialists.create') }}" class="btn btn-success">Добавить специалиста</a></p>
 
-    <table class="table table-bordered table-striped">
+    <table id="table" class="table table-bordered table-striped">
         <thead>
         <tr>
             <th>Номер</th>
@@ -27,18 +27,18 @@
             <th></th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="tablecontents" data-csrf-token="{{csrf_token()}}">
 
         @foreach ($specialists as $index => $model)
-            <tr>
+            <tr class="row1" data-id="{{ $model->id }}">
                 <td>{{ $index + 1 }}</td>
-                <td class="d-flex">
-                    {!! Form::open()->route('admin.specialists.up', [$model])->attrs(['style' => 'margin-right: 10px']) !!}
-                    {!! Form::submit('<span class="fa fa-angle-double-up"></span>') !!}
-                    {!! Form::close() !!}
-                    {!! Form::open()->route('admin.specialists.down', [$model]) !!}
-                    {!! Form::submit('<span class="fa fa-angle-double-down"></span>') !!}
-                    {!! Form::close() !!}
+                <td>
+                    <div
+                        style="color:rgb(124,77,255); padding-left: 10px; float: left; font-size: 20px; cursor: pointer;"
+                        title="change display order">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                    </div>
                 </td>
                 <td>@if ($model->getFirstMedia('specialist_photo') && $src = $model->getFirstMedia('specialist_photo')->getUrl('thumb-admin'))
                         <img src="{{$src}}">

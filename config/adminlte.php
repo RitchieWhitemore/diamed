@@ -338,6 +338,17 @@ return [
 
     'plugins' => [
         [
+            'name' => 'jquery',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/assets/admin/js/jquery.min.js',
+                ],
+            ],
+        ],
+        [
             'name' => 'Datatables',
             'active' => false,
             'files' => [
@@ -409,6 +420,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'jqueryUI',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/assets/admin/css/jquery-ui.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/assets/admin/js/jquery-ui.min.js',
                 ],
             ],
         ],

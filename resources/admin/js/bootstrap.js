@@ -8,7 +8,7 @@ window.Popper = require('popper.js').default;
  */
 
 try {
-    window.$ = window.jQuery = require('jquery');
+    //window.$ = window.jQuery = require('jquery');
 
     require('select2/dist/js/select2.full');
 

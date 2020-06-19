@@ -28,6 +28,9 @@ mix.copy('resources/js/scripts.js', 'public/js')
 mix.options({processCssUrls: false})
     .js('resources/admin/js/admin.js', 'public/assets/admin/js')
     .sass('resources/admin/sass/admin.scss', 'public/assets/admin/css')
+    .copy('node_modules/jquery/dist/jquery.min.js', 'public/assets/admin/js')
+    .copy('resources/admin/js/jquery-ui.min.js', 'public/assets/admin/js')
+    .copy('resources/admin/css/jquery-ui.min.css', 'public/assets/admin/css')
     .version();
 
 mix.copy('node_modules/tinymce/skins', 'public/css/skins');

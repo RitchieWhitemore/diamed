@@ -106,6 +106,24 @@ class SpecialistController extends Controller
         return redirect()->route('admin.specialists.index');
     }
 
+    public function updateOrder(Request $request)
+    {
+        $specialists = Specialist::all();
+
+        foreach ($specialists as $specialist) {
+            $specialist->timestamps = false; // To disable update_at field updation
+            $id = $specialist->id;
+
+            foreach ($request->order as $order) {
+                if ($order['id'] == $id) {
+                    $specialist->update(['order_column' => $order['position']]);
+                }
+            }
+        }
+
+        return response('Update Successfully.', 200);
+    }
+
     public function upload(Request $request, Specialist $specialist)
     {
         $mimeTypes = ['image/jpeg', 'image/png'];

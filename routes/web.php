@@ -92,6 +92,7 @@ Route::group(
 
         Route::post('specialists/{specialist}/up', 'SpecialistController@up')->name('specialists.up');
         Route::post('specialists/{specialist}/down', 'SpecialistController@down')->name('specialists.down');
+        Route::post('specialists/order', 'SpecialistController@updateOrder');
         Route::post('specialist/media', 'SpecialistController@storeMedia')->name('specialists.storeMedia');
         Route::resource('specialists', 'SpecialistController');
 

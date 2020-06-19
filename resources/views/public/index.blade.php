@@ -28,7 +28,7 @@
         <h2>Ваши улыбки - наша работа!</h2>
         <div class="slogan__button-wrapper">
             <button class="btn" data-toggle="modal" data-target="#signup-modal">Записаться</button>
-            <a href="whatsapp://send?phone=79607326690" class="slogan__whatsapp btn__whatsapp"></a>
+            <a href="whatsapp://send?phone=79209294452" class="slogan__whatsapp btn__whatsapp"></a>
         </div>
     </section>
     <section class="services">
