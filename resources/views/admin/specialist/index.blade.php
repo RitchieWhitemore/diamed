@@ -27,7 +27,7 @@
             <th></th>
         </tr>
         </thead>
-        <tbody id="tablecontents" data-csrf-token="{{csrf_token()}}">
+        <tbody id="tablecontents" data-csrf-token="{{csrf_token()}}" data-url="/admin/specialists/order">
 
         @foreach ($specialists as $index => $model)
             <tr class="row1" data-id="{{ $model->id }}">

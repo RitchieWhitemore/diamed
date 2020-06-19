@@ -71,7 +71,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "/admin/specialists/order",
+            url: $("#tablecontents").data('url'),
             data: {
                 order: order,
                 _token: $("#tablecontents").data('csrf-token')

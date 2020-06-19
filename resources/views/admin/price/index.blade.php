@@ -26,18 +26,19 @@
             <th></th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="tablecontents" data-csrf-token="{{csrf_token()}}"
+               data-url="{{route('admin.services.prices.order', [$service])}}">
 
         @foreach ($prices as $index => $model)
-            <tr>
+            <tr class="row1" data-id="{{ $model->id }}">
                 <td>{{ $index + 1 }}</td>
                 <td class="d-flex">
-                    {!! Form::open()->route('admin.services.prices.up', [$service, $model])->attrs(['style' => 'margin-right: 10px']) !!}
-                    {!! Form::submit('<span class="fa fa-angle-double-up"></span>') !!}
-                    {!! Form::close() !!}
-                    {!! Form::open()->route('admin.services.prices.down', [$service, $model]) !!}
-                    {!! Form::submit('<span class="fa fa-angle-double-down"></span>') !!}
-                    {!! Form::close() !!}
+                    <div
+                        style="color:rgb(124,77,255); padding-left: 10px; float: left; font-size: 20px; cursor: pointer;"
+                        title="change display order">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                    </div>
                 </td>
                 <td>
                     <a href="{{ route('admin.services.prices.show', ['service' => $service->id, 'price' => $model]) }}">{{ $model->name }}</a>

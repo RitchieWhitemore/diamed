@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PriceRequest;
 use App\Models\Price;
 use App\Models\Service;
+use Illuminate\Http\Request;
 
 class PriceController extends Controller
 {
@@ -118,5 +119,23 @@ class PriceController extends Controller
     {
         $price->moveOrderDown();
         return redirect()->route('admin.services.prices.index', $service);
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $prices = Price::all();
+
+        foreach ($prices as $price) {
+            $price->timestamps = false; // To disable update_at field updation
+            $id = $price->id;
+
+            foreach ($request->order as $order) {
+                if ($order['id'] == $id) {
+                    $price->update(['order_column' => $order['position']]);
+                }
+            }
+        }
+
+        return response('Update Successfully.', 200);
     }
 }

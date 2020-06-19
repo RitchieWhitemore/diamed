@@ -50,6 +50,7 @@ class Price extends Model implements HiddenInterface, Sortable
         'value',
         'hidden',
         'service_id',
+        'order_column',
     ];
 
     public function service()

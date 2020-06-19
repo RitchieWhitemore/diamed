@@ -83,6 +83,7 @@ Route::group(
         Route::group(['prefix' => 'services/{service}', 'as' => 'services.'], function () {
             Route::post('prices/{price}/up', 'PriceController@up')->name('prices.up');
             Route::post('prices/{price}/down', 'PriceController@down')->name('prices.down');
+            Route::post('prices/order', 'PriceController@updateOrder')->name('prices.order');
             Route::resource('prices', 'PriceController');
         });
 
