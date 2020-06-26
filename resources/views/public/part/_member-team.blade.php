@@ -1,11 +1,6 @@
 <div class="member">
     <div class="member__image-wrapper">
-        <picture>
-            <source media="(min-width:540px)"
-                    srcset="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}">
-
-            <img src="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}" alt="">
-        </picture>
+        <img class="lazy" data-src="{{$specialist->getFirstMediaUrl('specialist_photo', 'public')}}" alt="">
     </div>
     <h3 class="member__title">
         <span>{{$specialist->last_name}}</span><br>{{$specialist->first_name}} {{$specialist->middle_name}}</h3>
@@ -21,7 +16,7 @@
             <div class="member__cert-gallery">
                 @foreach ($specialist->getMedia('certificate') as $media)
                     <a href="{!! $media->getUrl('certificate') !!}">
-                        <img src="{!! $media->getUrl('certificate') !!}" alt=""></a>
+                        <img class="lazy" data-src="{!! $media->getUrl('certificate') !!}" alt=""></a>
                 @endforeach
             </div>
         </div>

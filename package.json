@@ -25,6 +25,7 @@
         "blueimp-file-upload": "^10.13.1",
         "bootstrap": "^4.5.0",
         "jquery": "^3.4.1",
+        "jquery-lazy": "^1.7.10",
         "jquery-ui": "^1.12.1",
         "lightslider": "^1.1.6",
         "popper.js": "^1.16.0",

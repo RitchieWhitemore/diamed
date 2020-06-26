@@ -65,13 +65,18 @@
 }
 
 .btn__wrapper {
-  text-align: center;
+    text-align: center;
 }
 
 @media (min-width: 992px) {
-  .btn {
-    padding: 20px 60px;
-    font-size: 16px;
-    border-radius: 30px;
-  }
+    .btn {
+        padding: 20px 60px;
+        font-size: 16px;
+        border-radius: 30px;
+    }
+
+    .btn__whatsapp {
+        width: 70px;
+        height: 70px;
+    }
 }

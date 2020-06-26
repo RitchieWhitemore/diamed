@@ -32,7 +32,7 @@
         @foreach ($prices as $index => $model)
             <tr class="row1" data-id="{{ $model->id }}">
                 <td>{{ $index + 1 }}</td>
-                <td class="d-flex">
+                <td>
                     <div
                         style="color:rgb(124,77,255); padding-left: 10px; float: left; font-size: 20px; cursor: pointer;"
                         title="change display order">

@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('.lazy').Lazy();
+
     $('.main-header__btn-menu').on('click', function (evt) {
         $(evt.currentTarget).toggleClass('main-header__btn-menu--close');
         $('.main-nav').toggleClass('main-nav--close');
@@ -18,16 +20,20 @@ $(document).ready(function () {
 
     $('#main-slider').lightSlider({
         item: 1,
+        auto: true,
         loop: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600,
+        speed: 1000,
+        pause: 4000,
     })
 
     $('#main-gallery').lightSlider({
         item: 1,
+        auto: true,
         loop: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600,
+        speed: 1000,
+        pause: 4000,
     })
 
     if ($(window).width() <= 779) {

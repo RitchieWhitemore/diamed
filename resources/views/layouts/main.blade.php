@@ -119,6 +119,8 @@
 </footer>
 @include ('layouts.modals')
 <script src="{{ mix('/js/app.js') }}"></script>
+<script src="{{ mix('/js/jquery.lazy.min.js') }}"></script>
+<script src="{{ mix('/js/jquery.lazy.plugins.min.js') }}"></script>
 <script src="{{ mix('/js/simple-lightbox.jquery.min.js') }}"></script>
 <script src="{{ mix('/js/lightslider.min.js') }}"></script>
 @stack('js');

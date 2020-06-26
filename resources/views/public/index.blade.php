@@ -59,9 +59,27 @@
         <div class="about-company__gallery-wrapper">
             <div class="about-company__gallery gallery">
                 <ul id="main-gallery" class="gallery__list">
-                    <li class="gallery__item"><img src="/img/diamed-2.jpg"></li>
-                    {{--<li class="gallery__item"><img src="/img/diamed_n.jpg"></li>
-                    <li class="gallery__item"><img src="/img/diamed_n.jpg"></li>--}}
+                    <li class="gallery__item"><img class="lazy" data-src="/img/diamed-2.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-1.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-2.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-3.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-4.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-6.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-7.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-15.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-16.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-17.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-18.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-19.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-20.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-21.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-22.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-23.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-24.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-25.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-26.jpg"></li>
+                    <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-27.jpg"></li>
+
                 </ul>
             </div>
             <div class="about-company__info">
@@ -94,7 +112,7 @@
             ортодонта. Наши пациенты получают комплексную стоматологическую помощь по индивидуальному плану,
             составленному опытными специалистами.</p>
         <div class="about-company__director director">
-            <div class="director__photo"></div>
+            <div class="director__photo lazy" data-src="/img/director.jpg?ver=2"></div>
             <div>
                 <p class="director__text">Я отвечаю лично за каждого нашего
                     пациента и искренне заинтересована
@@ -148,7 +166,8 @@
             </div>
             <div class="reviews__wrapper-bottom">
                 <div class="reviews__video">
-                    <iframe src="https://www.youtube.com/embed/QCfSMlXLWU8"
+                    <iframe class="lazy" data-src="https://www.youtube.com/embed/QCfSMlXLWU8"
+                            loading="lazy"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -174,7 +193,9 @@
 
     </section>
     <section class="map">
-        <iframe src="https://yandex.ru/map-widget/v1/-/CGh8rFif" width="100%" height="200" frameborder="0"
+        <iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CGh8rFif" width="100%" height="200"
+                frameborder="0"
+                loading="lazy"
                 allowfullscreen="true"></iframe>
     </section>
 @endsection

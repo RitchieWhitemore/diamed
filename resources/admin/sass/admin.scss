@@ -2,16 +2,20 @@
 @import "~select2/dist/css/select2.css";
 
 .admin-delete-form {
-  display: inline-block;
+    display: inline-block;
+}
+
+.action-column {
+    width: 82px;
 }
 
 .admin-delete-form button {
-  background: none;
-  border: none;
-  outline: none;
-  padding: 0;
-  padding-left: 5px;
-  padding-bottom: 2px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    padding-left: 5px;
+    padding-bottom: 2px;
 }
 
 .admin-delete-form button:hover,
