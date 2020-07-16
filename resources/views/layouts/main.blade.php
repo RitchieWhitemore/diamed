@@ -10,6 +10,29 @@
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
     @stack('css')
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(22528675, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/22528675" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -25,7 +48,7 @@
                 <img class="main-header__logo" src="/img/logo.svg">
             </a>
         </div>
-        <a href="tel:88888888" class="main-header__phone"></a>
+        <a href="tel:+79209294452" class="main-header__phone"></a>
         <nav class="main-nav main-nav--close">
             <div class="main-nav__slogan-wrapper">
                 <p class="main-nav__slogan">Стоматологическая клиника<br>
@@ -123,7 +146,7 @@
 <script src="{{ mix('/js/jquery.lazy.plugins.min.js') }}"></script>
 <script src="{{ mix('/js/simple-lightbox.jquery.min.js') }}"></script>
 <script src="{{ mix('/js/lightslider.min.js') }}"></script>
-@stack('js');
+@stack('js')
 <script src="{{ mix('/js/scripts.js') }}"></script>
 </body>
 </html>

@@ -79,13 +79,12 @@
                     <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-25.jpg"></li>
                     <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-26.jpg"></li>
                     <li class="gallery__item"><img class="lazy" data-src="/storage/photos/1/slider/slider-27.jpg"></li>
-
                 </ul>
             </div>
             <div class="about-company__info">
                 <div class="row features">
                     <div class="col value">
-                        <span class="number">15</span><span class="text">лет успешной работы</span>
+                        <span class="number">{{$howManyYearsOfWork}}</span><span class="text">лет успешной работы</span>
                     </div>
                     <div class="col value">
                         <span class="number">18000</span><span class="text">довольных пациентов</span>

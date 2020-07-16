@@ -38,7 +38,10 @@ class HomeController extends Controller
 
         $reviews = Review::notHidden()->orderByDesc('created_at')->limit(3)->get();
 
-        return view('public.index', compact('sliders', 'specialists', 'articles', 'reviews'));
+        $dateBegin = Carbon::createFromDate('2004', '1', '14');
+        $howManyYearsOfWork = Carbon::now()->diffInYears($dateBegin);
+
+        return view('public.index', compact('sliders', 'specialists', 'articles', 'reviews', 'howManyYearsOfWork'));
     }
 
     public function promotion()

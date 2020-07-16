@@ -1,6 +1,10 @@
 $(document).ready(function () {
     $('.lazy').Lazy();
 
+    $('#main-gallery .lazy').Lazy({
+        delay: 2000
+    });
+
     $('.main-header__btn-menu').on('click', function (evt) {
         $(evt.currentTarget).toggleClass('main-header__btn-menu--close');
         $('.main-nav').toggleClass('main-nav--close');
